@@ -24,7 +24,8 @@
       <ul class="nav navbar-nav navbar-left">
         <% if user_signed_in?  %>
         <li class="nav-nickname"><%= current_user.nickname %>さん</li>
-        <li><a href="#">投稿する</a></li>
+        <li><a href="#">プロフィール</a></li>
+        <li><a href="#">スクリーンショット</a></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <% end  %>
       </ul>
