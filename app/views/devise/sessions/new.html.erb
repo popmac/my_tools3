@@ -20,7 +20,7 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-box">
         <%= f.email_field :email, placeholder: 'メールアドレス', autofocus: true %>
-        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off", class: 'login-password'%>
+        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
         <button class="btn btn-info btn-block login" type="submit">ログイン</button>
         <%= link_to '会員登録はこちら', new_user_registration_path, class: 'btn btn-info btn-block login active' %>
       <% end %>
