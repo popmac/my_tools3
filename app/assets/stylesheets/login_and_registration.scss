@@ -57,6 +57,10 @@ body{
 }
 
 .form-box input[type="password"]{
+    border-top: 0;
+}
+
+#user_password_confirmation {
     border-radius: 0 0 5px 5px;
     border-top: 0;
 }
