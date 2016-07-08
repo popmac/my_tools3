@@ -47,3 +47,4 @@ end
 
 gem 'pry-rails'
 gem 'bootstrap-sass'
+gem 'devise'
