@@ -52,7 +52,6 @@ body{
 }
 
 .form-box input[type="email"]{
-    border-radius: 5px 5px 0 0;
     text-transform: lowercase;
 }
 
@@ -60,13 +59,7 @@ body{
     border-top: 0;
 }
 
-#user_password_confirmation {
-    border-radius: 0 0 5px 5px;
-    border-top: 0;
-}
-
 .login-password {
-    border-radius: 0 0 5px 5px !important;
     border-top: 0;
 }
 
