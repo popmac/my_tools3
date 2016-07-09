@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="login-container">
+    <div class="avatar">
+      <p class="sentense"><h3>あなた</h3></p>
+    </div>
+    <div class="list-group-item">Nickname:<%= @user.nickname %>さん</div>
+    <div class="list-group-item">Age:<%= @profile.age %>歳</div>
+    <div class="list-group-item">Job:<%= @profile.job %></div>
+    <div class="list-group-item">Comment:<%= @profile.comment %></div>
+    <%= link_to 'トップページに戻る', root_path, class: 'list-group-item' %>
+  </div>
+</div>
