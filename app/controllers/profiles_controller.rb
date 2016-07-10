@@ -9,8 +9,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
-    @profile = @user.profile
+    @profile = Profile.find(params[:id])
   end
 
   private
