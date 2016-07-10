@@ -1,5 +1,33 @@
-body{
+.sessions {
     background: image-url("back_image.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.registrations {
+    background: image-url("back_image.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.users {
+    background: image-url("index_back.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.profiles {
+    background: image-url("index_back.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.photos {
+    background: image-url("index_back.jpg");
     background-size: cover;
     position: relative;
     height: 100%;
