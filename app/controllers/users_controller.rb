@@ -6,4 +6,9 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     @comment = @user.profile.comment
   end
+
+  def show
+    @user = User.find(params[:id])
+    @comment = @user.profile.comment
+  end
 end
