@@ -1,0 +1,12 @@
+ <div class="container">
+  <div class="col-md-12">
+    <div class="login-container">
+      <div class="form-box">
+        <%= form_for(@photo) do |f| %>
+        <%= f.file_field :image %>
+        <%= f.submit '投稿する' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

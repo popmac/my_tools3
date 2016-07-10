@@ -24,9 +24,9 @@
       <ul class="nav navbar-nav navbar-left">
         <% if user_signed_in?  %>
         <li class="nav-nickname"><%= current_user.nickname %>さん</li>
-        <li><%= link_to '投稿する', new_profile_path, class: "nav-profile-post" %></li>
+        <li><%= link_to 'プロフィールを投稿', new_profile_path, class: "nav-profile-post" %></li>
         <li><%= link_to 'プロフィール', profile_path(current_user.id), class: "nav-profile-post" %></li>
-        <li><a href="#">スクリーンショット</a></li>
+        <li><%= link_to 'スクリーンショットを投稿', new_photo_path, class: "nav-profile-post" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <% end  %>
       </ul>
