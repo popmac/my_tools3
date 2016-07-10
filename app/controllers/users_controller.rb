@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
     @user = User.find(current_user.id)
     @comment = @user.profile.comment
+    @photos = @user.photos
   end
 
   def show
