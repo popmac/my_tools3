@@ -2,8 +2,12 @@
   <div class="col-md-12">
     <div class="login-container">
       <div class="form-box">
-        <%= form_for(@photo) do |f| %>
-        <%= f.file_field :image %>
+      <%= form_for(@photo, :html => {:multipart => true}) do |f| %>
+        <input type="file" name="photo[image][0]">
+        <input type="file" name="photo[image][1]">
+        <input type="file" name="photo[image][2]">
+        <input type="file" name="photo[image][3]">
+        <input type="file" name="photo[image][4]">
         <%= f.submit '投稿する' %>
         <% end %>
       </div>
