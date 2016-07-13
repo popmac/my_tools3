@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
 
   def create
     photo_params.each_value do |image|
-      photo = current_user.photos.create(image: image)
+      current_user.photos.create(image: image)
     end
     redirect_to :root
   end
