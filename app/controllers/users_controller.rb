@@ -3,9 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @user = User.find(current_user.id)
-    @comment = @user.profile.comment
-    @photos = @user.photos
+    @comment = current_user.profile.comment
+    @photos = current_user.photos
   end
 
   def show
