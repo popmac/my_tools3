@@ -1,6 +1,11 @@
 class PhotosController < ApplicationController
 
+  def index
+    @photos = current_user.photos
+  end
+
   def new
+    @user = current_user
     @photo = Photo.new
   end
 
@@ -9,6 +14,14 @@ class PhotosController < ApplicationController
       current_user.photos.create(image: image)
     end
     redirect_to :root
+  end
+
+  def destroy
+    photo = Photo.find(params[:id])
+    if photo.user.id == current_user.id
+      photo.destroy
+    end
+    redirect_to action: :index
   end
 
   private
