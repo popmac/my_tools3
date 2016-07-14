@@ -14,6 +14,7 @@ class PhotosController < ApplicationController
       current_user.photos.create(image: image)
     end
     redirect_to :root
+    flash[:notice] = "スクリーンショットを投稿しました"
   end
 
   def destroy
@@ -22,6 +23,7 @@ class PhotosController < ApplicationController
       photo.destroy
     end
     redirect_to action: :index
+    flash[:notice] = "スクリーンショットを削除しました"
   end
 
   private

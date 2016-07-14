@@ -17,6 +17,7 @@ class ProfilesController < ApplicationController
       profile.update(update_params)
     end
     redirect_to action: :show
+    flash[:notice] = "プロフィールを編集しました"
   end
 
   private
