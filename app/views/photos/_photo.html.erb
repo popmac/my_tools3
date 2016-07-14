@@ -6,6 +6,6 @@
     <img src="<%= photo.image %>" style="width: 100%;">
   </div>
   <div>
-    <%= link_to '削除する', "/users/#{current_user.id}/photos/#{photo.id}", method: :delete %>
+    <%= link_to '削除する', "/users/#{current_user.id}/photos/#{photo.id}", method: :delete, data: {confirm: "本当に削除しますか？"}%>
   </div>
 </div>
