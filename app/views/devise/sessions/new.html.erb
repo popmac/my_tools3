@@ -6,9 +6,31 @@
       <ul>
       <li>自分が使っているアプリを投稿する</li>
       <li>他の人が使っているアプリを閲覧できる</li>
+      <br>
+      <li>↓この画像をクリックすると拡大されます</li>
       </ul>
       <br>
-      <%= image_tag 'top_image.png', class: 'img-responsive'%>
+      <!-- Image trigger modal -->
+      <a data-toggle="modal" data-target=".bs-example-modal-lg">
+        <img src="/assets/top_image.png" class="img-responsive">
+      </a>
+      <!-- Modal -->
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
+            </div>
+            <div class="modal-body">
+              <img src="/assets/top_image.png" class="img-responsive">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+        </div>
+      </div>
   </div>
   </div>
   <div class="col-md-6">
