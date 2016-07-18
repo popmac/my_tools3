@@ -9,11 +9,12 @@
     <div class="col-md-9">
       <div class="row" style="margin-bottom:30px;">
       <div>
-        <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
-        <p class="lead-profile">Age：<%= @user.profile.age %>歳</p>
-        <p class="lead-profile">Job：<%= @user.profile.job %></p>
+        <p class="lead-profile">Nickname：<%= current_user.nickname %>さん</p>
+        <p class="lead-profile">Age：<%= current_user.profile.age %>歳</p>
+        <p class="lead-profile">Job：<%= current_user.profile.job %></p>
       </div>
         <div class="col-md-12">
+
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
             <% @photos.each_with_index do |photo, i| %>
@@ -23,7 +24,26 @@
             <div class="carousel-inner">
             <% @photos.each_with_index do |photo, i| %>
               <div class="item <%= "active" if i == 0 %>">
-                <img src="<%= photo.image %>" style="width: 100%;">
+                <a data-toggle="modal" data-target=".bs-example-modal-lg">
+                <img src="<%= photo.image %>" class="img-responsive">
+                </a>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h2 class="modal-title" id="myModalLabel" style="text-align: center"><%= i + 1 %>枚目のスクリーンショット</h2>
+                    </div>
+                    <div class="modal-body">
+                      <img src="<%= photo.image %>" class="img-responsive">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <% end %>
             </div>
