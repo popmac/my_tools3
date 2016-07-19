@@ -1,6 +1,6 @@
 <div class="col-sm-4">
   <div>
-    <h3>登録日:<%= photo.updated_at %></h3>
+    <h3>登録日:<%= l photo.created_at, format: :short %></h3>
   </div>
   <div>
     <img src="<%= photo.image %>" style="width: 100%;">
