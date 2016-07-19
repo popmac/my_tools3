@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(params[:id])
     unless current_user.profile.id == @profile.id
-      redirect_to controller: :users, action: :index
+      redirect_to "/profiles/#{current_user.profile.id}/edit"
     end
   end
 
