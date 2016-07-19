@@ -18,8 +18,8 @@
 
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-            <% @photos.each_with_index do |photo, i| %>
-              <li data-target="#carousel-example-generic" data-slide-to=i class=<%= "active" if i == 0 %>></li>
+              <% @photos.each_with_index do |photo, i| %>
+              <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
               <% end %>
             </ol>
             <div class="carousel-inner">
