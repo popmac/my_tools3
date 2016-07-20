@@ -2,11 +2,18 @@ class PhotosController < ApplicationController
 
   def index
     @photos = current_user.photos
+    @user = User.find(params[:user_id])
+    unless current_user == @user
+      redirect_to "/users/#{current_user.id}/photos"
+    end
   end
 
   def new
     @user = current_user
     @photo = Photo.new
+    unless current_user.id == params[:user_id].to_i
+      redirect_to "/users/#{current_user.id}/photos/new"
+    end
   end
 
   def create
