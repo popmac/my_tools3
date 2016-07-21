@@ -1,3 +1,5 @@
+<!-- 1つのモーダルに複数の画像が入るパターン -->
+
 <div class="container">
   <div class="row">
     <!-- 画面左側 -->
@@ -42,6 +44,7 @@
                   <img src="<%= photo.image %>" class="img-responsive">
                 </a>
               </div>
+              <% end %>
               <!-- 左右に移動するための矢印 -->
               <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -53,6 +56,7 @@
               <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
+                    <% @photos.each_with_index do |photo, i| %>
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       <h2 class="modal-title" id="myModalLabel" style="text-align: center"><%= i + 1 %>枚目のスクリーンショット</h2>
@@ -63,10 +67,10 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
                     </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
-              <% end %>
             </div>
             <% end %>
           </div>
