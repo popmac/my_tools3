@@ -35,12 +35,26 @@
   </div>
   <div class="col-md-6">
   <div class="login-container" style="margin-top: 60px">
-    <div class="avatar">
-        <p class="sentense"><h3>あなた</h3></p>
-    </div>
+    <div id="result-omikuji" style="margin-top: 5px">？</div>
+    <div id="btn-omikuji">今日のあなたの運勢は？</div>
+    <script>
+      (function() {
+        document.getElementById('btn-omikuji').addEventListener('click', function() {
+          var results = ["大吉", "中吉", "小吉", "凶"];
+          var result = Math.floor(Math.random() * results.length);
+          document.getElementById('result-omikuji').innerHTML = results[result];
+        });
+        document.getElementById('btn-omikuji').addEventListener('mousedown', function() {
+          this.className = 'pushed';
+        });
+        document.getElementById('btn-omikuji').addEventListener('mouseup', function() {
+          this.className = "";
+        })
+      })();
+    </script>
     <div id="output"></div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-box">
+    <div class="form-box" style="margin-top: 20px">
         <%= f.email_field :email, placeholder: 'メールアドレス', autofocus: true %>
         <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
         <button class="btn btn-info btn-block login" type="submit">ログイン</button>

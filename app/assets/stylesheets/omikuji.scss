@@ -1,0 +1,40 @@
+#result-omikuji {
+  background: #e0e0e0;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  line-height: 220px;
+  font-size: 48px;
+  font-weight: bold;
+  background: #f44336;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#btn-omikuji {
+  background: #e0e0e0;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #00aaff;
+  box-shadow: 0 4px 0 #0088cc;
+  cursor: pointer;
+}
+
+#btn-omikuji:hover {
+  opacity: 0.8;
+}
+
+#btn-omikuji.pushed {
+  margin-top: 22px;
+  box-shadow: 0 2px 0 #0088cc;
+}
