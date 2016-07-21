@@ -14,9 +14,9 @@
     <!-- プロフィール,スクリーンショット,コメント,アプリとレビュー,の表示 -->
     <div class="col-md-9">
       <!-- プロフィール,スクリーンショット,の表示 -->
-      <div class="row" style="margin-bottom:30px;">
+      <div class="row">
         <!-- プロフィールの表示 -->
-        <div>
+        <div class="col-md-12">
           <p class="lead-profile">Nickname：<%= current_user.nickname %>さん</p>
           <p class="lead-profile">Age：<%= current_user.profile.age %>歳</p>
           <p class="lead-profile">Job：<%= current_user.profile.job %></p>
