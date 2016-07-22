@@ -1,44 +1,66 @@
+<!-- 1つのモーダルに複数の画像が入るパターン -->
+
 <div class="container">
   <div class="row">
+    <!-- 画面左側 -->
+    <!-- ユーザー一覧の表示 -->
     <div class="col-md-3">
-    <p class="lead">User一覧</p>
-    <div class="list-group">
+      <p class="lead">User一覧</p>
+      <div class="list-group">
         <%= render @users %>
-    </div>
-    </div>
-    <div class="col-md-9">
-      <div class="row" style="margin-bottom:30px;">
-      <div>
-        <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
-        <p class="lead-profile">Age：<%= @user.profile.age %>歳</p>
-        <p class="lead-profile">Job：<%= @user.profile.job %></p>
-        <p class="lead-profile">投稿枚数：<%= @user.photos.length %>枚</p>
       </div>
+    </div>
+    <!-- 画面右側 -->
+    <!-- プロフィール,スクリーンショット,コメント,アプリとレビュー,の表示 -->
+    <div class="col-md-9">
+      <!-- プロフィールの表示 -->
+      <div class="row">
         <div class="col-md-12">
-
+          <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
+          <p class="lead-profile">Age：<%= @user.profile.age %>歳</p>
+          <p class="lead-profile">Job：<%= @user.profile.job %></p>
+          <p class="lead-profile">投稿枚数：<%= @user.photos.length %>枚</p>
+        </div>
+      </div>
+      <!-- スクリーンショットの表示 -->
+      <div class="row">
+        <div class="col-md-12">
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <% if @photos.blank? %>
+            <!-- スクリーンショットが登録されていない場合 -->
             <p>スクリーンショットが登録されていません</p>
             <% else %>
+            <!-- スクリーンショットが登録されている場合 -->
+            <!-- スクリーンショットの下のボタンの表示 -->
             <ol class="carousel-indicators">
               <% @photos.each_with_index do |photo, i| %>
               <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
               <% end %>
             </ol>
+            <!-- スクリーンショットの表示 -->
             <div class="carousel-inner">
-            <% @photos.each_with_index do |photo, i| %>
+              <% @photos.each_with_index do |photo, i| %>
               <div class="item <%= "active" if i == 0 %>">
                 <a data-toggle="modal" data-target=".bs-example-modal-lg">
-                <img src="<%= photo.image %>" class="img-responsive">
+                  <img src="<%= photo.image %>" class="img-responsive">
                 </a>
               </div>
-              <!-- Modal -->
+              <% end %>
+              <!-- 左右に移動するための矢印 -->
+              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+              <!-- モーダル -->
               <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
+                    <% @photos.each_with_index do |photo, i| %>
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h2 class="modal-title" id="myModalLabel" style="text-align: center"><%= i + 1 %>枚目のスクリーンショット</h2>
+                      <h2 class="modal-title" id="myModalLabel" style="text-align: center"><%= i + 1 %>/<%= @photos.length %>枚目</h2>
                     </div>
                     <div class="modal-body">
                       <img src="<%= photo.image %>" class="img-responsive">
@@ -46,34 +68,32 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
                     </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
-              <% end %>
             </div>
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
             <% end %>
           </div>
         </div>
       </div>
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <% if @comment.blank? %>
-          <p>コメントが登録されていません</p>
-          <% else %>
-          <p><%= @comment %></p>
-          <% end %>
+      <!-- コメントの表示 -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <% if @comment.blank? %>
+              <p>コメントが登録されていません</p>
+              <% else %>
+              <p><%= @comment %></p>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-
+      <!-- アプリとレビューの表示 -->
       <div class="row">
-        <div class="col-xs-6 col-sm-4 col-lg-4 col-md-4">
+        <div class="col-md-4">
           <div class="thumbnail">
             <img src="http://placehold.it/320x120" alt="">
             <div class="caption">
@@ -84,7 +104,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-lg-4 col-md-4">
+        <div class="col-md-4">
           <div class="thumbnail">
             <img src="http://placehold.it/320x120" alt="">
             <div class="caption">
@@ -95,7 +115,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-lg-4 col-md-4">
+        <div class="col-md-4">
           <div class="thumbnail">
             <img src="http://placehold.it/320x120" alt="">
             <div class="caption">
