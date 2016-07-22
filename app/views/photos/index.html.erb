@@ -1,17 +1,14 @@
-<div class="row">
+<div class="container">
 
-  <div class="col-md-4">
-    <h2><%= current_user.nickname %>さん</h2>
-    <%= link_to '新しいスクリーンショットを投稿', new_user_photo_path(current_user) %>
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= current_user.nickname %>さんが投稿したスクリーンショット</h2>
+      <%= link_to '新しいスクリーンショットを投稿', new_user_photo_path(current_user) %>
+    </div>
   </div>
 
-  <div class="col-md-8">
+  <div class="row">
+    <%= render @photos %>
   </div>
-
-</div>
-
-<div class="row">
-
-  <%= render @photos %>
 
 </div>
