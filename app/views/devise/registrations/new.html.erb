@@ -1,21 +1,21 @@
- <div class="container">
+<div class="container">
   <div class="col-md-12">
-  <div class="login-container">
-    <div class="avatar">
+    <div class="display-container">
+      <div class="avatar">
         <p class="sentense"><h3>あなた</h3></p>
-    </div>
-    <div id="output"></div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-box">
+      </div>
+      <div id="output"></div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="form-box">
         <%= f.text_field :nickname, placeholder: 'ニックネーム', autofocus: true, class: "registration-nickname" %>
         <%= f.email_field :email, placeholder: 'メールアドレス' %>
         <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
         <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", autocomplete: "off" %>
-        <%= f.submit "登録する", class: "btn btn-primary btn-lg btn-block login-button" %>
-        <%= link_to 'トップに戻る', users_path, class: "btn btn-primary btn-lg btn-block login-button" %>
-      <% end %>
+        <%= f.submit "登録する", class: "btn btn-info btn-lg btn-block active" %>
+        <%= link_to 'トップに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
+        <% end %>
+      </div>
     </div>
-  </div>
   </div>
 </div>

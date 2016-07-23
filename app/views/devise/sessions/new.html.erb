@@ -1,13 +1,13 @@
- <div class="container">
+<div class="container">
   <div class="col-md-6">
-  <div class="login-container" style="margin-top: 60px">
+    <div class="display-container" style="margin-top: 60px">
       <h2><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> My Tools の使い方 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></h2>
       <br>
       <ul>
-      <li>自分が使っているアプリを投稿する</li>
-      <li>他の人が使っているアプリを閲覧できる</li>
-      <br>
-      <li>↓この画像をクリックすると拡大されます</li>
+        <li>自分が使っているアプリを投稿する</li>
+        <li>他の人が使っているアプリを閲覧できる</li>
+        <br>
+        <li>↓この画像をクリックすると拡大されます</li>
       </ul>
       <br>
       <!-- Image trigger modal -->
@@ -31,36 +31,36 @@
           </div>
         </div>
       </div>
-  </div>
-  </div>
-  <div class="col-md-6">
-  <div class="login-container" style="margin-top: 60px">
-    <div id="result-omikuji" style="margin-top: 5px">？</div>
-    <div id="btn-omikuji">今日のあなたの運勢は？</div>
-    <script>
-      (function() {
-        document.getElementById('btn-omikuji').addEventListener('click', function() {
-          var results = ["大吉", "中吉", "小吉", "凶"];
-          var result = Math.floor(Math.random() * results.length);
-          document.getElementById('result-omikuji').innerHTML = results[result];
-        });
-        document.getElementById('btn-omikuji').addEventListener('mousedown', function() {
-          this.className = 'pushed';
-        });
-        document.getElementById('btn-omikuji').addEventListener('mouseup', function() {
-          this.className = "";
-        })
-      })();
-    </script>
-    <div id="output"></div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-box" style="margin-top: 20px">
-        <%= f.text_field :login, placeholder: 'メールアドレス もしくは ユーザーネーム', autofocus: true%>
-        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
-        <button class="btn btn-info btn-block login" type="submit">ログイン</button>
-        <%= link_to '会員登録はこちら', new_user_registration_path, class: 'btn btn-info btn-block login active' %>
-      <% end %>
     </div>
   </div>
+  <div class="col-md-6">
+    <div class="display-container" style="margin-top: 60px">
+      <div id="result-omikuji" style="margin-top: 5px">？</div>
+      <div id="btn-omikuji">今日のあなたの運勢は？</div>
+      <script>
+        (function() {
+          document.getElementById('btn-omikuji').addEventListener('click', function() {
+            var results = ["大吉", "中吉", "小吉", "凶"];
+            var result = Math.floor(Math.random() * results.length);
+            document.getElementById('result-omikuji').innerHTML = results[result];
+          });
+          document.getElementById('btn-omikuji').addEventListener('mousedown', function() {
+            this.className = 'pushed';
+          });
+          document.getElementById('btn-omikuji').addEventListener('mouseup', function() {
+            this.className = "";
+          })
+        })();
+      </script>
+      <div id="output"></div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-box" style="margin-top: 20px">
+        <%= f.text_field :login, placeholder: 'メールアドレス もしくは ユーザーネーム', autofocus: true%>
+        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
+        <%= f.submit 'ログイン', class: 'btn btn-info btn-lg btn-block active' %>
+        <%= link_to '会員登録はこちら', new_user_registration_path, class: 'btn btn-info btn-lg btn-block active' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

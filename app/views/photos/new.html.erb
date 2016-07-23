@@ -1,8 +1,8 @@
- <div class="container">
+<div class="container">
   <div class="col-md-12">
-    <div class="login-container">
+    <div class="display-container">
       <div class="form-box">
-      <%= form_for([@user, @photo], :html => {:multipart => true}) do |f| %>
+        <%= form_for([@user, @photo], :html => {:multipart => true}) do |f| %>
         <input type="file" name="photo[image][0]">
         <input type="file" name="photo[image][1]">
         <input type="file" name="photo[image][2]">
