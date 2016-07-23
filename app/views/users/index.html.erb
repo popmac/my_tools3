@@ -7,7 +7,14 @@
     <div class="col-md-3">
       <p class="lead">User一覧</p>
       <div class="list-group">
-        <%= render @users %>
+        <% @users.each do |user| %>
+        <% if current_user.id == user.id %>
+        <!-- 自分のnicknameが青くなる -->
+        <a href="/users/<%= user.id %>" class="list-group-item active"><%= user.nickname %>さん</a>
+        <% else %>
+        <a href="/users/<%= user.id %>" class="list-group-item"><%= user.nickname %>さん</a>
+        <% end %>
+        <% end %>
       </div>
     </div>
     <!-- 画面右側 -->
