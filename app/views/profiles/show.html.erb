@@ -7,7 +7,7 @@
     <div class="list-group-item">Age:<%= @profile.age %>歳</div>
     <div class="list-group-item">Job:<%= @profile.job %></div>
     <div class="list-group-item">Comment:<%= @profile.comment %></div>
-    <%= link_to 'プロフィールを編集する', edit_profile_path(@profile), class: 'list-group-item' %>
-    <%= link_to 'トップページに戻る', root_path, class: 'list-group-item' %>
+    <%= link_to 'プロフィールを編集する', edit_profile_path(@profile)%>
+    <%= link_to 'トップページに戻る', root_path%>
   </div>
 </div>
