@@ -9,9 +9,9 @@
         <%= f.text_field :job %><br>
         <%= f.label :comment %><br>
         <%= f.text_area :comment, rows: "8", cols: "50", placeholder: "自己紹介やよく使うアプリを書いてください" %><br>
-        <%= f.submit "送信する" %>
+        <%= f.submit '送信する', class: 'btn btn-info btn-lg btn-block active' %>
         <% end %>
-        <%= link_to 'トップページに戻る', root_path%>
+        <%= link_to 'トップページに戻る', root_path, class: 'btn btn-info btn-lg btn-block active' %>
       </div>
     </div>
   </div>
