@@ -2,6 +2,8 @@
   <div class="col-md-12">
     <div class="display-container">
       <div class="form-box">
+        <h2>スクリーンショットを投稿</h2>
+        <span>※一度に<strong>5枚</strong>まで投稿できます</span>
         <%= form_for([@user, @photo], :html => {:multipart => true}) do |f| %>
         <input type="file" name="photo[image][0]">
         <input type="file" name="photo[image][1]">
