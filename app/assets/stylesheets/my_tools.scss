@@ -46,3 +46,29 @@
     margin: 40px auto 35px;
   }
 }
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    transition: 0.2s ease-in-out;
+}
+
+.form-box input:focus {
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input.btn {
+    margin-top:10px;
+    padding: 10px 20px;
+}
+
+.form-box a.btn {
+    height: 40px;
+    margin-top:10px;
+    padding: 10px 20px;
+}
