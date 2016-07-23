@@ -1,13 +1,13 @@
 <div class="col-md-12">
   <div class="display-container">
     <div class="avatar">
-      <p class="sentense"><h3>あなた</h3></p>
+      <p><h3>あなた</h3></p>
     </div>
     <div class="list-group-item">Nickname:<%= current_user.nickname %>さん</div>
     <div class="list-group-item">Age:<%= @profile.age %>歳</div>
     <div class="list-group-item">Job:<%= @profile.job %></div>
     <div class="list-group-item">Comment:<%= @profile.comment %></div>
-    <%= link_to 'プロフィールを編集する', edit_profile_path(@profile)%>
-    <%= link_to 'トップページに戻る', root_path%>
+    <%= link_to 'プロフィールを編集する', edit_profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
+    <%= link_to 'トップページに戻る', root_path, class: 'btn btn-info btn-lg btn-block active' %>
   </div>
 </div>
