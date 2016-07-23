@@ -27,26 +27,21 @@
         <ul class="nav navbar-nav navbar-left">
           <!-- ユーザーがログインしている場合 -->
           <% if user_signed_in?  %>
-          <!-- マイページ関連のドロップダウン -->
+          <!-- ログインしているユーザーのnicknameを表示 -->
+          <a class="navbar-brand" href="/"><%= current_user.nickname %>さん</a>
+          <!-- メニューボタン -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.nickname %>さん<b class="caret"></b></a>
+            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">MENU<b class="caret" style="margin-left: 5px"></b></a>
             <ul class="dropdown-menu">
               <li><%= link_to "マイページ", users_path%></li>
               <li class="divider"></li>
               <li><%= link_to 'プロフィール', profile_path(current_user.profile.id)%></li>
-            </ul>
-          </li>
-          <!-- スクリーンショット関連のドロップダウン -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">スクリーンショット <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to '投稿する', new_user_photo_path(current_user)%></li>
               <li class="divider"></li>
-              <li><%= link_to '編集する', user_photos_path(current_user)%></li>
+              <li><%= link_to 'スクリーンショット', user_photos_path(current_user)%></li>
             </ul>
           </li>
           <!-- ログアウトボタン -->
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "btn btn-warning" %></li>
           <% end %>
         </ul>
       </div>
