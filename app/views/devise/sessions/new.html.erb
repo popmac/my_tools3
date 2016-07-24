@@ -1,13 +1,11 @@
 <div class="container">
   <div class="col-md-6">
     <div class="display-container" style="margin-top: 60px">
-      <h2><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> My Tools の使い方 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></h2>
-      <br>
+      <h1 style="margin-bottom: 20px"> My Tools </h1>
       <ul>
-        <li>自分が使っているアプリを投稿する</li>
-        <li>他の人が使っているアプリを閲覧できる</li>
-        <br>
-        <li>↓この画像をクリックすると拡大されます</li>
+        <li><h4>登録者数：<strong><%= User.all.length %></strong>名</h4></li>
+        <li><h4>投稿枚数：<strong><%= Photo.all.length %></strong>枚</h4></li>
+        <li><h4>最終投稿時間：<strong><%= l Photo.last.created_at, format: :short %></strong></h4></li>
       </ul>
       <br>
       <!-- Image trigger modal -->
