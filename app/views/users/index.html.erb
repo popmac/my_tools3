@@ -34,6 +34,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <p>プロフィールが登録されていません</p>
+          <p><%= link_to '登録はこちらから', edit_profile_path(current_user.profile.id) %></p>
         </div>
       </div>
       <% end %>
@@ -46,6 +47,7 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <p>スクリーンショットが登録されていません</p>
+                <p><%= link_to '登録はこちらから', new_user_photo_path(current_user) %></p>
               </div>
             </div>
             <% else %>
@@ -103,6 +105,7 @@
             <div class="panel-body">
               <% if @comment.blank? %>
               <p>コメントが登録されていません</p>
+              <p><%= link_to '登録はこちらから', edit_profile_path(current_user.profile.id) %></p>
               <% else %>
               <p><%= @comment %></p>
               <% end %>
