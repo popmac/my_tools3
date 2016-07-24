@@ -6,6 +6,9 @@ class PhotosController < ApplicationController
     unless current_user == @user
       redirect_to "/users/#{current_user.id}/photos"
     end
+    if @photos.blank?
+      redirect_to new_user_photo_path(current_user)
+    end
   end
 
   def new
