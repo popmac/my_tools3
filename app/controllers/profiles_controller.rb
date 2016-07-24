@@ -8,6 +8,10 @@ class ProfilesController < ApplicationController
     unless  current_user.profile.id == @profile.id
       redirect_to "/profiles/#{current_user.profile.id}"
     end
+    if @profile.age == nil || @profile.job == nil || @profile.comment == nil
+      redirect_to "/profiles/#{current_user.profile.id}/edit"
+      flash[:notice] = "プロフィールを入力してください"
+    end
   end
 
   def edit
