@@ -18,4 +18,16 @@ module ApplicationHelper
         )
     end
   end
+
+  def user_number
+    User.all.length
+  end
+
+  def photo_number
+    Photo.all.length
+  end
+
+  def show_time
+    l Photo.last.created_at, format: :short
+  end
 end
