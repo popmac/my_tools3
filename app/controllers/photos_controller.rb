@@ -20,12 +20,13 @@ class PhotosController < ApplicationController
   end
 
   def create
+    binding.pry
     if photo_params.present?
       photo_params.each_value do |image|
         current_user.photos.create(image: image)
       end
       redirect_to :root
-      flash[:notice] = "スクリーンショットを投稿しました"
+      flash[:notice] = "#{photo_params.length}枚のスクリーンショットを投稿しました"
     else
       redirect_to new_user_photo_path(current_user)
       flash[:notice] = "1枚以上を投稿してください"

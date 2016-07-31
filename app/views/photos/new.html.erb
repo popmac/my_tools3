@@ -5,15 +5,76 @@
         <h2>スクリーンショットを投稿</h2>
         <span>※一度に<strong>5枚</strong>まで投稿できます</span>
         <%= form_for([@user, @photo], :html => {:multipart => true}) do |f| %>
-        <input type="file" name="photo[image][0]">
-        <input type="file" name="photo[image][1]">
-        <input type="file" name="photo[image][2]">
-        <input type="file" name="photo[image][3]">
-        <input type="file" name="photo[image][4]">
-        <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active' %>
-        <% end %>
-        <%= link_to '戻る', user_photos_path(@user), class: 'btn btn-info btn-lg btn-block active' %>
-      </div>
+
+        <!-- 1つ目 -->
+        <input id="lefile0" type="file" style="display:none" name="photo[image][0]">
+        <div class="input-group">
+          <input readonly type="text" id="photoCover0" class="form-control" placeholder="選択されていません" onClick="$('#lefile0').click();">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" onClick="$('#lefile0').click();">ファイルを選択</button>
+          </span>
+        </div>
+
+        <!-- 2つ目 -->
+        <input id="lefile1" type="file" style="display:none" name="photo[image][1]">
+        <div class="input-group">
+          <input readonly type="text" id="photoCover1" class="form-control" placeholder="選択されていません" onClick="$('#lefile1').click();">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" onClick="$('#lefile1').click();">ファイルを選択</button>
+          </span>
+        </div>
+
+        <!-- 3つ目 -->
+        <input id="lefile2" type="file" style="display:none" name="photo[image][2]">
+        <div class="input-group">
+          <input readonly type="text" id="photoCover2" class="form-control" placeholder="選択されていません" onClick="$('#lefile2').click();">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" onClick="$('#lefile2').click();">ファイルを選択</button>
+          </span>
+        </div>
+
+        <!-- 4つ目 -->
+        <input id="lefile3" type="file" style="display:none" name="photo[image][3]">
+        <div class="input-group">
+          <input readonly type="text" id="photoCover3" class="form-control" placeholder="選択されていません" onClick="$('#lefile3').click();">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" onClick="$('#lefile3').click();">ファイルを選択</button>
+          </span>
+        </div>
+
+        <!-- 5つ目 -->
+        <input id="lefile4" type="file" style="display:none" name="photo[image][4]">
+        <div class="input-group">
+          <input readonly type="text" id="photoCover4" class="form-control" placeholder="選択されていません" onClick="$('#lefile4').click();">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" onClick="$('#lefile4').click();">ファイルを選択</button>
+          </span>
+        </div>
+
+        <!-- ファイルを選択したらファイル名が表示される -->
+        <script>
+         $('input[id=lefile0]').change(function() {
+          $('#photoCover0').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+
+         $('input[id=lefile1]').change(function() {
+          $('#photoCover1').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+         $('input[id=lefile2]').change(function() {
+          $('#photoCover2').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+         $('input[id=lefile3]').change(function() {
+          $('#photoCover3').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+         $('input[id=lefile4]').change(function() {
+          $('#photoCover4').val($(this).val().replace("C:\\fakepath\\", ""));
+        });
+      </script>
+
+      <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active' %>
+      <% end %>
+      <%= link_to '戻る', user_photos_path(@user), class: 'btn btn-info btn-lg btn-block active' %>
     </div>
   </div>
+</div>
 </div>
