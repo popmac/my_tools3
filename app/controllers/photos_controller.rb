@@ -20,7 +20,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-    binding.pry
     if photo_params.present?
       photo_params.each_value do |image|
         current_user.photos.create(image: image)
