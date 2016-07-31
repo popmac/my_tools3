@@ -13,6 +13,7 @@
         <%= f.submit '送信する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "変更内容を送信してもよろしいですか？"} %>
         <% end %>
         <%= link_to '戻る', profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
+        <%= link_to 'ニックネームやメールアドレスの変更はこちら', edit_user_registration_path, class: 'btn btn-success btn-lg btn-block active' %>
       </div>
     </div>
   </div>
