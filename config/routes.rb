@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   end
   resources :profiles
   resources :tools
+  resources :reviews
   root 'users#index'
 end
