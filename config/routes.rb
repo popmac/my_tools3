@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :photos
   end
   resources :profiles
+  resources :tools
   root 'users#index'
 end
