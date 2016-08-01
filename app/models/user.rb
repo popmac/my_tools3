@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :photos
 
+  validates :nickname, presence: true
+
   before_create :build_default_profile
 
   attr_accessor :login
