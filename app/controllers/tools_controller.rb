@@ -3,8 +3,7 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
-    @review = Review.new
-    # @tool.reviews.build
+    @tool.reviews.build
   end
 
   def create
