@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
         :validatable, :authentication_keys => [:login]
   has_one :profile
   has_many :photos
+  has_many :reviews
 
   validates :nickname, presence: true
 
