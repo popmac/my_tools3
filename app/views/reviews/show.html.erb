@@ -1,2 +1,14 @@
-<h3>レビューの詳細</h3>
-<%= @review.review %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3><%= @review.user.nickname %>さんの<%= @review.tool.name %>のレビューの詳細</h3>
+          <div>
+            <p><%= @review.review %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

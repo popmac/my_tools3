@@ -5,7 +5,7 @@
     height: 100%;
 }
 
-.users, .profiles, .photos {
+.users, .profiles, .photos, .tools, .reviews {
     background: image-url("index_back.jpg");
     background-size: cover;
     position: relative;
@@ -80,17 +80,31 @@
     padding: 10px 20px;
 }
 
-// profile投稿ページのコメント欄
-#profile_comment {
-  width: 100%;
-}
-
-// photo一覧ページ
-.photo {
+// photo, review, 一覧ページ
+.photo, .review {
   h2 {
     color: white;
   }
   h3 {
     color: white;
   }
+}
+
+.review a {
+  margin-bottom: 10px;
+}
+
+// profile編集ページのコメント欄
+#profile_comment {
+  width: 100%;
+}
+
+// toolとreview投稿ページのコメント蘭
+#tool_review_review {
+  width: 100%;
+}
+
+// review編集ページのコメント蘭
+#review_review {
+  width: 100%;
 }
