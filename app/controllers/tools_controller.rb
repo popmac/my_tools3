@@ -20,6 +20,11 @@ class ToolsController < ApplicationController
     end
   end
 
+  def show
+    @tool = Tool.find(params[:id])
+    @reviews = @tool.reviews
+  end
+
   private
   def review_params
     params.require(:tool).require(:review).permit(:review).merge(user_id: current_user.id, tool_id: @tool.id)

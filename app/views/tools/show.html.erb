@@ -1,0 +1,7 @@
+<%= @tool.name %>
+
+<br>
+
+<% @reviews.each do |review| %>
+<a href="/users/<%= review.user_id %>"><%= review.user.nickname %></a>:<%= review.review %><br>
+<% end %>
