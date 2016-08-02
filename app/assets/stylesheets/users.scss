@@ -20,3 +20,10 @@ p.lead {
 #myModalLabel {
   text-align: center;
 }
+
+.caption p {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

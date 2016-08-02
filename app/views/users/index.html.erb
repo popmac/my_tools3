@@ -114,41 +114,33 @@
         </div>
       </div>
       <!-- アプリとレビューの表示 -->
+      <% if @reviews.blank? %>
       <div class="row">
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img src="http://placehold.it/320x120" alt="">
-            <div class="caption">
-              <h3>Sublime Text</h3>
-              <p>とても使いやすいエディターです！</p>
-              <p>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img src="http://placehold.it/320x120" alt="">
-            <div class="caption">
-              <h3>Sublime Text</h3>
-              <p>とても使いやすいエディターです！</p>
-              <p>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="thumbnail">
-            <img src="http://placehold.it/320x120" alt="">
-            <div class="caption">
-              <h3>Sublime Text</h3>
-              <p>とても使いやすいエディターです！</p>
-              <p>
-              </p>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p>アプリとレビューが登録されていません</p>
+              <p><%= link_to '登録はこちらから', new_tool_path %></p>
             </div>
           </div>
         </div>
       </div>
+      <% else %>
+      <div class="row">
+        <% @reviews.each do |review| %>
+        <div class="col-md-6">
+          <div class="thumbnail">
+            <div class="caption">
+              <a href="/tools/<%= review.tool_id %>"><h2><%= review.tool.name %></h2></a>
+              <p><%= review.review %></p>
+              <p><%= link_to '詳細を見る', review_path(review) %></p>
+              <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

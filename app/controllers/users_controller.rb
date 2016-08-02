@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
     @comment = current_user.profile.comment
     @photos = current_user.photos
+    @reviews = current_user.reviews
   end
 
   def show
@@ -12,5 +13,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @comment = @user.profile.comment
     @photos = @user.photos
+    @reviews = @user.reviews
   end
 end

@@ -1,0 +1,5 @@
+<% @reviews.each do |review| %>
+<%= review.tool.name %>:<%= review.review %><br>
+<% end %>
+
+<%= link_to 'アプリとレビューを登録する', new_tool_path %>
