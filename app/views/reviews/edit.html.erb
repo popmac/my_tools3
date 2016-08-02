@@ -1,0 +1,13 @@
+<h1><%= @review.tool.name %></h1>
+
+<%= form_for @review do |f| %>
+<div class="field">
+  <%= f.label :review %>
+  <%= f.text_field :review %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<%= link_to 'レビューを削除する', "/reviews/#{@review.id}", method: :delete %>
+<% end %>
+
