@@ -131,6 +131,9 @@
               <a href="/tools/<%= review.tool_id %>"><h2><%= review.tool.name %></h2></a>
               <p><%= review.review %></p>
               <p><%= link_to '詳細を見る', review_path(review) %></p>
+              <% if @user.id == current_user.id %>
+              <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+              <% end %>
             </div>
           </div>
         </div>
