@@ -1,5 +1,21 @@
-<% @reviews.each do |review| %>
-<%= review.tool.name %>:<%= review.review %><br>
-<% end %>
-
-<%= link_to 'アプリとレビューを登録する', new_tool_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 review">
+      <h2><%= current_user.nickname %>さんが登録したアプリとレビュー</h2>
+      <%= link_to '新しいアプリとレビューを登録する', new_tool_path, class: 'btn btn-info btn-lg active' %>
+    </div>
+  </div>
+  <div class="row">
+    <% @reviews.each do |review| %>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3><%= review.tool.name %></h3>
+          <p><%= review.review %></p>
+          <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
