@@ -3,12 +3,12 @@
     <div class="display-container">
       <div class="form-box">
 
-      <h2>好きなアプリと感想を投稿</h2>
+      <h2>好きなアプリとレビューを投稿</h2>
 
         <%= form_for @tool do |f| %>
         <div class="field">
           <%= f.label 'アプリの名前' %><br>
-          <span>※すでに登録されているものは予測変換で名前が出ます</span>
+          <span>※すでにサイトに登録されているものは予測変換で名前が出ます</span>
           <%= f.autocomplete_field :name, autocomplete_tool_name_tools_path, autofocus: true %>
         </div>
         <div class="field">
