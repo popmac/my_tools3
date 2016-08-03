@@ -129,9 +129,11 @@
       <div class="row">
         <% @reviews.each do |review| %>
         <div class="col-md-6">
-          <div class="thumbnail">
-            <div class="caption">
+          <div class="panel panel-default">
+            <div class="panel-heading">
               <a href="/tools/<%= review.tool_id %>"><h2><%= review.tool.name %></h2></a>
+            </div>
+            <div class="panel-body short_review">
               <p><%= review.review %></p>
               <p><%= link_to '詳細を見る', review_path(review) %></p>
               <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>

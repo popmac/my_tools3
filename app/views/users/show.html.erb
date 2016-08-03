@@ -16,130 +16,133 @@
        <% end %>
        <% end %>
      </div>
+   </div>
+   <!-- 画面右側 -->
+   <!-- プロフィール,スクリーンショット,コメント,アプリとレビュー,の表示 -->
+   <div class="col-md-9">
+    <!-- プロフィールの表示 -->
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
+        <p class="lead-profile">Age：<%= @user.profile.age %></p>
+        <p class="lead-profile">Job：<%= @user.profile.job %></p>
+        <p class="lead-profile">投稿枚数：<%= @user.photos.length %>枚</p>
+      </div>
     </div>
-    <!-- 画面右側 -->
-    <!-- プロフィール,スクリーンショット,コメント,アプリとレビュー,の表示 -->
-    <div class="col-md-9">
-      <!-- プロフィールの表示 -->
-      <div class="row">
-        <div class="col-md-12">
-          <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
-          <p class="lead-profile">Age：<%= @user.profile.age %></p>
-          <p class="lead-profile">Job：<%= @user.profile.job %></p>
-          <p class="lead-profile">投稿枚数：<%= @user.photos.length %>枚</p>
-        </div>
+    <!-- プロフィールが登録されていない場合 -->
+    <% if @user.profile.age == nil || @user.profile.job == nil %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>プロフィールが登録されていません</p>
       </div>
-      <!-- プロフィールが登録されていない場合 -->
-      <% if @user.profile.age == nil || @user.profile.job == nil %>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>プロフィールが登録されていません</p>
-        </div>
-      </div>
-      <% end %>
-      <!-- スクリーンショットの表示 -->
-      <div class="row">
-        <div class="col-md-12">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <% if @photos.blank? %>
-            <!-- スクリーンショットが登録されていない場合 -->
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p>スクリーンショットが登録されていません</p>
-              </div>
+    </div>
+    <% end %>
+    <!-- スクリーンショットの表示 -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <% if @photos.blank? %>
+          <!-- スクリーンショットが登録されていない場合 -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p>スクリーンショットが登録されていません</p>
             </div>
-            <% else %>
-            <!-- スクリーンショットが登録されている場合 -->
-            <!-- スクリーンショットの下のボタンの表示 -->
-            <ol class="carousel-indicators">
-              <% @photos.each_with_index do |photo, i| %>
-              <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
-              <% end %>
-            </ol>
-            <!-- スクリーンショットの表示 -->
-            <div class="carousel-inner">
-              <% @photos.each_with_index do |photo, i| %>
-              <div class="item <%= "active" if i == 0 %>">
-                <a data-toggle="modal" data-target=".bs-example-modal-lg">
-                  <img src="<%= photo.image %>" class="img-responsive">
-                </a>
-              </div>
-              <% end %>
-              <!-- 左右に移動するための矢印 -->
-              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+          </div>
+          <% else %>
+          <!-- スクリーンショットが登録されている場合 -->
+          <!-- スクリーンショットの下のボタンの表示 -->
+          <ol class="carousel-indicators">
+            <% @photos.each_with_index do |photo, i| %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
+            <% end %>
+          </ol>
+          <!-- スクリーンショットの表示 -->
+          <div class="carousel-inner">
+            <% @photos.each_with_index do |photo, i| %>
+            <div class="item <%= "active" if i == 0 %>">
+              <a data-toggle="modal" data-target=".bs-example-modal-lg">
+                <img src="<%= photo.image %>" class="img-responsive">
               </a>
-              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-              <!-- モーダル -->
-              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <% @photos.each_with_index do |photo, i| %>
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.length %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
-                    </div>
-                    <div class="modal-body">
-                      <img src="<%= photo.image %>" class="img-responsive">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
-                    </div>
-                    <% end %>
+            </div>
+            <% end %>
+            <!-- 左右に移動するための矢印 -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <!-- モーダル -->
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <% @photos.each_with_index do |photo, i| %>
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.length %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
                   </div>
+                  <div class="modal-body">
+                    <img src="<%= photo.image %>" class="img-responsive">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- コメントの表示 -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <% if @comment.blank? %>
+            <p>コメントが登録されていません</p>
+            <% else %>
+            <p><%= @comment %></p>
             <% end %>
           </div>
         </div>
       </div>
-      <!-- コメントの表示 -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <% if @comment.blank? %>
-              <p>コメントが登録されていません</p>
-              <% else %>
-              <p><%= @comment %></p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- アプリとレビューの表示 -->
-      <% if @reviews.blank? %>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <p>アプリとレビューが登録されていません</p>
-              <p><%= link_to '登録はこちらから', new_tool_path %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% else %>
-      <div class="row">
-        <% @reviews.each do |review| %>
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <div class="caption">
-              <a href="/tools/<%= review.tool_id %>"><h2><%= review.tool.name %></h2></a>
-              <p><%= review.review %></p>
-              <p><%= link_to '詳細を見る', review_path(review) %></p>
-              <% if @user.id == current_user.id %>
-              <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <% end %>
     </div>
+    <!-- アプリとレビューの表示 -->
+    <% if @reviews.blank? %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p>アプリとレビューが登録されていません</p>
+            <p><%= link_to '登録はこちらから', new_tool_path %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% else %>
+    <div class="row">
+      <% @reviews.each do |review| %>
+      <div class="col-md-6">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <a href="/tools/<%= review.tool_id %>"><h2><%= review.tool.name %></h2></a>
+        </div>
+        <div class="panel-body short_review">
+          <p><%= review.review %></p>
+          <p><%= link_to '詳細を見る', review_path(review) %></p>
+          <% if @user.id == current_user.id %>
+          <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
+  <% end %>
 </div>
+</div>
+</div>
+
