@@ -2,17 +2,20 @@
   <div class="row">
     <div class="col-md-12 review">
       <h2><%= @tool.name %>のレビューの一覧</h2>
+      <%= link_to 'トップページへ', users_path, class: 'btn btn-info btn-lg active' %>
     </div>
     <% @reviews.each do |review| %>
     <div class="col-md-4">
-      <div class="thumbnail">
-        <div class="caption">
-          <a href="/users/<%= review.user_id %>"><%= review.user.nickname %></a>
-          <p><%= review.review %></p>
-          <p><%= link_to '詳細を見る', review_path(review) %></p>
-        </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="/users/<%= review.user_id %>"><%= review.user.nickname %></a>
+      </div>
+      <div class="panel-body short_review">
+        <p><%= review.review %></p>
+        <p><%= link_to '詳細を見る', review_path(review) %></p>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
+</div>
 </div>
