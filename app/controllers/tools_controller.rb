@@ -2,6 +2,10 @@ class ToolsController < ApplicationController
   autocomplete :tool, :name, :full => true
   before_action :authenticate_user!, only: [:new, :show]
 
+  def index
+    @tools = Tool.all
+  end
+
   def new
     @tool = Tool.new
     @tool.reviews.build
