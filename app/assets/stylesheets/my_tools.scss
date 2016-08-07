@@ -80,7 +80,7 @@
     padding: 10px 20px;
 }
 
-// photo, review, tool, 一覧ページ
+// photo, review, tool, の一覧ページ, 投稿されたcommentの数
 .photo, .review, .tool {
   h2 {
     color: white;
@@ -90,21 +90,35 @@
   }
 }
 
-.review a {
+ #comments-number {
+  color: white;
   margin-bottom: 10px;
+ }
+
+.review-comment {
+  margin-bottom: 100px;
+  p {
+    color: white;
+  }
 }
 
-// profile編集ページのテキストボックス
+// profile編集ページのテキストエリア
 #profile_introduce {
   width: 100%;
 }
 
-// toolとreview投稿ページのテキストボックス
+// toolとreview投稿ページのテキストエリア
 #tool_review_review {
   width: 100%;
 }
 
-// review編集ページのテキストボックス
+// review編集ページのテキストエリア
 #review_review {
   width: 100%;
+}
+
+// reviewに対するcommentのテキストエリア
+#comment_field {
+  width: 100%;
+  height: 100px;
 }
