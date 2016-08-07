@@ -1,20 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <%= link_to 'トップページへ', users_path, class: 'btn btn-info btn-lg active' %>
+      <%= link_to "#{@review.tool.name}のレビューの一覧へ", tool_path(@review.tool_id), class: 'btn btn-info btn-lg active' %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3><%= @review.user.nickname %>さんの<%= @review.tool.name %>のレビューの詳細</h3>
         </div>
         <div class="panel-body">
-            <p><%= @review.review %></p>
+          <p><%= @review.review %></p>
         </div>
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= link_to 'トップページへ', users_path, class: 'btn btn-info btn-lg btn-block active' %>
-      <%= link_to "#{@review.tool.name}のレビューの一覧へ", tool_path(@review.tool_id), class: 'btn btn-info btn-lg btn-block active' %>
+
+      <!-- コメント総数の表示 -->
+      <div id="comments-number">
+        コメント(<%= @review.comments.count %>)
+      </div>
+
+      <!-- コメントの表示 -->
+      <div id="comments">
+        <%= render partial: 'comments/comment', collection: @review.comments %>
+      </div>
+      <div class="review-comment">
+        <p>コメントを入力してください</p>
+        <%= form_for [@review, @comment], remote: true do |f| %>
+        <%= f.text_area :comment, id: "comment_field" %><br>
+        <%= f.submit '送信', class: "btn btn-info btn-block btn-lg active" %>
+        <% end %>
+      </div>
     </div>
   </div>
+
 </div>
