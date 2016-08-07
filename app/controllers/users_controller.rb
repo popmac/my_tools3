@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @comment = current_user.profile.comment
+    @introduce = current_user.profile.introduce
     @photos = current_user.photos
     @reviews = current_user.reviews
   end
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @users = User.all
     @user = User.find(params[:id])
-    @comment = @user.profile.comment
+    @introduce = @user.profile.introduce
     @photos = @user.photos
     @reviews = @user.reviews
   end
