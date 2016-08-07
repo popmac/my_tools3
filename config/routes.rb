@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       get 'autocomplete_tool_name'
     end
   end
-  resources :reviews
+  resources :reviews do
+    resources :comments
+  end
   root 'users#index'
 end
