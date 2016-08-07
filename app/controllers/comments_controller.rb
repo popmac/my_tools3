@@ -5,6 +5,11 @@ class CommentsController < ApplicationController
     Comment.create(comment_params)
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    @review = Review.find(params[:review_id])
+  end
 
   private
   def comment_params
