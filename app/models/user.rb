@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :nickname, presence: true
 
