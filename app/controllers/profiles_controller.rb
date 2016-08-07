@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
     unless  current_user.profile.id == @profile.id
       redirect_to "/profiles/#{current_user.profile.id}"
     end
-    if @profile.age == nil || @profile.job == nil || @profile.comment == nil
+    if @profile.age == nil || @profile.job == nil || @profile.introduce == nil
       redirect_to "/profiles/#{current_user.profile.id}/edit"
       flash[:notice] = "プロフィールを入力してください"
     end
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   private
   def update_params
-    params.require(:profile).permit(:age, :job, :comment).merge(user_id: current_user.id)
+    params.require(:profile).permit(:age, :job, :introduce).merge(user_id: current_user.id)
   end
 
 end
