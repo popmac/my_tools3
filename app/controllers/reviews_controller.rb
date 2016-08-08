@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-   before_action :authenticate_user!, only: [:show]
+   before_action :authenticate_user!, only: [:new, :show]
 
   def index
     @reviews = current_user.reviews
