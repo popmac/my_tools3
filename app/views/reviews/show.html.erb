@@ -9,6 +9,10 @@
         </div>
         <div class="panel-body">
           <p><%= @review.review %></p>
+          <!-- likeボタン -->
+          <div id="review-detail-like-button">
+            <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
+          </div>
         </div>
       </div>
     </div>
