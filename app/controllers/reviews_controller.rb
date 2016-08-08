@@ -8,6 +8,16 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def new
+    @review = Review.new
+    @tool = Tool.find(params[:tool_id])
+  end
+
+  def create
+    Review.create(create_params)
+    redirect_to "/tools/#{params[:tool_id]}"
+  end
+
   def show
     @review = Review.find(params[:id])
     @comment = Comment.new
@@ -36,6 +46,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+  def create_params
+    params.require(:review).permit(:review).merge(user_id: current_user.id, tool_id: params[:tool_id])
+  end
+
   def update_params
     params.require(:review).permit(:review).merge(user_id: current_user.id, tool_id: @tool_id)
   end
