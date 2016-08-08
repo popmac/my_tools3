@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :reviews, except: [:new] do
     resources :comments
+    resources :likes, only: [:create, :destroy]
   end
   root 'users#index'
 end
