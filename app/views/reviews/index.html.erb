@@ -15,6 +15,7 @@
         <div class="panel-body short_review">
           <p><%= review.review %></p>
           <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+          <p>コメント:<%= review.comments.count %></p>
         </div>
       </div>
     </div>
