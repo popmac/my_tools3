@@ -139,6 +139,10 @@
               <p><%= review.review %></p>
               <p><%= link_to '詳細を見る', review_path(review) %></p>
               <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+              <!-- likeボタン -->
+              <div id="user-reviews-like-button<%= review.id %>">
+                <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,3 @@
+$("#review-detail-like-button").html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#user-reviews-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#tool-reviews-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
