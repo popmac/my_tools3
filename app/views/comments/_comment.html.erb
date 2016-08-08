@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4><%= comment.user.nickname %>さんのコメント</h4>
+    <%= comment.user.nickname %>さんのコメント
     <% if comment.user.id == current_user.id %>
-    <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, remote: true %>
+    <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, remote: true, class: "btn btn-primary active" %>
     <% end %>
   </div>
   <div class="panel-body">
