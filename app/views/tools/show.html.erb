@@ -21,6 +21,7 @@
         <div id="tool-reviews-like-button<%= review.id %>">
           <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
         </div>
+        <p>コメント:<%= review.comments.count %></p>
       </div>
     </div>
   </div>

@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-md-12 review">
       <h2><%= current_user.nickname %>さんが登録したアプリとレビュー</h2>
-      <%= link_to '新しいアプリとレビューを登録する', new_tool_path, class: 'btn btn-info btn-lg active' %>
+      <%= link_to '新しいアプリとレビューを登録', new_tool_path, class: 'btn btn-info btn-lg active' %>
+      <%= link_to 'アプリ一覧', tools_path, class: 'btn btn-info btn-lg active' %>
     </div>
   </div>
   <div class="row">
@@ -15,6 +16,7 @@
         <div class="panel-body short_review">
           <p><%= review.review %></p>
           <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
+          <p>コメント:<%= review.comments.count %></p>
         </div>
       </div>
     </div>
