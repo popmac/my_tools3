@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="display-container">
+      <div class="form-box">
+
+        <h2><%= @tool.name %>のレビューを投稿</h2>
+
+        <%= form_for @review do |f| %>
+        <div class="field">
+          <%= f.label 'レビュー' %><br>
+          <%= f.text_area :review, rows: "8", cols: "50", placeholder: "アプリの使い方や設定を書いてください" %>
+          <%= hidden_field_tag(:tool_id, @tool.id) %>
+        </div>
+        <div class="actions">
+          <%= f.submit class: 'btn btn-info btn-lg btn-block active'%>
+        </div>
+        <% end %>
+
+        <%= link_to '戻る', tool_path(@tool), class: 'btn btn-info btn-lg btn-block active' %>
+
+      </div>
+    </div>
+  </div>
+</div>
