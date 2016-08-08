@@ -4,7 +4,7 @@ class Review < ActiveRecord::Base
   belongs_to :tool
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  def likes_user(user_id)
+  def like_user(user_id)
     self.likes.find_by(user_id: user_id)
   end
 end
