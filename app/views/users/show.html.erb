@@ -137,6 +137,7 @@
           <% if @user.id == current_user.id %>
           <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
           <% end %>
+          <!-- likeボタン -->
           <div id="user-reviews-like-button<%= review.id %>">
             <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
           </div>
