@@ -25,6 +25,14 @@
       text-align: left;
       list-style: none;
     }
+    a img {
+      cursor: pointer;
+    }
+}
+
+// スクリーンショットにマウスが当たった時
+.carousel-inner div a img {
+  cursor: pointer;
 }
 
 .list-group-item {
