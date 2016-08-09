@@ -3,7 +3,14 @@
     <div class="display-container">
       <div class="form-box">
         <div><h1>プロフィール編集ページ</h1></div>
+        <% if @profile.avatar.present? %>
+          <%= image_tag @profile.avatar %>
+        <% else %>
+          <%= image_tag('no_image.png') %>
+        <% end %>
         <%= form_for(@profile) do |f| %>
+        <%= f.label :avatar %><br>
+        <%= f.file_field :avatar %><br>
         <%= f.label :age %><br>
         <%= f.text_field :age %><br>
         <%= f.label :job %><br>

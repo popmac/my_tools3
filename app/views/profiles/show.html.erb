@@ -1,7 +1,11 @@
 <div class="col-md-12">
   <div class="display-container">
     <div class="avatar">
-      <p><h3>あなた</h3></p>
+        <% if @profile.avatar.present? %>
+        <%= image_tag @profile.avatar %>
+        <% else %>
+        <p><h3>あなた</h3></p>
+        <% end %>
     </div>
     <label>Nickname</label>
     <div class="list-group-item"><%= current_user.nickname %>さん</div>
@@ -13,5 +17,5 @@
     <div class="list-group-item"><%= @profile.introduce %></div>
     <%= link_to 'プロフィールを編集する', edit_profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
     <%= link_to 'トップページに戻る', root_path, class: 'btn btn-info btn-lg btn-block active' %>
-  </div>
+</div>
 </div>

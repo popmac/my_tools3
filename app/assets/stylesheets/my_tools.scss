@@ -54,6 +54,16 @@
     font-size: 20px;
     margin: 40px auto 35px;
   }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// profileのeditページに表示されるavatar
+.form-box img {
+  width: 100px;
+  height: 100px;
 }
 
 .form-box input {
