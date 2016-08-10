@@ -4,7 +4,7 @@
         <% if @profile.avatar.present? %>
         <%= image_tag @profile.avatar %>
         <% else %>
-        <p><h3>あなた</h3></p>
+        <%= image_tag('no_image.png') %>
         <% end %>
     </div>
     <label>Nickname</label>
