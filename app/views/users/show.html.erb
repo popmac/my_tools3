@@ -5,8 +5,8 @@
     <!-- 画面左側 -->
     <!-- ユーザー一覧の表示 -->
     <div class="col-md-3">
-      <p class="lead">User一覧：<%= @users.length %>名</p>
-      <div class="user-scr-bar">
+      <p class="lead">User一覧：<%= @users.count %>名</p>
+      <div class="user-scroll-bar">
         <div class="list-group">
          <% @users.each do |user| %>
            <!-- 自分が選択しているuserのアカウントの背景が青くなる -->
