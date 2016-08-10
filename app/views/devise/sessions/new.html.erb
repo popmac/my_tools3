@@ -1,58 +1,42 @@
 <div class="container">
-  <div class="col-md-6">
-    <div class="display-container">
-      <h1 style="margin-bottom: 20px"> My Tools </h1>
-      <br>
-      <!-- Image trigger modal -->
-      <a data-toggle="modal" data-target=".bs-example-modal-lg">
-        <img src="/assets/top_image.png" class="img-responsive">
-      </a>
-      <!-- Modal -->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
-            </div>
-            <div class="modal-body">
-              <img src="/assets/top_image.png" class="img-responsive">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="display-container">
+        <h1 style="margin-bottom: 20px"> My Tools </h1>
+        <h4>ユーザー：<strong><%= user_number %></strong>名</h4>
+        <h4>投稿枚数：<strong><%= photo_number %></strong>枚</h4>
+        <!-- サンプル画像(モーダルできる) -->
+        <a data-toggle="modal" data-target=".bs-example-modal-lg">
+          <%= image_tag('top_image.png', class: "img-responsive") %>
+        </a>
+
+        <!-- モーダル -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
+              </div>
+              <div class="modal-body">
+                <img src="/assets/top_image.png" class="img-responsive">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="display-container">
-      <div id="result-omikuji" style="margin-top: 5px">？</div>
-      <div id="btn-omikuji">今日のあなたの運勢は？</div>
-      <script>
-        (function() {
-          document.getElementById('btn-omikuji').addEventListener('click', function() {
-            var results = ["大吉", "中吉", "小吉", "凶"];
-            var result = Math.floor(Math.random() * results.length);
-            document.getElementById('result-omikuji').innerHTML = results[result];
-          });
-          document.getElementById('btn-omikuji').addEventListener('mousedown', function() {
-            this.className = 'pushed';
-          });
-          document.getElementById('btn-omikuji').addEventListener('mouseup', function() {
-            this.className = "";
-          });
-        })();
-      </script>
-      <div id="output"></div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-box" style="margin-top: 20px">
-        <%= f.text_field :login, placeholder: 'メールアドレス もしくは ユーザーネーム', autofocus: true%>
-        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
-        <%= f.submit 'ログイン', class: 'btn btn-info btn-lg btn-block active' %>
-        <%= link_to '会員登録はこちら', new_user_registration_path, class: 'btn btn-info btn-lg btn-block active' %>
-        <% end %>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-box" style="margin-top: 20px">
+          <%= f.text_field :login, placeholder: 'メールアドレス もしくは ニックネーム', autofocus: true%>
+          <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
+          <%= f.submit 'ログイン', class: 'btn btn-info btn-lg btn-block active' %>
+          <%= link_to '会員登録はこちらから', new_user_registration_path, class: 'btn btn-info btn-lg btn-block active' %>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
