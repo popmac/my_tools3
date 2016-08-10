@@ -1,54 +1,62 @@
 <div class="container">
-  <div class="col-md-6">
-    <div class="display-container">
-    <h1 style="margin-bottom: 20px"> My Tools へようこそ！</h1>
-      <ul>
-        <li>●サイトの利用方法</li><br>
-        <li>1.会員登録をします</li>
-        <li>2.自分の簡単なプロフィールを登録します</li>
-        <li>3.自分が使用しているアプリのスクリーンショットを投稿します</li>
-        <li>4.投稿が完了したら他の人がどんなアプリを使っているか見てみましょう！</li>
-      </ul>
-      <br>
-      <!-- Image trigger modal -->
-      <a data-toggle="modal" data-target=".bs-example-modal-lg">
-        <img src="/assets/top_image.png" class="img-responsive">
-      </a>
-      <!-- Modal -->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
-            </div>
-            <div class="modal-body">
-              <img src="/assets/top_image.png" class="img-responsive">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+  <div class="row">
+    <!-- 左のブロック -->
+    <div class="col-md-6">
+      <div class="display-container">
+        <h1 style="margin-bottom: 20px"> My Tools へようこそ！</h1>
+        <ul>
+          <li>1.会員登録をします</li>
+          <li>2.簡単なプロフィールを登録します</li>
+          <li>3.自分が使用しているアプリのスクリーンショットを投稿します</li>
+          <li>4.好きなアプリとレビューを投稿します</li>
+          <li>5.他の人がどんなアプリを使っているか見てみましょう！</li>
+        </ul>
+
+        <!-- サンプル画像(モーダルできる) -->
+        <a data-toggle="modal" data-target=".bs-example-modal-lg">
+          <%= image_tag('top_image.png', class: "img-responsive") %>
+        </a>
+
+        <!-- モーダル -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
+              </div>
+              <div class="modal-body">
+                <img src="/assets/top_image.png" class="img-responsive">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 100px">閉じる</button>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="display-container">
-      <div class="avatar">
-        <p><h3>あなた</h3></p>
-      </div>
-      <div id="output"></div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      <div class="form-box">
-        <%= f.text_field :nickname, placeholder: 'ニックネーム', autofocus: true, class: "registration-nickname" %>
-        <%= f.email_field :email, placeholder: 'メールアドレス' %>
-        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
-        <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", autocomplete: "off" %>
-        <%= f.submit "登録する", class: "btn btn-info btn-lg btn-block active" %>
-        <%= link_to 'トップに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
-        <% end %>
+
+    <!-- 右のブロック -->
+    <div class="col-md-6">
+      <div class="display-container">
+        <h2>Registration</h2><br>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-box">
+          <%= f.label :nickname %>
+          <%= f.text_field :nickname, placeholder: 'ニックネーム', autofocus: true, class: "registration-nickname" %>
+          <%= f.label 'e-mail' %>
+          <%= f.email_field :email, placeholder: 'メールアドレス' %>
+          <%= f.label 'Password' %>
+          <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
+          <%= f.label 'Password (confirmation)' %>
+          <%= f.password_field :password_confirmation, placeholder: "パスワード(確認)", autocomplete: "off" %>
+          <%= f.submit "会員登録する", class: "btn btn-info btn-lg btn-block active" %>
+          <%= link_to 'ログインページに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
