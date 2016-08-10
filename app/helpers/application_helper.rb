@@ -20,14 +20,11 @@ module ApplicationHelper
   end
 
   def user_number
-    User.all.length
+    User.all.count
   end
 
   def photo_number
-    Photo.all.length
+    Photo.all.count
   end
 
-  def show_time
-    l Photo.last.created_at, format: :short
-  end
 end
