@@ -14,7 +14,7 @@
 
 .display-container {
     position: relative;
-    margin-top: 60px !important;
+    margin-top: 30px !important;
     width: 550px;
     margin: 100px auto;
     padding: 20px 40px 40px;
@@ -35,6 +35,11 @@
   cursor: pointer;
 }
 
+// photos/indexのスクリーンショットにマウスが当たった時
+.users-photo {
+  cursor: pointer;
+}
+
 .list-group-item {
   text-align: center;
 }
@@ -43,21 +48,9 @@
   margin: 0 0 10px 0;
 }
 
-.avatar{
+.avatar img {
   width: 100px;
   height: 100px;
-  margin: 10px auto 30px;
-  border-radius: 100%;
-  border: 2px solid #aaa;
-  background-size: cover;
-  p {
-    font-size: 20px;
-    margin: 40px auto 35px;
-  }
-  img {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 // profileのeditページに表示されるavatar
