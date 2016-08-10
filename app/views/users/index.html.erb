@@ -5,8 +5,8 @@
     <!-- 画面左側 -->
     <!-- ユーザー一覧の表示 -->
     <div class="col-md-3">
-      <p class="lead">User一覧：<%= @users.length %>名</p>
-      <div class="user-scr-bar">
+      <p class="lead">User一覧：<%= @users.count %>名</p>
+      <div class="user-scroll-bar">
         <div class="list-group">
           <% @users.each do |user| %>
             <!-- 自分のアカウントとそれ以外を条件分岐, 自分のアカウントの背景を青色にする -->
@@ -95,7 +95,7 @@
                     <% @photos.each_with_index do |photo, i| %>
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.length %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
+                      <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.count %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
                     </div>
                     <div class="modal-body">
                       <img src="<%= photo.image %>" class="img-responsive">
