@@ -9,8 +9,8 @@ CarrierWave.configure do |config|
 
     case Rails.env
     when 'development'
-        config.fog_directory  = 'upload-mytools'
-        config.asset_host = 'https://s3.amazonaws.com/upload-mytools'
+        config.fog_directory  = 'development-upload-mytools'
+        config.asset_host = 'https://s3.amazonaws.com/development-upload-mytools'
     when 'production'
         config.fog_directory  = 'upload-mytools'
         config.asset_host = 'https://s3.amazonaws.com/upload-mytools'
