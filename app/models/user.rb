@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :nickname, presence: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }, format: { with: /\A[a-z0-9_]+\z/i }
 
   before_create :build_default_profile
 
