@@ -5,12 +5,11 @@
         <h1 style="margin-bottom: 20px"> ユーザー情報を変更</h1>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
 
-        <!-- nickname -->
+        <!-- username -->
         <div class="field">
-          <%= f.label 'ニックネーム' %><br />
-          <%= f.text_field :nickname, autofocus: true %>
+          <%= f.label 'ユーザーネーム' %><br />
+          <%= f.text_field :username, autofocus: true, placeholder: "(半角英数字・記号(_)・4~20文字)", pattern: "[a-zA-Z0-9_]{4,20}" %>
         </div>
 
         <!-- email -->
@@ -41,11 +40,11 @@
         <div class="field">
           <%= f.label '現在のパスワード', style: "margin-bottom: 0" %><br>
           <i>※変更するには現在のパスワードを入力してください</i><br />
-          <%= f.password_field :current_password, autocomplete: "off" %>
+          <%= f.password_field :current_password, autocomplete: "off", required: true %>
         </div>
 
         <div class="actions">
-          <%= f.submit "変更する", data: { confirm: "変更してよろしいですか?" }, class: "btn btn-info btn-lg btn-block active" %>
+          <%= f.submit "変更する", class: "btn btn-info btn-lg btn-block active" %>
         </div>
         <% end %>
 
