@@ -13,17 +13,17 @@
            <% if @user.id == user.id %>
              <!-- avatarが登録してあるかないかで条件分岐 -->
              <% if user.profile.avatar.present? %>
-               <a href="/users/<%= user.id %>" class="list-group-item active"><%= image_tag user.profile.avatar %> <%= user.nickname %>さん</a>
+               <a href="/users/<%= user.id %>" class="list-group-item active"><%= image_tag user.profile.avatar %> <%= user.profile.nickname %>さん</a>
              <% else %>
-               <a href="/users/<%= user.id %>" class="list-group-item active"><%= image_tag('no_image.png') %> <%= user.nickname %>さん</a>
+               <a href="/users/<%= user.id %>" class="list-group-item active"><%= image_tag('no_image.png') %> <%= user.profile.nickname %>さん</a>
              <% end %>
           <!-- 自分が選択しているuserのアカウント以外の背景が白くなる -->
            <% else %>
              <!-- avatarが登録してあるかないかで条件分岐 -->
              <% if user.profile.avatar.present? %>
-               <a href="/users/<%= user.id %>" class="list-group-item"><%= image_tag user.profile.avatar %> <%= user.nickname %>さん</a>
+               <a href="/users/<%= user.id %>" class="list-group-item"><%= image_tag user.profile.avatar %> <%= user.profile.nickname %>さん</a>
              <% else %>
-               <a href="/users/<%= user.id %>" class="list-group-item"><%= image_tag('no_image.png') %> <%= user.nickname %>さん</a>
+               <a href="/users/<%= user.id %>" class="list-group-item"><%= image_tag('no_image.png') %> <%= user.profile.nickname %>さん</a>
              <% end %>
            <% end %>
          <% end %>
@@ -36,7 +36,7 @@
     <!-- プロフィールの表示 -->
     <div class="row">
       <div class="col-md-12">
-        <p class="lead-profile">Nickname：<%= @user.nickname %>さん</p>
+        <p class="lead-profile">Nickname：<%= @user.profile.nickname %>さん</p>
         <p class="lead-profile">Age：<%= @user.profile.age %></p>
         <p class="lead-profile">Job：<%= @user.profile.job %></p>
         <p class="lead-profile">投稿枚数：<%= @user.photos.length %>枚</p>
