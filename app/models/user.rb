@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :nickname, presence: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }, format: { with: /\A[a-z0-9_]+\z/i }
 
   before_create :build_default_profile
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["nickname = :value OR lower(email) = lower(:value)", { :value => login }]).first
+      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
     else
       where(conditions).first
     end

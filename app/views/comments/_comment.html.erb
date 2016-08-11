@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= comment.user.nickname %>さんのコメント
+    <%= comment.user.profile.nickname %>さんのコメント
     <time><%= time_ago_in_words comment.created_at %>前</time>
     <% if comment.user.id == current_user.id %>
     <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, remote: true, class: "btn btn-primary active" %>

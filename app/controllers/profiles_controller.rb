@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   private
   def update_params
-    params.require(:profile).permit(:age, :job, :introduce, :avatar).merge(user_id: current_user.id)
+    params.require(:profile).permit(:nickname, :age, :job, :introduce, :avatar).merge(user_id: current_user.id)
   end
 
 end
