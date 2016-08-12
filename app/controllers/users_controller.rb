@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @user = User.find(current_user.id)
     @introduce = current_user.profile.introduce
     @photos = current_user.photos
     @reviews = current_user.reviews
