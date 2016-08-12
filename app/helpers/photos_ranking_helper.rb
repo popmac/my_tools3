@@ -1,0 +1,2 @@
+module PhotosRankingHelper
+end
