@@ -1,0 +1,2 @@
+$("#user_list").html("<%= j(render partial: "users/user_list", locals: { users: @users }) %>");
+$(".list-group-item" + ".active").removeClass("active");
