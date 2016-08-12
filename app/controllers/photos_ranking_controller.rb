@@ -1,0 +1,2 @@
+class PhotosRankingController < ApplicationController
+end
