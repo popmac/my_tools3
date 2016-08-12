@@ -1,6 +1,6 @@
 <% if review.like_user(current_user.id) %>
 <!-- reviewに対してされているlikeをcurrent_userがつけている場合 -->
-  <%= button_to review_like_path(review, like), method: :delete, id: "like-button", remote: true do %>
+  <%= button_to review_like_path(review, like), method: :delete, id: "like-button", class: "btn btn-primary", remote: true do %>
   <%= image_tag("red-heart.png") %>
   <span>
     Like <%= review.likes_count %>
@@ -9,7 +9,7 @@
 
 <% else %>
 <!-- reviewに対してされているlikeをcurrent_userがつけていない場合 -->
-  <%= button_to review_likes_path(review), method: :post, id: "like-button", remote: true do %>
+  <%= button_to review_likes_path(review), method: :post, id: "like-button", class: "btn btn-primary", remote: true do %>
   <%= image_tag("gray-heart.png") %>
   <% if review.likes_count == nil %>
     <span>
