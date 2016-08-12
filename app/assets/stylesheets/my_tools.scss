@@ -133,3 +133,24 @@
   width: 100%;
   height: 100px;
 }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// users/indexのtoolの箇所で表示されるlikeボタン
+.index-like-button {
+  float: left;
+  margin-right: 10px;
+}
+
+// users/indexのtoolの箇所で表示されるcommentの合計
+.index-comment-number {
+  float: left;
+}
+
+p.index-comment-number {
+  line-height: 30px;
+}
