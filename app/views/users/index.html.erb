@@ -7,6 +7,7 @@
     <div class="col-md-3">
       <p class="lead">User一覧：<%= @users.count %>名</p>
       <%= link_to '登録順', root_path, :remote => true %>
+      <%= link_to '投稿枚数順', photos_ranking_index_path, :remote => true %>
       <div id="user_list">
         <%= render partial: "users/user_list", locals: { users: @users } %>
       </div>
