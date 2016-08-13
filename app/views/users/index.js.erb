@@ -1,2 +1,4 @@
+$("#sort-menu").text("登録順");
 $("#user_list").html("<%= j(render partial: "users/user_list", locals: { users: @users }) %>");
+$(".sort-dropdown-menu").hide();
 $(".list-group-item" + ".active").removeClass("active");
