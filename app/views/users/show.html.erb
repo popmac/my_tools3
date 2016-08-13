@@ -1,0 +1,38 @@
+<!-- 1つのモーダルに複数の画像が入るパターン -->
+
+<div class="container">
+  <div class="row">
+    <!-- 画面左側 -->
+    <!-- ユーザー一覧の表示 -->
+    <div class="col-md-3">
+      <p class="lead">Users List</p>
+      <!-- ソート用のドロップダウン -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle sort-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="sort-menu">
+         Sort Menu <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu sort-dropdown-menu">
+          <li><%= link_to '登録順', root_path, :remote => true %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to 'レビュー投稿数順', users_reviews_number_ranking_index_path, :remote => true %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to 'スクリーンショット投稿枚数順', photos_ranking_index_path, :remote => true %></li>
+        </ul>
+      </div>
+      <!-- user一覧 -->
+      <div id="user_list">
+        <%= render partial: "users/user_list", locals: { users: @users } %>
+      </div>
+    </div>
+    <!-- 画面右側 -->
+    <div id="user_data">
+      <%= render partial: "users/user_data", locals: { user: @user, photos: @photos, introduce: @introduce, reviews: @reviews } %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".sort-dropdown-button").click(function() {
+    $(".sort-dropdown-menu").show();
+  });
+</script>
