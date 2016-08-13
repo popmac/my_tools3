@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :photos_ranking, only: [:index]
+  resources :users_reviews_number_ranking, only: [:index]
   root 'users#index'
 end
