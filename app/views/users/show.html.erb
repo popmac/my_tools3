@@ -21,7 +21,7 @@
       </div>
       <!-- user一覧 -->
       <div id="user_list">
-        <%= render partial: "users/user_list", locals: { users: @users } %>
+        <%= render partial: "users/user_list_show", locals: { users: @users, active_user: @active_user } %>
       </div>
     </div>
     <!-- 画面右側 -->
