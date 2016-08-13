@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @users = User.all
     @user = User.find(params[:id])
+    @active_user = User.find(params[:id])
     @introduce = @user.profile.introduce
     @photos = @user.photos
     @reviews = @user.reviews
