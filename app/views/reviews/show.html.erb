@@ -5,7 +5,7 @@
       <%= link_to "#{@review.tool.name}のレビューの一覧へ", tool_path(@review.tool_id), class: 'btn btn-info btn-lg active' %>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3><%= @review.user.profile.nickname %>さんの<%= @review.tool.name %>のレビューの詳細</h3>
+          <h3><a href="/users/<%= @review.user_id %>"><%= @review.user.profile.nickname %>さん</a>の<%= @review.tool.name %>のレビューの詳細</h3>
         </div>
         <div class="panel-body">
           <p><%= @review.review %></p>
