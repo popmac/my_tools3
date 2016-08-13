@@ -1,0 +1,2 @@
+class UsersReviewsNumberRankingController < ApplicationController
+end
