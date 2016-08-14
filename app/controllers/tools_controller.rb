@@ -3,7 +3,9 @@ class ToolsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
 
   def index
-    @tools = Tool.all
+    # reviewが多い順で並ぶようにしている
+    tool_ids = Review.group(:tool_id).order('count_tool_id DESC').count(:tool_id).keys
+    @tools = tool_ids.map { |id| Tool.find(id) }
   end
 
   def new
