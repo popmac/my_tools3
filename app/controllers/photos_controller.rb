@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = current_user.photos
+    @photos = current_user.photos.order(created_at: :desc)
     @user = User.find(params[:user_id])
     unless current_user == @user
       redirect_to "/users/#{current_user.id}/photos"
