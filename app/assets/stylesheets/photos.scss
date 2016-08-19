@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.photos-index-container {
+  h2 {
+    color: white;
+  }
+  h3 {
+    color: white;
+  }
+}
+
 .user-photo {
   // photos/indexのスクリーンショットにマウスが当たった時
   cursor: pointer;
