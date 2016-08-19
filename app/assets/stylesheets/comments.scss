@@ -1,3 +1,8 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// users/_user_dataのreviewで表示される「comment」の表示と「commentの総数」
+.review-comment-number {
+  float: left;
+  line-height: 30px;
+}
