@@ -6,9 +6,13 @@
         <%= form_for(@profile) do |f| %>
         <%= f.label :avatar %><br>
         <% if @profile.avatar.present? %>
-        <%= image_tag @profile.avatar %>
+        <div class="avatar">
+            <%= image_tag @profile.avatar %>
+        </div>
         <% else %>
-        <%= image_tag('no_image.png') %>
+        <div class="avatar">
+            <%= image_tag('no_image.png') %>
+        </div>
         <% end %>
         <%= f.file_field :avatar %>
         <%= f.label :nickname %><br>
@@ -24,7 +28,7 @@
         <% end %>
         <%= link_to '戻る', profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
         <%= link_to 'ニックネームやメールアドレスの変更はこちら', edit_user_registration_path, class: 'btn btn-success btn-lg btn-block active' %>
-      </div>
     </div>
-  </div>
+</div>
+</div>
 </div>
