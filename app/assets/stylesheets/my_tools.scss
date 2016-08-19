@@ -1,12 +1,26 @@
-.sessions, .registrations {
-    background: image-url("back_image.jpg");
+body {
+  // navbarの分の余白を取る
+  padding-top: 50px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// 各コントローラーの背景の画像
+.users, .profiles, .photos, .tools, .reviews {
+    background: image-url("index_back.jpg");
     background-size: cover;
     position: relative;
     height: 100%;
 }
 
-.users, .profiles, .photos, .tools, .reviews {
-    background: image-url("index_back.jpg");
+// sessions/newの背景の画像
+// resistrations/newの背景の画像
+.sessions, .registrations {
+    background: image-url("back_image.jpg");
     background-size: cover;
     position: relative;
     height: 100%;
@@ -25,50 +39,17 @@
       text-align: left;
       list-style: none;
     }
+    // sessions/newの画像
+    // registrations/newの画像
     a img {
       cursor: pointer;
     }
 }
 
-// スクリーンショットにマウスが当たった時
-.carousel-inner div a img {
-  cursor: pointer;
-}
-
-// photos/indexのスクリーンショットにマウスが当たった時
-.users-photo {
-  cursor: pointer;
-}
-
+// user一覧で使用
+// profiles/showで使用
 .list-group-item {
   text-align: center;
-}
-
-.img-responsive {
-  margin: 0 0 10px 0;
-}
-
-// users/indexで表示されるphoto
-.users-data-photo {
-  height: 535px !important;
-  margin: 0 auto;
-}
-
-// users/indexでモーダルで表示されるphoto
-.users-data-photo-modal {
-  height: 535px !important;
-  margin: 0 auto;
-}
-
-.avatar img {
-  width: 100px;
-  height: 100px;
-}
-
-// profileのeditページに表示されるavatar
-.form-box img {
-  width: 100px;
-  height: 100px;
 }
 
 .form-box input {
@@ -86,93 +67,20 @@
     background: #eee;
 }
 
+// form内にある送信ボタン
 .form-box input.btn {
     margin-top:10px;
     padding: 10px 20px;
 }
 
+// form内にあるリンクボタン
 .form-box a.btn {
     height: 40px;
     margin-top:10px;
     padding: 10px 20px;
 }
 
-.display-container a.btn {
-    height: 40px;
-    margin-top:10px;
-    padding: 10px 20px;
-}
-
-// photo, review, tool, の一覧ページ, 投稿されたcommentの数
-.photo, .review, .tool {
-  h2 {
-    color: white;
-  }
-  h3 {
-    color: white;
-  }
-}
-
- #comments-number {
-  color: white;
-  margin-bottom: 10px;
- }
-
-.review-comment {
-  margin-bottom: 100px;
-  p {
-    color: white;
-  }
-}
-
-// profile編集ページのテキストエリア
-#profile_introduce {
-  width: 100%;
-}
-
-// toolとreview投稿ページのテキストエリア
-#tool_review_review {
-  width: 100%;
-}
-
-// review編集ページのテキストエリア
-#review_review {
-  width: 100%;
-}
-
-// reviewに対するcommentのテキストエリア
-#comment_field {
-  width: 100%;
-  height: 100px;
-}
-
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-// users/indexのtoolの箇所で表示されるlikeボタン
-.index-like-button {
-  float: left;
-  margin-right: 10px;
-}
-
-// users/indexのtoolの箇所で表示されるcommentの合計
-.index-comment-number {
-  float: left;
-}
-
-p.index-comment-number {
-  line-height: 30px;
-}
-
-// sortメニューと間隔を空けるため
-#user_list {
-  margin-top: 20px;
-}
-
-// copyright
+// footerに表示しているcopyright
 footer p {
   color: white;
   text-align: center;
