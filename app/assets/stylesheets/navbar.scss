@@ -1,9 +1,17 @@
-// ナビゲーションバーのサイト名
+// navbarのサイト名
 .navbar-header a.navbar-brand {
   font-size: 40px;
   color: white;
 }
 
+// navbarのメニューのキャレット
+.dropdown .caret {
+  margin-left: 5px !important;
+  width: 7px;
+  height: 9px;
+}
+
+// navbarのメニュー
 ul li .nav-menu {
   font-size: 15px;
   color: white !important;
@@ -11,6 +19,7 @@ ul li .nav-menu {
   border: 1px solid #008080;
 }
 
+// navbarのログアウトボタン
 ul li .nav-logout {
   font-size: 15px;
   color: white !important;
