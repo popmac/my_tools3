@@ -4,11 +4,11 @@
   <!-- プロフィールの表示 -->
   <div class="row">
     <div class="col-md-12">
-      <p class="lead-profile">Nickname：<%= user.profile.nickname %>さん</p>
-      <p class="lead-profile">Age：<%= user.profile.age %></p>
-      <p class="lead-profile">Job：<%= user.profile.job %></p>
-      <p class="lead-profile">Photos：<%= user.photos.length %>枚</p>
-      <p class="lead-profile">Reviews：<%= user.reviews.length %></p>
+      <p class="user-profile">Nickname：<%= user.profile.nickname %>さん</p>
+      <p class="user-profile">Age：<%= user.profile.age %></p>
+      <p class="user-profile">Job：<%= user.profile.job %></p>
+      <p class="user-profile">Photos：<%= user.photos.length %>枚</p>
+      <p class="user-profile">Reviews：<%= user.reviews.length %></p>
     </div>
   </div>
   <!-- プロフィールが登録されていない場合 -->
@@ -131,10 +131,10 @@
         <% end %>
         <div class="clearfix">
           <!-- likeボタン -->
-          <div class="index-like-button" id="user-reviews-like-button<%= review.id %>">
+          <div class="review-like-button" id="user-reviews-like-button<%= review.id %>">
             <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
           </div>
-          <p class="index-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true">Comment:<%= review.comments.count %></p>
+          <p class="review-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true">Comment:<%= review.comments.count %></p>
         </div>
       </div>
     </div>

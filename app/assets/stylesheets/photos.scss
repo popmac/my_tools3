@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user-photo {
+  // photos/indexのスクリーンショットにマウスが当たった時
+  cursor: pointer;
+  img {
+  // photos/indexで表示されるスクリーンショットの幅
+  width: 100%;
+  }
+}
+
+// photos/newの「ファイルを選択」ボタン
 .input-group-btn button {
   height: 35px;
   margin-top: 5px;
