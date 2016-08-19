@@ -131,7 +131,7 @@
         <% end %>
         <div class="clearfix">
           <!-- likeボタン -->
-          <div class="index-like-button" id="user-reviews-like-button<%= review.id %>">
+          <div class="review-like-button" id="user-reviews-like-button<%= review.id %>">
             <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
           </div>
           <p class="index-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true">Comment:<%= review.comments.count %></p>
