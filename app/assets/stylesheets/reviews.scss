@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.reviews-index-container {
+  h2 {
+    color: white;
+  }
+}
+
 // reviewの表示を1行だけにする
 .short_review p {
   word-break: break-all;
