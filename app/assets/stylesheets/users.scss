@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// user一覧のタイトル
-.users-list-title p {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
 // users/_user_dataのuserのprofileを表示
 .user-profile {
   text-align: left;
@@ -19,6 +11,37 @@
   float: left;
 }
 
+// users/_user_dataで表示されるphoto
+.users-data-photo {
+  height: 535px !important;
+  margin: 0 auto;
+}
+
+// users/_user_dataのモーダルで表示されるphoto
+.users-data-photo-modal {
+  height: 535px !important;
+  margin: 0 auto;
+}
+
+// users/_user_dataのphotoにマウスが当たった時
+.carousel-inner div a img {
+  cursor: pointer;
+}
+
+// user一覧のタイトル
+.users-list-title p {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+// user一覧とsortメニューと間隔を空ける
+#user_list {
+  margin-top: 20px;
+}
+
+// user一覧のスクロールバー
 .users-scroll-bar {
   overflow: auto;
   width: 100%;
