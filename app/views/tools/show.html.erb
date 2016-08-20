@@ -1,28 +1,28 @@
-<div class="container">
+<div class="container tools-show-container">
   <div class="row">
-    <div class="col-md-12 review">
+    <div class="col-md-12">
       <h2><%= @tool.name %>のレビューの一覧 <%= link_to 'アプリ一覧へ', tools_path, class: 'btn btn-info btn-lg active' %></h2>
       <%= link_to 'このアプリのレビューを投稿する', new_tool_review_path(@tool), class: 'btn btn-info btn-lg active' %>
     </div>
   </div>
   <div class="row">
     <% @reviews.each do |review| %>
-    <div class="col-md-4">
-     <div class="panel panel-default">
-      <div class="panel-heading">
-        <a href="/users/<%= review.user_id %>"><%= review.user.profile.nickname %>さん</a>
-      </div>
-      <div class="panel-body short_review">
-        <p><%= review.review %></p>
-        <p><%= link_to '詳細を見る', review_path(review) %></p>
-        <!-- likeボタン -->
-        <div id="tool-reviews-like-button<%= review.id %>">
-          <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+         <div class="panel-heading">
+           <a href="/users/<%= review.user_id %>"><%= review.user.profile.nickname %>さん</a>
+         </div>
+          <div class="panel-body short_review">
+            <p><%= review.review %></p>
+            <p><%= link_to '詳細を見る', review_path(review) %></p>
+            <!-- likeボタン -->
+            <div id="tool-reviews-like-button<%= review.id %>">
+              <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
+            </div>
+            <p>コメント:<%= review.comments.count %></p>
+          </div>
         </div>
-        <p>コメント:<%= review.comments.count %></p>
       </div>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>
