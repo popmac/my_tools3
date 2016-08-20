@@ -4,11 +4,13 @@
   <!-- プロフィールの表示 -->
   <div class="row">
     <div class="col-md-12">
-      <p class="user-profile">Nickname：<%= user.profile.nickname %>さん</p>
-      <p class="user-profile">Age：<%= user.profile.age %></p>
-      <p class="user-profile">Job：<%= user.profile.job %></p>
-      <p class="user-profile">Photos：<%= user.photos.length %>枚</p>
-      <p class="user-profile">Reviews：<%= user.reviews.length %></p>
+      <div class="user-profile-list">
+        <p class="user-profile">Nickname：<%= user.profile.nickname %>さん</p>
+        <p class="user-profile">Age：<%= user.profile.age %></p>
+        <p class="user-profile">Job：<%= user.profile.job %></p>
+        <p class="user-profile">Photos：<%= user.photos.length %>枚</p>
+        <p class="user-profile">Reviews：<%= user.reviews.length %></p>
+      </div>
     </div>
   </div>
   <!-- プロフィールが登録されていない場合 -->
