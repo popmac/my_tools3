@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container photos-index-container">
   <div class="row">
-    <div class="col-md-12 photos-index-container">
+    <div class="col-md-12">
       <h2><%= current_user.profile.nickname %>さんが投稿したスクリーンショット</h2>
       <%= link_to '新しいスクリーンショットを投稿', new_user_photo_path(current_user), class: 'btn btn-info btn-lg active' %>
     </div>
@@ -8,9 +8,7 @@
   <div class="row">
     <% @photos.each do |photo| %>
     <div class="col-md-4">
-      <div class="photo">
-        <h3>登録日:<%= l photo.created_at, format: :short %></h3>
-      </div>
+      <h3>登録日:<%= l photo.created_at, format: :short %></h3>
       <div>
         <a data-toggle="modal" data-target=".bs-example-modal-lg" class="user-photo">
           <img src="<%= photo.image %>">
