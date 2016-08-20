@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// users/_user_dataのuserのprofileを表示
-.user-profile {
-  text-align: left;
-  color: white;
-  font-size: 15px;
-  margin-right: 20px;
-  float: left;
+// users/_user_dataで表示されるuserのprofile
+.user-profile-list {
+  margin-top: 20px;
+  p {
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+    float: left;
+  }
 }
 
 // users/_user_dataで表示されるphoto
