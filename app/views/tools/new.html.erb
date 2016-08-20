@@ -1,29 +1,31 @@
 <div class="container">
-  <div class="col-md-12">
-    <div class="display-container">
-      <div class="form-box">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="display-container">
+        <div class="form-box">
 
-      <h2>好きなアプリとレビューを投稿</h2>
+          <h2>好きなアプリとレビューを投稿</h2>
 
-        <%= form_for @tool do |f| %>
-        <div class="field">
-          <%= f.label 'アプリの名前' %><br>
-          <span>※すでにサイトに登録されているものは予測変換で名前が出ます</span>
-          <%= f.autocomplete_field :name, autocomplete_tool_name_tools_path, autofocus: true %>
-        </div>
-        <div class="field">
-          <%= f.label 'レビュー' %>
-          <%= f.fields_for :review do |review_form| %>
-          <%= review_form.text_area :review, rows: "8", cols: "50", placeholder: "アプリの使い方や設定を書いてください" %>
+          <%= form_for @tool do |f| %>
+          <div class="field">
+            <%= f.label 'アプリの名前' %><br>
+            <span>※すでにサイトに登録されているものは予測変換で名前が出ます</span>
+            <%= f.autocomplete_field :name, autocomplete_tool_name_tools_path, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label 'レビュー' %>
+            <%= f.fields_for :review do |review_form| %>
+            <%= review_form.text_area :review, rows: "8", cols: "50", placeholder: "アプリの使い方や設定を書いてください" %>
+            <% end %>
+          </div>
+          <div class="actions">
+            <%= f.submit class: 'btn btn-info btn-lg btn-block active'%>
+          </div>
           <% end %>
-        </div>
-        <div class="actions">
-          <%= f.submit class: 'btn btn-info btn-lg btn-block active'%>
-        </div>
-        <% end %>
 
-        <%= link_to '戻る', reviews_path, class: 'btn btn-info btn-lg btn-block active' %>
+          <%= link_to '戻る', reviews_path, class: 'btn btn-info btn-lg btn-block active' %>
 
+        </div>
       </div>
     </div>
   </div>
