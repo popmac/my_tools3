@@ -12,8 +12,8 @@
          <div class="panel-heading">
            <a href="/users/<%= review.user_id %>"><%= review.user.profile.nickname %>さん</a>
          </div>
-          <div class="panel-body short_review">
-            <p><%= review.review %></p>
+          <div class="panel-body">
+            <p class="short-review"><%= review.review %></p>
             <p><%= link_to '詳細を見る', review_path(review) %></p>
             <!-- likeボタン -->
             <div id="tool-reviews-like-button<%= review.id %>">
