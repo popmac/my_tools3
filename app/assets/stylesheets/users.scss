@@ -58,3 +58,35 @@
   cursor: pointer;
 }
 
+// 以下は_user_dataで表示されるtoolのreview
+.user-data-card {
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+.user-data-card-title {
+  margin-top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.user-data-card-content {
+  padding: 15px 15px 0 15px;
+}
+
+.user-data-card-short-review {
+  margin-bottom: 20px;
+}
+
+.user-data-card-review-link {
+  float: left;
+  margin-right: 10px;
+}
+
+// users/_user_dataのreviewで表示される「comment」の表示と「commentの総数」
+.user-data-card-review-comment-number {
+  float: left;
+  line-height: 35px;
+  margin-right: 10px;
+  font-size: 15px;
+}
