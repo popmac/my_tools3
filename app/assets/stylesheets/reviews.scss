@@ -2,13 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.reviews-index-container {
-  h2 {
-    color: white;
-  }
-}
-
 // reviewの表示を1行だけにする
+// メソッド的に使用する
 .short-review {
   word-break: break-all;
   overflow: hidden;
@@ -16,8 +11,41 @@
   white-space: nowrap;
 }
 
+.reviews-index-container {
+  h2 {
+    color: white;
+  }
+}
+
 // reviews/editのテキストエリア
 // form_forにより生成されるid
 #review_review {
   width: 100%;
+}
+
+.reviews-show-link-buttons {
+  margin: 10px auto 10px;
+}
+
+// 以下からはrevews/showのレビューのカード
+.reviews-show-card {
+  background-color: white;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.reviews-show-card-title {
+  border: 0.5px solid #BDBDBD;
+  h3 {
+    margin-left: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.reviews-show-card-content p {
+  margin: 10px 0 10px 10px;
+}
+
+.reviews-show-card-content #review-detail-like-button {
+  margin-left: 10px;
 }
