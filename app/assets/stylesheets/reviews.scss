@@ -9,7 +9,7 @@
 }
 
 // reviewの表示を1行だけにする
-.short_review p {
+.short-review, .short-review p {
   word-break: break-all;
   overflow: hidden;
   text-overflow: ellipsis;
