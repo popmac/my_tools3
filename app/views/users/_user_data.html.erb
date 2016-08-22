@@ -127,20 +127,20 @@
     <div class="row">
       <% reviews.each do |review| %>
         <div class="col-md-6">
-          <div class="card">
+          <div class="user-data-card">
             <!-- toolの名前 -->
-            <h2 class="card-title">
+            <h2 class="user-data-card-title">
               <a href="/tools/<%= review.tool_id %>"><%= review.tool.name %></a>
             </h2>
-            <div class="card-content">
-              <p class="short-review card-short-review"><%= review.review %></p>
+            <div class="user-data-card-content">
+              <p class="short-review user-data-card-short-review"><%= review.review %></p>
               <div class="clearfix">
-                <%= link_to '詳細を見る', review_path(review), class: "btn btn-warning card-content-review-link" %>
+                <%= link_to '詳細を見る', review_path(review), class: "btn btn-warning user-data-card-review-link" %>
                 <!-- likeボタン -->
                 <div class="review-like-button" id="user-reviews-like-button<%= review.id %>">
                   <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
                 </div>
-                <p class="card-review-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
+                <p class="user-data-card-review-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
               </div>
             </div>
           </div>
