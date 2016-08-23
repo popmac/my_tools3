@@ -18,8 +18,7 @@ body {
 }
 
 // sessions/newの背景の画像
-// resistrations/newの背景の画像
-.sessions, .registrations {
+.sessions {
     background: image-url("back_image.jpg");
     background-size: cover;
     position: relative;
