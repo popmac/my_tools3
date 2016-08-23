@@ -1,3 +1,24 @@
+// resistrations/newのページ上部の画像
+.jumbotron {
+  background: image-url("back_image.jpg");
+  background-size: cover;
+  height: 650px;
+  margin-bottom: 0 !important;
+}
+
+.jumbotron-explain {
+  color: white;
+  margin-top: 250px;
+}
+
+.filter {
+  position: absolute;
+  top: 50px;
+  height: 650px;
+  width: 100%;
+  background: rgba(0,0,0,.6);
+}
+
 // registrations/editのタイトル
 .registrations-edit-title h1 {
   margin-bottom: 20px;
