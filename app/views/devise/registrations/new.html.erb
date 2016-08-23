@@ -13,22 +13,24 @@
         </div>
       </div>
       <!-- ▼ 会員登録のフォーム -->
-      <div class="col-md-6 resitrations-new-form">
-        <h3>Registration</h3>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <div class="form-box">
-          <%= f.label :username %>
-          <span>※ログイン時に使用できます</span>
-          <%= f.text_field :username, placeholder: 'ユーザーネーム', autofocus: true, placeholder: "(半角英数字・記号(_)・4~20文字)", pattern: "[a-zA-Z0-9_]{4,20}", required: true %>
-          <%= f.label 'e-mail' %>
-          <%= f.email_field :email, placeholder: 'メールアドレス', required: true %>
-          <%= f.label 'Password' %>
-          <%= f.password_field :password, placeholder: '6文字以上', autocomplete: "off", required: true %>
-          <%= f.label 'Password (confirmation)' %>
-          <%= f.password_field :password_confirmation, placeholder: "確認のためもう一度入力してください", autocomplete: "off", required: true %>
-          <%= f.submit "会員登録する", class: "btn btn-info btn-lg active" %>
-          <%= link_to 'ログインページに戻る', users_path, class: "btn btn-info btn-lg active" %>
-          <% end %>
+      <div class="col-md-6">
+        <div class="resistrations-new-form">
+          <h3>Registration</h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="form-box">
+            <%= f.label :username %>
+            <span>※ログイン時に使用できます</span>
+            <%= f.text_field :username, placeholder: 'ユーザーネーム', autofocus: true, placeholder: "(半角英数字・記号(_)・4~20文字)", pattern: "[a-zA-Z0-9_]{4,20}", required: true %>
+            <%= f.label 'e-mail' %>
+            <%= f.email_field :email, placeholder: 'メールアドレス', required: true %>
+            <%= f.label 'Password' %>
+            <%= f.password_field :password, placeholder: '6文字以上', autocomplete: "off", required: true %>
+            <%= f.label 'Password (confirmation)' %>
+            <%= f.password_field :password_confirmation, placeholder: "確認のためもう一度入力してください", autocomplete: "off", required: true %>
+            <%= f.submit "会員登録する", class: "btn btn-info btn-lg active" %>
+            <%= link_to 'ログインページに戻る', users_path, class: "btn btn-info btn-lg active" %>
+            <% end %>
+          </div>
         </div>
       </div>
       <!-- ▲ 会員登録のフォーム -->

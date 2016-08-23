@@ -21,7 +21,7 @@
 }
 
 // 以下はregistrations/newのフォーム
-.resitrations-new-form {
+.resistrations-new-form {
   margin-top: 45px;
   h3 {
     color: white;
@@ -38,9 +38,9 @@
     text-align: center;
   }
   #user_username, #user_email, #user_password, #user_password_confirmation {
-  display: block;
-  width: 330px;
-  margin: 0 auto;
+    display: block;
+    width: 330px;
+    margin: 0 auto;
   }
   input[type="submit"] {
     display: block;
@@ -102,8 +102,8 @@
 // resistrations/newのfooter
 // resistrations/editのfooter
 .registrations footer {
-    background-color: rgb(26,57,89);
-    padding-top: 30px;
+  background-color: rgb(26,57,89);
+  padding-top: 30px;
 }
 
 // registrations/editのタイトル
