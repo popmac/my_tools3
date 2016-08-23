@@ -1,6 +1,5 @@
 html {
   height: 100%;
-  position: relative;
 }
 
 body {
@@ -70,12 +69,7 @@ body {
     padding: 10px 20px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  p {
+footer p {
   color: white;
   text-align: center;
-  }
 }
