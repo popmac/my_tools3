@@ -1,4 +1,9 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   // navbarの分の余白を取る
   padding-top: 50px;
 }
@@ -17,14 +22,6 @@ body {
     height: 100%;
 }
 
-// sessions/newの背景の画像
-.sessions {
-    background: image-url("back_image.jpg");
-    background-size: cover;
-    position: relative;
-    height: 100%;
-}
-
 .display-container {
     width: 550px;
     margin: 30px auto;
@@ -35,11 +32,6 @@ body {
     li {
       text-align: left;
       list-style: none;
-    }
-    // sessions/newの画像
-    // registrations/newの画像
-    a img {
-      cursor: pointer;
     }
 }
 

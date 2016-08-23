@@ -1,5 +1,41 @@
+// sessions/newの背景の画像
+.sessions {
+  background: image-url("login-back.jpg");
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.sessions-new-filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.5);
+}
+
+.sessions-new-display-container {
+  margin-top: 80px;
+  // footerとの距離をとるため
+  margin-bottom: 20px;
+  a img {
+    cursor: pointer;
+  }
+  #user_login, #user_password {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+  }
+  input[type="submit"], a {
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+  }
+}
+
 // sessions/newのタイトル
-.sessions-new-title h1 {
+.sessions-new-title {
+  color: white;
+  text-align: center;
   margin-bottom: 20px;
 }
 

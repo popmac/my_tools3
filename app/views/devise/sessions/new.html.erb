@@ -1,13 +1,13 @@
+<div class="sessions-new-filter"></div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="display-container sessions-new-title">
-        <h1> My Tools </h1>
-        <h4>ユーザー：<strong><%= user_number %></strong>名</h4>
-        <h4>投稿枚数：<strong><%= photo_number %></strong>枚</h4>
+      <div class="sessions-new-display-container">
+        <h1 class="sessions-new-title"> My Tools </h1>
         <!-- サンプル画像(モーダルできる) -->
         <a data-toggle="modal" data-target=".bs-example-modal-lg">
-          <%= image_tag('top_image.png', class: "img-responsive") %>
+          <%= image_tag('screenshot-sample.png', class: "img-responsive") %>
         </a>
 
         <!-- モーダル -->
@@ -19,7 +19,7 @@
                 <h2 class="modal-title" id="myModalLabel">サンプル画像</h2>
               </div>
               <div class="modal-body">
-                <%= image_tag('top_image.png', class: "img-responsive") %>
+                <%= image_tag('screenshot-sample.png', class: "img-responsive") %>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
@@ -32,8 +32,8 @@
         <div class="form-box sessions-new-form">
           <%= f.text_field :login, placeholder: 'メールアドレス もしくは ユーザーネーム', autofocus: true%>
           <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
-          <%= f.submit 'ログイン', class: 'btn btn-info btn-lg btn-block active' %>
-          <%= link_to '会員登録はこちらから', new_user_registration_path, class: 'btn btn-info btn-lg btn-block active' %>
+          <%= f.submit 'ログイン', class: 'btn btn-info btn-lg active' %>
+          <%= link_to '会員登録はこちらから', new_user_registration_path, class: 'btn btn-info btn-lg active' %>
           <% end %>
         </div>
 
