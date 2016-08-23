@@ -5,15 +5,19 @@
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 jumbotron-explain">
-        <p>「みんなどんなアプリを使ってるんだろう?」</p>
-        <p>そんな思いからこのWEBサービスは生まれました</p>
-      </div>
+      <!-- サイトのコンセプトを説明 -->
       <div class="col-md-6">
-        <h2>Registration</h2><br>
+        <div class="jumbotron-explain">
+          <p>「みんなどんなアプリを使ってるんだろう?」</p>
+          <p>そんな思いからこのWEBサービスは生まれました</p>
+        </div>
+      </div>
+      <!-- ▼ 会員登録のフォーム -->
+      <div class="col-md-6 resitrations-new-form">
+        <h3>Registration</h3>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="form-box">
-          <%= f.label :username %><br>
+          <%= f.label :username %>
           <span>※ログイン時に使用できます</span>
           <%= f.text_field :username, placeholder: 'ユーザーネーム', autofocus: true, placeholder: "(半角英数字・記号(_)・4~20文字)", pattern: "[a-zA-Z0-9_]{4,20}", required: true %>
           <%= f.label 'e-mail' %>
@@ -22,11 +26,12 @@
           <%= f.password_field :password, placeholder: '6文字以上', autocomplete: "off", required: true %>
           <%= f.label 'Password (confirmation)' %>
           <%= f.password_field :password_confirmation, placeholder: "確認のためもう一度入力してください", autocomplete: "off", required: true %>
-          <%= f.submit "会員登録する", class: "btn btn-info btn-lg btn-block active" %>
-          <%= link_to 'ログインページに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
+          <%= f.submit "会員登録する", class: "btn btn-info btn-lg active" %>
+          <%= link_to 'ログインページに戻る', users_path, class: "btn btn-info btn-lg active" %>
           <% end %>
         </div>
       </div>
+      <!-- ▲ 会員登録のフォーム -->
     </div>
   </div>
 </div>
