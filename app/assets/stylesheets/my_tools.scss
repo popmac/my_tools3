@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  position: relative;
 }
 
 body {
@@ -69,8 +70,12 @@ body {
     padding: 10px 20px;
 }
 
-// footerに表示しているcopyright
-footer p {
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  p {
   color: white;
   text-align: center;
+  }
 }
