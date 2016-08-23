@@ -8,7 +8,8 @@
 
 .jumbotron-explain {
   color: white;
-  margin-top: 250px;
+  margin: 250px auto;
+  text-align: center;
 }
 
 .filter {
@@ -17,6 +18,40 @@
   height: 650px;
   width: 100%;
   background: rgba(0,0,0,.6);
+}
+
+// 以下はregistrations/newのフォーム
+.resitrations-new-form {
+  margin-top: 45px;
+  h3 {
+    color: white;
+    text-align: center;
+  }
+  label {
+    color: white;
+    display: block;
+    text-align: center;
+  }
+  span {
+    color: white;
+    display: block;
+    text-align: center;
+  }
+  #user_username, #user_email, #user_password, #user_password_confirmation {
+  display: block;
+  width: 330px;
+  margin: 0 auto;
+  }
+  input[type="submit"] {
+    display: block;
+    width: 330px;
+    margin: 10px auto;
+  }
+  a {
+    display: block;
+    width: 330px;
+    margin: 0 auto;
+  }
 }
 
 .registrations-new-heading-1 {
@@ -68,7 +103,7 @@
 // resistrations/editのfooter
 .registrations footer {
     background-color: rgb(26,57,89);
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 // registrations/editのタイトル
