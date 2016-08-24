@@ -1,6 +1,6 @@
 // registrations/newのページ上部の画像
 .jumbotron {
-  background: image-url("back_image.jpg");
+  background: image-url("registrations-new-jumbotron-with-filter.jpg");
   background-size: cover;
   height: 650px;
   margin-bottom: 0 !important;
@@ -10,14 +10,6 @@
   color: white;
   margin: 250px auto;
   text-align: center;
-}
-
-.jumbotron-filter {
-  position: absolute;
-  top: 50px;
-  height: 650px;
-  width: 100%;
-  background: rgba(0,0,0,.6);
 }
 
 // 以下はregistrations/newのフォーム
