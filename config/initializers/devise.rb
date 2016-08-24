@@ -1,3 +1,10 @@
+class CustomFailure < Devise::FailureApp
+  def redirect_url
+    # 未ログインでアクセスしてきたときはサインアップページへリダイレクト
+    new_user_registration_path
+  end
+end
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -7,6 +14,11 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '2a2a08779d1a54e6df32e241528eb43260ff9a7125b00255b78878fd030e16d9e6d1ddb37bbf6fcc76a48e918f0a92513ec1072a5fe2eba8405ac55a0e652a6e'
+
+  # 上で定義したCustomFailureクラスを設定
+  config.warden do |manager|
+    manager.failure_app = CustomFailure
+  end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
