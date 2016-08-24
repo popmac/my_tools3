@@ -2,7 +2,7 @@
 .jumbotron {
   background: image-url("registrations-new-jumbotron-with-filter.jpg");
   background-size: cover;
-  height: 650px;
+  height: auto;
   margin-bottom: 0 !important;
 }
 
@@ -15,7 +15,6 @@
 // 以下はregistrations/newのフォーム
 .registrations-new-form {
   margin-top: 45px;
-  margin-bottom: 45px;
   h3 {
     color: white;
     text-align: center;
