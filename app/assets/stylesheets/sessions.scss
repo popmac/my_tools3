@@ -1,19 +1,12 @@
 // sessions/newの背景の画像
 .sessions {
-  background: image-url("login-back.jpg");
+  background: image-url("login-back-with-filter.jpg");
   background-size: cover;
   position: relative;
   height: 100%;
   // my_tools.scssのbodyで設定しているnavbar分の余白の分を打ち消している
   // sessions-new-filterをブラウザ画面一杯に収めるため
   padding-top: 0;
-}
-
-.sessions-new-filter {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0,0,0,.5);
 }
 
 .sessions-new-display-container {
