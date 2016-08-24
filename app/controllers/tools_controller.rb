@@ -1,6 +1,5 @@
 class ToolsController < ApplicationController
   autocomplete :tool, :name, :full => true
-  before_action :authenticate_user!, only: [:new, :show]
 
   def index
     # reviewが多い順で並ぶようにしている
