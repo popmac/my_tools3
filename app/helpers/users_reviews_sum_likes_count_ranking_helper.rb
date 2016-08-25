@@ -1,0 +1,2 @@
+module UsersReviewsSumLikesCountRankingHelper
+end
