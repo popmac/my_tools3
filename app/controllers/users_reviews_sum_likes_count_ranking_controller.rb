@@ -1,0 +1,2 @@
+class UsersReviewsSumLikesCountRankingController < ApplicationController
+end
