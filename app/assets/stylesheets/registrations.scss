@@ -32,17 +32,20 @@
   }
   #user_username, #user_email, #user_password, #user_password_confirmation {
     display: block;
-    width: 330px;
+    // width: 330px;
+    width: 70%;
     margin: 0 auto;
   }
   input[type="submit"] {
     display: block;
-    width: 330px;
+    // width: 330px;
+    width: 70%;
     margin: 10px auto;
   }
   a {
     display: block;
-    width: 330px;
+    // width: 330px;
+    width: 70%;
     margin: 0 auto;
   }
 }
