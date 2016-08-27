@@ -21,7 +21,11 @@
           <span class="icon-bar"></span>
         </button>
         <!-- ロゴ -->
-        <a href="/"><%= image_tag('my-tools-logo.png', class: 'navbar-logo') %></a>
+        <% if user_signed_in?  %>
+          <a href="/"><%= image_tag('my-tools-logo.png', class: 'navbar-logo') %></a>
+        <% else %>
+          <%= image_tag('my-tools-logo.png', class: 'navbar-logo') %>
+        <% end %>
       </div>
 
       <div class="collapse navbar-collapse">
