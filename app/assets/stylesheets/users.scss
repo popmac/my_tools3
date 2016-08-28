@@ -4,11 +4,11 @@
 
 // user一覧のタイトル
 .users-list-title {
-  text-align: center;
-  color: white;
-  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 5px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
 // user一覧とsortメニューと間隔を空ける
@@ -34,10 +34,10 @@
 .user-profile-list {
   margin-top: 20px;
   p {
-    color: white;
-    font-size: 15px;
-    margin-right: 20px;
     float: left;
+    margin-right: 20px;
+    font-size: 15px;
+    color: white;
   }
 }
 
@@ -60,8 +60,8 @@
 
 // 以下は_user_dataで表示されるtoolのreview
 .user-data-card {
-  background-color: white;
   margin-bottom: 15px;
+  background-color: white;
 }
 
 .user-data-card-title {
@@ -86,7 +86,7 @@
 // users/_user_dataのreviewで表示される「comment」の表示と「commentの総数」
 .user-data-card-review-comment-number {
   float: left;
-  line-height: 35px;
   margin-right: 10px;
   font-size: 15px;
+  line-height: 35px;
 }

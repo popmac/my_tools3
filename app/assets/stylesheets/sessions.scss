@@ -1,10 +1,10 @@
 // sessions/newの背景の画像
 .sessions {
+  height: 100%;
   background: image-url("login-back-with-filter.jpg");
   background-size: cover;
-  height: 100%;
+  // sessions-new-filterをブラウザ画面一杯に収めるために
   // my_tools.scssのbodyで設定しているnavbar分の余白の分を打ち消している
-  // sessions-new-filterをブラウザ画面一杯に収めるため
   padding-top: 0;
 }
 
@@ -28,9 +28,9 @@
 
 // sessions/newのタイトル
 .sessions-new-title {
+  margin-bottom: 20px;
   color: white;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 // sessions/newのformボックス

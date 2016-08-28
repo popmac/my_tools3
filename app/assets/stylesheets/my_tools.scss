@@ -11,22 +11,22 @@ body {
 
 // 各コントローラーの背景の画像
 .users, .profiles, .photos, .tools, .reviews {
-    background: image-url("main-background-image.jpg");
-    background-size: cover;
-    height: 100%;
+  height: 100%;
+  background: image-url("main-background-image.jpg");
+  background-size: cover;
 }
 
 .display-container {
-    width: 550px;
-    margin: 30px auto;
-    padding: 20px 40px 40px;
-    text-align: center;
-    background: #fff;
-    border: 5px solid #ccc;
-    li {
-      text-align: left;
-      list-style: none;
-    }
+  width: 550px;
+  margin: 30px auto;
+  padding: 20px 40px 40px;
+  border: 5px solid #ccc;
+  text-align: center;
+  background: #fff;
+  li {
+    list-style: none;
+    text-align: left;
+  }
 }
 
 // user一覧で使用
@@ -36,30 +36,30 @@ body {
 }
 
 .form-box input {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    height: 40px;
-    border: 1px solid #ccc;
-    background: #fafafa;
-    transition: 0.2s ease-in-out;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background: #fafafa;
+  transition: 0.2s ease-in-out;
 }
 
 .form-box input:focus {
-    outline: 0;
-    background: #eee;
+  outline: 0;
+  background: #eee;
 }
 
 // form内にある送信ボタン
 .form-box input.btn {
-    margin-top:10px;
-    padding: 10px 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
 }
 
 // form内にあるリンクボタン
 .form-box a.btn {
     height: 40px;
-    margin-top:10px;
+    margin-top: 10px;
     padding: 10px 20px;
 }
 
