@@ -48,13 +48,13 @@
           </div>
           <% end %>
 
-          <%= link_to 'トップに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
+          <%= link_to 'トップページに戻る', users_path, class: "btn btn-info btn-lg btn-block active" %>
 
           <br>
 
           <h4>アカウントを削除する場合はこちら</h4>
 
-          <p><%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete, class: "btn btn-danger btn-lg btn-block active" %></p>
+          <p><%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "本当に削除してもよろしいですか?" }, method: :delete, class: "btn btn-danger btn-lg btn-block active" %></p>
 
         </div>
       </div>
