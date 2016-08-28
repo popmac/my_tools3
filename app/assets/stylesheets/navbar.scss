@@ -1,28 +1,27 @@
 // navbarのロゴ
 .navbar-logo {
-  height: 50px;
   width: 80px;
+  height: 50px;
 }
 
 // navbarのメニューのキャレット
 .dropdown .caret {
-  margin-left: 5px !important;
-  width: 7px;
   height: 9px;
+  margin-left: 5px !important;
 }
 
 // navbarのメニュー
 ul li .nav-menu {
+  border: 1px solid #008080;
   font-size: 15px;
   color: white !important;
   background-color: #008080;
-  border: 1px solid #008080;
 }
 
 // navbarのログアウトボタン
 ul li .nav-logout {
+  border: 1px solid #800000;
   font-size: 15px;
   color: white !important;
   background-color: #800000;
-  border: 1px solid #800000;
 }

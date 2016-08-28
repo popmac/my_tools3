@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// reviewの表示を1行だけにする
-// メソッド的に使用する
+// reviewの表示を1行だけにする, メソッド的に使用
 .short-review {
+  // 言語に関係なく表示範囲に合わせて改行
   word-break: break-all;
+  // はみ出た部分を表示させない
   overflow: hidden;
+  // ...の省略記号を表示
   text-overflow: ellipsis;
+  // ソース中の連続する半角スペース・タブ・改行を、1つの半角スペースとして表示
   white-space: nowrap;
 }
 
@@ -29,14 +32,14 @@
 
 // 以下からはrevews/showのレビューのカード
 .reviews-show-card {
-  background-color: white;
   margin-bottom: 5px;
   padding-bottom: 10px;
+  background-color: white;
 }
 
 .reviews-show-card-title {
-  background-color: #f5f5f5;
   border: 0.5px solid #BDBDBD;
+  background-color: #f5f5f5;
   h3 {
     margin-left: 15px;
     margin-bottom: 20px;
