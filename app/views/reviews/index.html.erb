@@ -1,8 +1,9 @@
 <div class="container reviews-index-container">
   <div class="row">
     <div class="col-md-12">
-      <h2><%= current_user.profile.nickname %>さんが登録したアプリとレビュー <%= link_to 'サイトに登録されたアプリ一覧', tools_path, class: 'btn btn-info btn-lg active' %></h2>
-      <%= link_to '新しいアプリとレビューを登録', new_tool_path, class: 'btn btn-info btn-lg active' %>
+      <h2><%= current_user.profile.nickname %>さんが投稿したアプリのレビュー</h2>
+      <%= link_to '新しいレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+      <%= link_to 'サイトに登録されたアプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
     </div>
   </div>
   <div class="row">
@@ -14,6 +15,7 @@
         </div>
         <div class="panel-body">
           <p class="short-review"><%= review.review %></p>
+          <p><%= link_to '詳細を見る', review_path(review) %></p>
           <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
           <p>コメント:<%= review.comments.count %></p>
         </div>

@@ -4,7 +4,7 @@
       <div class="display-container">
         <div class="form-box">
 
-          <h2><%= @tool.name %>のレビューを投稿</h2>
+          <h2><%= @tool.name %> のレビューを投稿</h2>
 
           <%= form_for @review do |f| %>
           <div class="field">
@@ -13,11 +13,11 @@
             <%= hidden_field_tag(:tool_id, @tool.id) %>
           </div>
           <div class="actions">
-            <%= f.submit class: 'btn btn-info btn-lg btn-block active'%>
+            <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active'%>
           </div>
           <% end %>
 
-          <%= link_to '戻る', tool_path(@tool), class: 'btn btn-info btn-lg btn-block active' %>
+          <%= link_to "#{@tool.name} のレビューの一覧に戻る", tool_path(@tool), class: 'btn btn-info btn-lg btn-block active' %>
 
         </div>
       </div>

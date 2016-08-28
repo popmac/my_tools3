@@ -37,11 +37,11 @@
               <a href="#" class="btn btn-primary dropdown-toggle nav-menu" data-toggle="dropdown"><%= current_user.profile.nickname %>さんのMENU<b class="caret"></b></a>
               <!-- メニューの中身 -->
               <ul class="dropdown-menu user-dropdown-menu">
-                <li><%= link_to profile_path(current_user.profile.id) do %><span class="glyphicon glyphicon-user glyphicon-user-menu" aria-hidden="true"></span>Profile<% end %></li>
+                <li><%= link_to reviews_path do %><span class="glyphicon glyphicon-book glyphicon-user-menu" aria-hidden="true"></span>Review<% end %></li>
                 <li class="divider"></li>
                 <li><%= link_to user_photos_path(current_user) do %><span class="glyphicon glyphicon-camera glyphicon-user-menu" aria-hidden="true"></span>Photo<% end %></li>
                 <li class="divider"></li>
-                <li><%= link_to reviews_path do %><span class="glyphicon glyphicon-book glyphicon-user-menu" aria-hidden="true"></span>Review<% end %></li>
+                <li><%= link_to profile_path(current_user.profile.id) do %><span class="glyphicon glyphicon-user glyphicon-user-menu" aria-hidden="true"></span>Profile<% end %></li>
                 <li class="divider"></li>
                 <li><%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %><span class="glyphicon glyphicon-log-out glyphicon-user-menu" aria-hidden="true"></span>Logout<% end %></li>
               </ul>
