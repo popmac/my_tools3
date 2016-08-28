@@ -9,8 +9,8 @@ body {
   clear: both;
 }
 
-// 各コントローラーの背景の画像
-.users, .profiles, .photos, .tools, .reviews {
+// 各コントローラーやアクションの背景の画像
+.users, .profiles, .photos, .tools, .reviews, .registrations.edit {
   height: 100%;
   background: image-url("main-background-image.jpg");
   background-size: cover;
