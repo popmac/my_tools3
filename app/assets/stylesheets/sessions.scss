@@ -3,9 +3,6 @@
   height: 100%;
   background: image-url("login-back-with-filter.jpg");
   background-size: cover;
-  // sessions-new-filterをブラウザ画面一杯に収めるために
-  // my_tools.scssのbodyで設定しているnavbar分の余白の分を打ち消している
-  padding-top: 0;
 }
 
 .sessions-new-display-container {
