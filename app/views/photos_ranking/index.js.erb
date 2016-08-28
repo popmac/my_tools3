@@ -1,4 +1,5 @@
-$("#sort-menu").text("投稿枚数順");
+$("#sort-menu").text("スクリーンショット投稿数").append("<span></span>");
+$("#sort-menu span").addClass("caret");
 $("#user_list").html("<%= j(render partial: "users/user_list", locals: { users: @users }) %>");
 $(".sort-dropdown-menu").hide();
 $(".list-group-item" + ".active").removeClass("active");

@@ -12,11 +12,13 @@
          Sort Menu <span class="caret"></span>
         </button>
         <ul class="dropdown-menu sort-dropdown-menu">
-          <li><%= link_to '登録順', root_path, :remote => true %></li>
+          <li><%= link_to 'ユーザー登録 (古い順)', root_path, :remote => true %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to 'レビュー投稿数順', users_reviews_number_ranking_index_path, :remote => true %></li>
+          <li><%= link_to 'レビュー投稿数', users_reviews_number_ranking_index_path, :remote => true %></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to 'スクリーンショット投稿枚数順', photos_ranking_index_path, :remote => true %></li>
+          <li><%= link_to 'スクリーンショット投稿数', photos_ranking_index_path, :remote => true %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to 'いいね獲得数', users_reviews_sum_likes_count_ranking_index_path, :remote => true %></li>
         </ul>
       </div>
       <!-- user一覧 -->
