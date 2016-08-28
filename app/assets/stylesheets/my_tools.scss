@@ -10,7 +10,7 @@ body {
 }
 
 // 各コントローラーやアクションの背景の画像
-.users, .profiles, .photos, .tools, .reviews, .registrations.edit {
+.users, .profiles, .photos, .tools, .reviews, .registrations.edit, .registrations.update {
   height: 100%;
   background: image-url("main-background-image.jpg");
   background-size: cover;
