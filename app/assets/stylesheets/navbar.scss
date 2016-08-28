@@ -1,7 +1,7 @@
 // navbarのロゴ
 .navbar-logo {
   width: 80px;
-  height: 50px;
+  height: 100%;
 }
 
 // navbarのメニューのキャレット
@@ -10,7 +10,7 @@
   margin-left: 5px !important;
 }
 
-// navbarのメニュー
+// navbarのメニューボタン
 ul li .nav-menu {
   border: 1px solid #008080;
   font-size: 15px;
@@ -18,10 +18,16 @@ ul li .nav-menu {
   background-color: #008080;
 }
 
-// navbarのログアウトボタン
-ul li .nav-logout {
-  border: 1px solid #800000;
+// user自身のmenuのdropdownボタンを押した時に表示されるメニュー
+.user-dropdown-menu {
+  width: 100%;
+  li {
   font-size: 15px;
-  color: white !important;
-  background-color: #800000;
+  text-align: center;
+  }
+}
+
+// グリフィコンとメニューのタイトルの距離を取るために設定
+.glyphicon-user-menu {
+  margin-right: 5px;
 }
