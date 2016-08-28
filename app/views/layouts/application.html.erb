@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <!-- コントローラーごとにクラス名が変わる -->
-<body class='<%= "#{controller.controller_name}" %>'>
+<body class='<%= "#{controller.controller_name}" %> <%= "#{action_name}" %>'>
 
   <!-- ナビゲーションバー -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
