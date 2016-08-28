@@ -1,8 +1,9 @@
 <div class="container tools-show-container">
   <div class="row">
     <div class="col-md-12">
-      <h2><%= @tool.name %>のレビューの一覧 <%= link_to 'アプリ一覧へ', tools_path, class: 'btn btn-info btn-lg active' %></h2>
+      <h2><%= @tool.name %> のレビューの一覧</h2>
       <%= link_to 'このアプリのレビューを投稿する', new_tool_review_path(@tool), class: 'btn btn-info btn-lg active' %>
+      <%= link_to 'サイトに登録されたアプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
     </div>
   </div>
   <div class="row">
