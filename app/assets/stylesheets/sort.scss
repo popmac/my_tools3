@@ -1,10 +1,18 @@
+// sortメニューのボタンの幅をuser一覧と同じ幅にするために親の箱を作る
+.users-list-btn-group {
+  width: 100%;
+}
+
 // sortメニューのボタン
 .sort-dropdown-button {
-  width: 262.5px;
+  width: 100%;
 }
 
 // sortメニューの中身
-.sort-dropdown-menu a {
-  width: 262.5px;
+.sort-dropdown-menu {
+  width: 100%;
+  a {
+  width: 100%;
   text-align: center;
+  }
 }
