@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @reviews = current_user.reviews
     if @reviews.blank?
       redirect_to controller: :tools, action: :new
+      flash[:notice] = "レビューを投稿してください"
     end
   end
 
