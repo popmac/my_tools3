@@ -5,6 +5,19 @@
   background-size: cover;
 }
 
+// sessions/newのスマホサイズの背景
+@media all and (max-width: 640px) {
+  .sessions.new {
+    width: 70%;
+    margin: auto;
+    background: image-url("sessions_new-sp-back.jpg");
+    background-size: cover;
+    .navbar {
+    display: none;
+    }
+  }
+}
+
 .sessions-new-display-container {
   margin-top: 80px;
   a img {
@@ -18,6 +31,12 @@
     display: block;
     margin: 10px auto;
     line-height: 1;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .sessions-new-display-container {
+    margin-top: 100px;
   }
 }
 
@@ -35,6 +54,13 @@
 
 .share-buttons-container {
   margin-top: 50px;
+}
+
+@media all and (max-width: 640px) {
+  .share-buttons-container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
 }
 
 // Twitterのシェアボタン
