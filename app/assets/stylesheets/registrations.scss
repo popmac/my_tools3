@@ -1,3 +1,10 @@
+// resigtrations/newでスマホサイズの場合、ナビゲーションバーのハンバーガーを消す
+@media all and (max-width: 640px) {
+  .registrations.new .navbar-toggle {
+    display: none;
+  }
+}
+
 // registrations/newのページ上部の画像
 .jumbotron-registrations-new-main {
   height: auto;
@@ -10,6 +17,15 @@
   margin: 250px auto 100px;
   color: white;
   text-align: center;
+}
+
+@media all and (max-width: 640px) {
+  .jumbotron-registrations-new-main-explain {
+    margin: 50px auto 50px;
+    p {
+      font-size: 15px !important;
+    }
+  }
 }
 
 // 以下はregistrations/newのフォーム
@@ -49,6 +65,12 @@
   }
 }
 
+@media all and (max-width: 640px) {
+  .registrations-new-form {
+    margin-bottom: 50px;
+  }
+}
+
 .registrations-new-heading-1 {
   text-align: center;
   background-color: rgb(55,58,60);
@@ -71,6 +93,12 @@
   margin: 100px auto;
   font-size: 20px;
   text-align: center;
+}
+
+@media all and (max-width: 640px) {
+  .registrations-new-sentences-1 {
+    margin: 50px auto;
+  }
 }
 
 .main-display-sample {
@@ -102,6 +130,17 @@
     width: 360px;
     height: 225px;
     margin: 0 auto;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .reviews-explain {
+    margin-top: 50px;
+  }
+  .review-comments-explain {
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
 }
 
