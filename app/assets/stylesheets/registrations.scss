@@ -102,10 +102,40 @@
   }
 }
 
+.registrations-new-heading-3 {
+  text-align: center;
+  background-color: #31708f;
+  h1 {
+    margin: 30px auto;
+    color: white;
+  }
+}
+
+// registrations/newのsnsのリンクのセクション
+.registrations-new-sns-links {
+  padding-bottom: 20px;
+  background-color: #31708f;
+}
+
+// registrations/newのsnsのアイコンを中央揃えにする
+.registrations-new-sns-link {
+  text-align: center;
+}
+
+// registrations/newのsnsのアイコンの大きさ
+.fa-large {
+  font-size: 150px !important;
+}
+
+// registrations/newのsnsのアイコンの色
+.fa-white {
+  color: white;
+}
+
 // registrations/newのfooter
 .registrations.new footer {
   padding-top: 30px;
-  background-color: rgb(26,57,89);
+  background-color: #31708f;
 }
 
 // registrations/editのタイトル
