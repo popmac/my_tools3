@@ -6,18 +6,39 @@
   h2 {
     color: white;
   }
-  h3 {
-    color: white;
+  .modal-title {
+    color: black;
   }
 }
 
+// 「登録日」の表示部分
+.photos-index-created-at {
+  float: left;
+  margin-top: 15px;
+  font-size: 24px;
+  color: white;
+}
+
+.photos-index-delete-btn {
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
 .user-photo {
+  margin-top: 10px;
   // photos/indexのスクリーンショットにマウスが当たった時
   cursor: pointer;
   img {
-  // photos/indexで表示されるスクリーンショットの幅
-  width: 100%;
+    display: block;
+    max-width: 100%;
+    height: 225px;
+    margin: 0 auto;
   }
+}
+
+.photos-index-modal {
+  margin: 0 auto;
 }
 
 // photos/newの「ファイルを選択」ボタン

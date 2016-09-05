@@ -8,14 +8,14 @@
   <div class="row">
     <% @photos.each do |photo| %>
     <div class="col-md-4">
-      <h3>登録日:<%= l photo.created_at, format: :short %></h3>
-      <div>
-        <a data-toggle="modal" data-target=".bs-example-modal-lg" class="user-photo">
+      <div class="clearfix">
+        <p class="photos-index-created-at">登録日:<%= l photo.created_at, format: :short %></p>
+        <%= link_to '削除する', "/users/#{current_user.id}/photos/#{photo.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-primary active photos-index-delete-btn' %>
+      </div>
+      <div class="user-photo">
+        <a data-toggle="modal" data-target=".bs-example-modal-lg">
           <img src="<%= photo.image %>">
         </a>
-      </div>
-      <div>
-        <%= link_to '削除する', "/users/#{current_user.id}/photos/#{photo.id}", method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-primary btn-lg active' %>
       </div>
     </div>
     <% end %>
@@ -24,16 +24,16 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <% @photos.each_with_index do |photo, i| %>
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.count %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に登録</h2>
-          </div>
-          <div class="modal-body">
-            <img src="<%= photo.image %>" class="img-responsive">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
-          </div>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= @photos.count %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に登録</h2>
+            </div>
+            <div class="modal-body">
+              <img src="<%= photo.image %>" class="img-responsive photos-index-modal">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
+            </div>
           <% end %>
         </div>
       </div>
