@@ -1,17 +1,34 @@
 <div class="container">
+
   <div class="row">
     <div class="col-md-12">
       <h2 class="tools-heading">サイトに登録されたアプリの一覧</h2>
-      <%= link_to '登録されていないアプリのレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
     </div>
   </div>
+
   <div class="row">
-    <% @tools.each do |tool| %>
-    <div class="col-md-4">
-      <div class="panel panel-default tool-panel">
-        <a href="/tools/<%= tool.id %>"><h2><%= tool.name %> (<%= tool.reviews.count %>)</h2></a>
+    <div class="col-md-12">
+
+      <div class="tools-index-operate-section">
+
+        <%= form_tag search_tools_path, class: "tools-index-search-form", method: :get, remote: true do %>
+          <%= text_field_tag :tool, "",  id: "tool_name", name: "keyword", placeholder: "検索：アプリ名を入力してください"%>
+        <% end %>
+
+        <%= link_to '登録されていないアプリのレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+
       </div>
+
+      <div id="tool_list">
+        <% @tools.each do |tool| %>
+          <div class="col-md-4">
+            <div class="panel panel-default tool-panel">
+              <a href="/tools/<%= tool.id %>"><h2><%= tool.name %> (<%= tool.reviews.count %>)</h2></a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
     </div>
-    <% end %>
   </div>
 </div>
