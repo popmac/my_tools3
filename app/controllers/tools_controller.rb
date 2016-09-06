@@ -31,6 +31,10 @@ class ToolsController < ApplicationController
     @reviews = @tool.reviews
   end
 
+  def search
+    @tools = Tool.where('name LIKE(?)', "%#{params[:keyword]}%")
+  end
+
   private
   def review_params
     params.require(:tool).require(:review).permit(:review).merge(user_id: current_user.id, tool_id: @tool.id)
