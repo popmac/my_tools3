@@ -33,7 +33,7 @@
             <%= f.label :introduce %>
             <%= f.text_area :introduce, rows: "8", cols: "50", placeholder: "自己紹介やよく使うアプリを書いてください" %>
             <!-- 送信ボタン -->
-            <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "プロフィールを変更してもよろしいですか？"} %>
+            <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "プロフィールを変更してもよろしいですか？", disable_with: "送信中..."} %>
           <% end %>
           <%= link_to 'プロフィールページに戻る', profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
           <%= link_to 'ユーザーネームやメールアドレスの変更はこちら', edit_user_registration_path, class: 'btn btn-success btn-lg btn-block active' %>

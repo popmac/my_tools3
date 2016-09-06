@@ -27,7 +27,7 @@
             <%= f.password_field :password, placeholder: '6文字以上', autocomplete: "off", required: true %>
             <%= f.label 'Password (confirmation)' %>
             <%= f.password_field :password_confirmation, placeholder: "確認のためもう一度入力してください", autocomplete: "off", required: true %>
-            <%= f.submit "会員登録する", class: "btn btn-info btn-lg active" %>
+            <%= f.submit "会員登録する", class: "btn btn-info btn-lg active", data: { disable_with: "送信中..." }  %>
             <%= link_to 'ログインはこちら', new_user_session_path, class: "btn btn-info btn-lg active" %>
             <% end %>
           </div>

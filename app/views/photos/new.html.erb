@@ -72,7 +72,7 @@
           });
           </script>
 
-          <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active' %>
+          <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active', data: { disable_with: "送信中..." }  %>
           <% end %>
           <%= link_to 'スクリーンショット一覧に戻る', user_photos_path(@user), class: 'btn btn-info btn-lg btn-block active' %>
         </div>
