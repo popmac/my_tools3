@@ -1,5 +1,5 @@
 $("#sort-menu").text("ユーザー登録 (古い順)").append("<span></span>");
 $("#sort-menu span").addClass("caret");
-$("#user_list").html("<%= j(render partial: "users/user_list", locals: { users: @users }) %>");
+$("#user_list").html("<%= j(render partial: "users_created_at_ascend/user_list_created_at_ascend", locals: { users: @users }) %>");
 $(".sort-dropdown-menu").hide();
 $(".list-group-item" + ".active").removeClass("active");
