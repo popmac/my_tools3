@@ -12,7 +12,7 @@
          Sort Menu <span class="caret"></span>
         </button>
         <ul class="dropdown-menu sort-dropdown-menu">
-          <li><%= link_to 'ユーザー登録 (古い順)', root_path, :remote => true %></li>
+          <li><%= link_to 'ユーザー登録 (古い順)', users_created_at_ascend_index_path, :remote => true %></li>
           <li role="separator" class="divider"></li>
           <li><%= link_to 'レビュー投稿数', users_reviews_number_ranking_index_path, :remote => true %></li>
           <li role="separator" class="divider"></li>
