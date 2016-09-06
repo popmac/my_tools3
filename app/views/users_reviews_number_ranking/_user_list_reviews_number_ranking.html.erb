@@ -1,0 +1,44 @@
+<div class="users-scroll-bar">
+  <div class="list-group users-list">
+    <% users.each do |user| %>
+      <!-- 背景が青くなる -->
+      <% if user.id == current_user.id %>
+        <!-- avatarが登録されている場合 -->
+        <% if user.profile.avatar.present? %>
+          <%= link_to "/users/#{user.id}", class: "list-group-item active", :remote => true do %>
+          <%= image_tag user.profile.avatar %>
+          <%="#{user.profile.nickname}さん (#{user.reviews.count})" %>
+          <% end %>
+        <!-- avatarが登録されてない場合 -->
+        <% else %>
+          <%= link_to "/users/#{user.id}", class: "list-group-item active", :remote => true do %>
+          <%= image_tag('no_image.png') %>
+          <%="#{user.profile.nickname}さん (#{user.reviews.count})" %>
+          <% end %>
+        <% end %>
+      <!-- 背景が白くなる -->
+      <% else %>
+        <!-- avatarが登録されている場合 -->
+        <% if user.profile.avatar.present? %>
+          <%= link_to "/users/#{user.id}", class: "list-group-item", :remote => true do %>
+          <%= image_tag user.profile.avatar %>
+          <%="#{user.profile.nickname}さん (#{user.reviews.count})" %>
+          <% end %>
+        <!-- avatarが登録されてない場合 -->
+        <% else %>
+          <%= link_to "/users/#{user.id}", class: "list-group-item", :remote => true do %>
+          <%= image_tag('no_image.png') %>
+          <%="#{user.profile.nickname}さん (#{user.reviews.count})" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(".list-group-item").on("click", function() {
+    $(".list-group-item,.active").removeClass("active");
+    $(this).addClass("active");
+  });
+</script>
