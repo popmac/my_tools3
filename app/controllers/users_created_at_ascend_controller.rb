@@ -1,0 +1,2 @@
+class UsersCreatedAtAscendController < ApplicationController
+end
