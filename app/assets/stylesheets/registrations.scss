@@ -169,6 +169,12 @@
   font-size: 150px !important;
 }
 
+@media all and (max-width: 640px) {
+  .fa-large {
+    font-size: 100px !important;
+  }
+}
+
 // registrations/newのsnsのアイコンの色
 .fa-white {
   color: white;
