@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new]
     collection do
       get 'autocomplete_tool_name'
+      get 'search'
     end
   end
   resources :reviews, except: [:new] do
