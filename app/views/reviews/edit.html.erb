@@ -11,10 +11,10 @@
             <%= f.text_area :review, rows: "8", cols: "50" %><br>
           </div>
           <div class="actions">
-            <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "変更内容を送信してもよろしいですか？"} %>
+            <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "変更内容を送信してもよろしいですか？", disable_with: "送信中..."} %>
           </div>
           <%= link_to '自分のレビューの一覧に戻る', reviews_path, class: 'btn btn-info btn-lg btn-block active' %>
-          <%= link_to 'レビューを削除する', "/reviews/#{@review.id}", method: :delete, class: 'btn btn-danger btn-lg btn-block active', data: {confirm: "レビューを削除してもよろしいですか？"}  %>
+          <%= link_to 'レビューを削除する', "/reviews/#{@review.id}", method: :delete, class: 'btn btn-danger btn-lg btn-block active', data: {confirm: "レビューを削除してもよろしいですか？", disable_with: "送信中..."}  %>
           <% end %>
 
         </div>
