@@ -61,7 +61,7 @@
       </div>
       <div class="col-md-6 col-xs-12 main-display-sample">
         <a data-toggle="modal" data-target=".bs-example-modal-lg">
-          <%= image_tag('main-display-sample.png', class: 'img-responsive') %>
+          <%= image_tag('main-display-sample.png', class: 'img-responsive', id: 'registrations-new-img-1') %>
         </a>
       </div>
     </div>
@@ -85,21 +85,21 @@
     <div class="row">
       <div class="col-md-4 col-xs-12 screenshot-explain">
         <a data-toggle="modal" data-target=".bs-example-modal-lg">
-          <%= image_tag('screenshot-sample.png', class: 'img-responsive') %>
+          <%= image_tag('screenshot-sample.png', class: 'img-responsive', id: 'registrations-new-img-2') %>
         </a>
         <h3>アプリの一覧が見やすい</h3>
         <p>Macの機能にある「Launchpad」のスクリーンショットの画像を見ることができるので、ユーザーがどんなアプリを使っているか見やすい</p>
       </div>
       <div class="col-md-4 col-xs-12 reviews-explain">
         <a data-toggle="modal" data-target=".bs-example-modal-lg">
-          <%= image_tag('reviews-sample.png', class: 'img-responsive') %>
+          <%= image_tag('reviews-sample.png', class: 'img-responsive', id: 'registrations-new-img-3') %>
         </a>
         <h3>好きなアプリをレビュー</h3>
         <p>自分が特に好きなアプリ、他の人は使ってなさそうだけど実は便利なアプリ、自分だけのオリジナルな設定、などをレビューとして投稿できます</p>
       </div>
       <div class="col-md-4 col-xs-12 review-comments-explain">
         <a data-toggle="modal" data-target=".bs-example-modal-lg">
-          <%= image_tag('review-comments-sample.png', class: 'img-responsive') %>
+          <%= image_tag('review-comments-sample.png', class: 'img-responsive', id: 'registrations-new-img-4') %>
         </a>
         <h3>気に入ったレビューにコメント</h3>
         <p>「このレビューが役に立った」「もっと設定や内容を知りたい」と思ったレビューにコメントをすることができます </p>
@@ -124,28 +124,28 @@
           <!-- スライド -->
           <div class="carousel-inner" role="listbox">
             <!-- 1枚目 -->
-            <div class="item active">
+            <div class="registrations-new-modal-slide-1 item active">
               <%= image_tag('main-display-sample.png', class: 'img-responsive registrations-new-modal-img') %>
               <div class="registrations-new-modal-slide-heading">
                 <h2>どんなアプリを使っているか、すぐにわかる</h2>
               </div>
             </div>
             <!-- 2枚目 -->
-            <div class="item">
+            <div class="registrations-new-modal-slide-2 item">
               <%= image_tag('screenshot-sample.png', class: 'img-responsive registrations-new-modal-img' ) %>
               <div class="registrations-new-modal-slide-heading">
                 <h2>アプリの一覧が見やすい</h2>
               </div>
             </div>
             <!-- 3枚目 -->
-            <div class="item">
+            <div class="registrations-new-modal-slide-3 item">
               <%= image_tag('reviews-sample.png', class: 'img-responsive registrations-new-modal-img') %>
               <div class="registrations-new-modal-slide-heading">
                 <h2>好きなアプリをレビュー</h2>
               </div>
             </div>
             <!-- 4枚目 -->
-            <div class="item">
+            <div class="registrations-new-modal-slide-4 item">
               <%= image_tag('review-comments-sample.png', class: 'img-responsive registrations-new-modal-img') %>
               <div class="registrations-new-modal-slide-heading">
                 <h2>気に入ったレビューにコメント</h2>
