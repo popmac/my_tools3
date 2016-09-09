@@ -28,7 +28,7 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
-    @reviews = @tool.reviews
+    @reviews = @tool.reviews.includes({user: [:profile]})
   end
 
   def search
