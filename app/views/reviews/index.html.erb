@@ -2,8 +2,10 @@
   <div class="row">
     <div class="col-md-12">
       <h2><%= current_user.profile.nickname %>さんが投稿したアプリのレビュー</h2>
-      <%= link_to '新しいレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
-      <%= link_to 'サイトに登録されたアプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
+      <div class="reviews-index-operate-section">
+        <%= link_to '新しいレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+        <%= link_to 'サイトに登録されたアプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
+      </div>
     </div>
   </div>
   <div class="row">
