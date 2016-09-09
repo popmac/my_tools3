@@ -29,7 +29,7 @@
 
       <!-- コメントの表示 -->
       <div id="comments">
-        <%= render partial: 'comments/comment', collection: @review.comments %>
+        <%= render partial: 'comments/comment', locals: { comments: @posted_comments } %>
       </div>
       <div class="review-comment">
         <p>コメントを入力してください</p>
