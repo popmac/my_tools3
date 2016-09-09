@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @posted_comments =  @review.comments.includes({user: [:profile]})
     @comment = Comment.new
   end
 
