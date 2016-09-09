@@ -1,12 +1,14 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <a href="/users/<%= comment.user_id %>"><%= comment.user.profile.nickname %>さん</a>のコメント
-    <time><%= time_ago_in_words comment.created_at %>前</time>
-    <% if comment.user.id == current_user.id %>
-    <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, data: { confirm: "本当に削除しますか?" }, remote: true, class: "btn btn-primary active" %>
-    <% end %>
+<% comments.each do |comment| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="/users/<%= comment.user_id %>"><%= comment.user.profile.nickname %>さん</a>のコメント
+      <time><%= time_ago_in_words comment.created_at %>前</time>
+      <% if comment.user.id == current_user.id %>
+      <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, data: { confirm: "本当に削除しますか?" }, remote: true, class: "btn btn-primary active" %>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <p><%= comment.comment %></p>
+    </div>
   </div>
-  <div class="panel-body">
-    <p><%= comment.comment %></p>
-  </div>
-</div>
+<% end %>
