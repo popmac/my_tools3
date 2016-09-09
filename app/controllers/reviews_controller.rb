@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = current_user.reviews
+    @reviews = current_user.reviews.includes(:tool)
     if @reviews.blank?
       redirect_to controller: :tools, action: :new
       flash[:notice] = "レビューを投稿してください"
