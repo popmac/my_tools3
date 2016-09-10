@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.where(name: params[:tool][:name]).first_or_initialize
-    if @tool.name.present? && params[:tool][:review][:review].present?
+    if @tool.name.present? && params[:tool][:review][:review].present? && params[:tool][:review][:rate].present?
       @tool.save
       @review = Review.create(review_params)
       redirect_to root_path
@@ -22,7 +22,7 @@ class ToolsController < ApplicationController
       return
     else
       render 'new'
-      flash[:notice] = "アプリとレビューを両方とも入力してください"
+      flash[:notice] = "すべての情報を入力してください"
     end
   end
 
@@ -37,7 +37,7 @@ class ToolsController < ApplicationController
 
   private
   def review_params
-    params.require(:tool).require(:review).permit(:review).merge(user_id: current_user.id, tool_id: @tool.id)
+    params.require(:tool).require(:review).permit(:review, :rate).merge(user_id: current_user.id, tool_id: @tool.id)
   end
 
 end
