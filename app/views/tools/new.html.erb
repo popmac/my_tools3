@@ -13,8 +13,10 @@
             <%= f.autocomplete_field :name, autocomplete_tool_name_tools_path, autofocus: true %>
           </div>
           <div class="field">
-            <%= f.label 'レビュー' %>
             <%= f.fields_for :review do |review_form| %>
+            <%= f.label 'オススメ度 (1~100)' %>
+            <%= review_form.number_field :rate, placeholder: '半角数字で入力してください', value: "", max: 100, min: 1, html: { style: 'text-align: right' } %>
+            <%= f.label 'レビュー' %>
             <%= review_form.text_area :review, rows: "8", cols: "50", placeholder: "アプリの使い方や設定を書いてください" %>
             <% end %>
           </div>

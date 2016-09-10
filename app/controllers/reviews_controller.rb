@@ -48,11 +48,11 @@ class ReviewsController < ApplicationController
 
   private
   def create_params
-    params.require(:review).permit(:review).merge(user_id: current_user.id, tool_id: params[:tool_id])
+    params.require(:review).permit(:review, :rate).merge(user_id: current_user.id, tool_id: params[:tool_id])
   end
 
   def update_params
-    params.require(:review).permit(:review).merge(user_id: current_user.id, tool_id: @tool_id)
+    params.require(:review).permit(:review, :rate).merge(user_id: current_user.id, tool_id: @tool_id)
   end
 
 end
