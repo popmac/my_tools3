@@ -8,7 +8,10 @@
 
           <%= form_for @review do |f| %>
           <div class="field">
-            <%= f.text_area :review, rows: "8", cols: "50" %><br>
+          <%= f.label 'オススメ度 (1~100)' %>
+          <%= f.number_field :rate, placeholder: '半角数字で入力してください', value: "#{@review.rate}", max: 100, min: 1, html: { style: 'text-align: right' } %>
+          <%= f.label 'レビュー' %>
+          <%= f.text_area :review, rows: "8", cols: "50" %><br>
           </div>
           <div class="actions">
             <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "変更内容を送信してもよろしいですか？", disable_with: "送信中..."} %>
