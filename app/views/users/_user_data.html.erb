@@ -141,6 +141,9 @@
                   <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
                 </div>
                 <p class="user-data-card-review-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
+                <div class="user-data-rating-star-container">
+                  <p class="rating-star"><span class="rating-star-inner"><%= review.rate %></span></p>
+                </div>
               </div>
             </div>
           </div>
