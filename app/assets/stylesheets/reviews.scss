@@ -15,6 +15,7 @@
   white-space: nowrap;
 }
 
+// 以下からはrevews/index
 .reviews-index-container {
   h2 {
     color: white;
@@ -65,18 +66,13 @@
 
 .reviews-index-card-comment-number {
   float: left;
+  margin-right: 10px;
   margin-bottom: 0;
   font-size: 15px;
   line-height: 35px;
 }
 
-// reviews/editのテキストエリア
-// form_forにより生成されるid
-#review_review {
-  width: 100%;
-}
-
-// 以下からはrevews/showのレビューのカード
+// 以下からはrevews/show
 .reviews-show-card {
   margin-top: 30px;
   margin-bottom: 5px;
@@ -93,16 +89,31 @@
   }
 }
 
-.reviews-show-card-content p {
-  margin: 10px 0 10px 10px;
+.reviews-show-review {
+  margin: 20px 10px 20px 10px;
 }
 
 .reviews-show-card-content #review-detail-like-button {
   float: left;
+  margin-right: 10px;
   margin-left: 10px;
+}
+
+.reviews-show-card-comment-number {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 35px;
 }
 
 .reviews-show-reviews-edit-link {
   float: right;
   margin-right: 10px;
+}
+
+// reviews/editのテキストエリア
+// form_forにより生成されるid
+#review_review {
+  width: 100%;
 }

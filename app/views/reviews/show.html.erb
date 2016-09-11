@@ -8,11 +8,15 @@
         <h3><a href="/users/<%= @review.user_id %>"><%= @review.user.profile.nickname %>さん</a>の<a href="/tools/<%= @review.tool.id %>"><%= @review.tool.name %></a>のレビューの詳細</h3>
         </div>
         <div class="reviews-show-card-content">
-          <p><%= @review.review %></p>
+          <p class="reviews-show-review"><%= @review.review %></p>
           <div class="clearfix">
             <!-- likeボタン -->
             <div id="review-detail-like-button">
               <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
+            </div>
+            <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= @review.comments.count %></b></p>
+            <div class="reviews-show-rating-star-container">
+              <p class="rating-star"><span class="rating-star-inner"><%= @review.rate %></span></p>
             </div>
             <% if @review.user.id == current_user.id %>
              <%= link_to '編集・削除', edit_review_path(@review), class: 'btn btn-primary active reviews-show-reviews-edit-link' %>
