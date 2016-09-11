@@ -137,7 +137,7 @@
               <div class="clearfix">
                 <%= link_to '詳細を見る', review_path(review), class: "btn btn-warning user-data-card-review-link" %>
                 <!-- likeボタン -->
-                <div class="review-like-button" id="user-reviews-like-button<%= review.id %>">
+                <div class="user-data-review-like-button" id="user-reviews-like-button<%= review.id %>">
                   <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
                 </div>
                 <p class="user-data-card-review-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>

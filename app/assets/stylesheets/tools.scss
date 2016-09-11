@@ -58,3 +58,32 @@
     margin-right: 20px;
   }
 }
+
+.tools-show-card {
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.tools-show-card-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  border: 0.5px solid #BDBDBD;
+  background-color: #f5f5f5;
+}
+
+.tools-show-card-content {
+  padding: 15px 15px 10px 15px;
+}
+
+.tools-show-card-reviews-show-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.tools-show-card-comment-number {
+  float: left;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 35px;
+}
