@@ -15,7 +15,7 @@
               <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
             </div>
             <% if @review.user.id == current_user.id %>
-             <%= link_to '編集する', edit_review_path(@review), class: 'btn btn-primary reviews-show-reviews-edit-link' %>
+             <%= link_to '編集・削除', edit_review_path(@review), class: 'btn btn-primary active reviews-show-reviews-edit-link' %>
             <% end %>
           </div>
         </div>
