@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // users/_user_dataのreviewで表示されるlikeボタン
-.review-like-button {
+.user-data-review-like-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.tools-show-review-like-button {
   float: left;
   margin-right: 10px;
 }
