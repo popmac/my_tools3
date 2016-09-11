@@ -29,6 +29,47 @@
   }
 }
 
+.reviews-index-card {
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.reviews-index-card-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  border: 0.5px solid #BDBDBD;
+  background-color: #f5f5f5;
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.reviews-index-card-content {
+  padding: 15px 15px 10px 15px;
+  .short-review {
+    margin-bottom: 15px;
+  }
+}
+
+.reviews-index-card-reviews-show-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.reviews-index-card-reviews-edit-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.reviews-index-card-comment-number {
+  float: left;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 35px;
+}
+
 // reviews/editのテキストエリア
 // form_forにより生成されるid
 #review_review {

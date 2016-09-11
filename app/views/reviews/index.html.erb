@@ -10,19 +10,21 @@
   </div>
   <div class="row">
     <% @reviews.each do |review| %>
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="/tools/<%= review.tool_id %>"><h3><%= review.tool.name %></h3></a>
-        </div>
-        <div class="panel-body">
-          <p class="short-review"><%= review.review %></p>
-          <p><%= link_to '詳細を見る', review_path(review) %></p>
-          <p><%= link_to 'レビューを編集する', edit_review_path(review) %></p>
-          <p>コメント:<%= review.comments.count %></p>
+      <div class="col-md-6">
+        <div class="reviews-index-card">
+            <div class="reviews-index-card-title">
+              <a href="/tools/<%= review.tool_id %>"><h3><%= review.tool.name %></h3></a>
+            </div>
+            <div class="reviews-index-card-content">
+              <p class="short-review"><%= review.review %></p>
+              <div class="clearfix">
+                <%= link_to '詳細', review_path(review), class: 'btn btn-warning reviews-index-card-reviews-show-link' %>
+                <%= link_to '編集', edit_review_path(review), class: 'btn btn-primary reviews-index-card-reviews-edit-link' %>
+                <p class="reviews-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
+              </div>
+            </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
