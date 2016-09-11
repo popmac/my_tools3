@@ -9,9 +9,14 @@
         </div>
         <div class="reviews-show-card-content">
           <p><%= @review.review %></p>
-          <!-- likeボタン -->
-          <div id="review-detail-like-button">
-            <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
+          <div class="clearfix">
+            <!-- likeボタン -->
+            <div id="review-detail-like-button">
+              <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
+            </div>
+            <% if @review.user.id == current_user.id %>
+             <%= link_to '編集する', edit_review_path(@review), class: 'btn btn-primary reviews-show-reviews-edit-link' %>
+            <% end %>
           </div>
         </div>
       </div>
