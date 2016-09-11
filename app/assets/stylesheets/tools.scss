@@ -65,8 +65,6 @@
 }
 
 .tools-show-card-title {
-  padding-top: 15px;
-  padding-bottom: 15px;
   padding-left: 10px;
   border: 0.5px solid #BDBDBD;
   background-color: #f5f5f5;
@@ -76,6 +74,11 @@
   padding: 15px 15px 10px 15px;
 }
 
+.tools-show-review {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .tools-show-card-reviews-show-link {
   float: left;
   margin-right: 10px;
@@ -83,6 +86,7 @@
 
 .tools-show-card-comment-number {
   float: left;
+  margin-right: 10px;
   margin-bottom: 0;
   font-size: 15px;
   line-height: 35px;
