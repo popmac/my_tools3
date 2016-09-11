@@ -135,7 +135,7 @@
             <div class="user-data-card-content">
               <p class="short-review user-data-card-short-review"><%= review.review %></p>
               <div class="clearfix">
-                <%= link_to '詳細を見る', review_path(review), class: "btn btn-warning user-data-card-review-link" %>
+                <%= link_to '詳細', review_path(review), class: "btn btn-warning active user-data-card-review-link" %>
                 <!-- likeボタン -->
                 <div class="user-data-review-like-button" id="user-reviews-like-button<%= review.id %>">
                   <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
