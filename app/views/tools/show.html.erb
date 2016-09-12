@@ -16,11 +16,10 @@
            <%= link_to user_path(review.user.id) do %>
              <% if review.user.profile.avatar.present? %>
                <%= image_tag review.user.profile.avatar %>
-               <%= review.user.profile.nickname %>さん
              <% else %>
                <%= image_tag('no_image.png') %>
-               <%= review.user.profile.nickname %>さん
              <% end %>
+               <%= review.user.profile.nickname %>さん
            <% end %>
          </div>
           <div class="tools-show-card-content">
