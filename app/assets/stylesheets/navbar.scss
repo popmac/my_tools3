@@ -9,18 +9,29 @@
   background-color: rgba(164,164,164,0.3) !important;
 }
 
-// navbarのメニューのキャレット
-.dropdown .caret {
-  height: 9px;
-  margin-left: 5px !important;
+.navnar-avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: -7px;
+  margin-right: 5px;
 }
 
 // navbarのメニューボタン
 ul li .nav-menu {
+  height :50px;
+  padding-top: 10px !important;
+  padding-bottom: 5px !important;
   border: 1px solid #008080;
   font-size: 15px;
   color: white !important;
   background-color: #008080;
+}
+
+// navbarのメニューのキャレット
+.dropdown .caret {
+  height: 9px;
+  margin-top: 7px;
+  margin-left: 6px !important;
 }
 
 // user自身のmenuのdropdownボタンを押した時に表示されるメニュー
