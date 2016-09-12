@@ -13,7 +13,15 @@
       <div class="col-md-6">
        <div class="tools-show-card">
          <div class="tools-show-card-title">
-         <a href="/users/<%= review.user_id %>"><h3><%= review.user.profile.nickname %>さん</h3></a>
+           <%= link_to user_path(review.user.id) do %>
+             <% if review.user.profile.avatar.present? %>
+               <%= image_tag review.user.profile.avatar %>
+               <%= review.user.profile.nickname %>さん
+             <% else %>
+               <%= image_tag('no_image.png') %>
+               <%= review.user.profile.nickname %>さん
+             <% end %>
+           <% end %>
          </div>
           <div class="tools-show-card-content">
             <p class="tools-show-review short-review"><%= review.review %></p>
