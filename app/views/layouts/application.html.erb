@@ -30,6 +30,15 @@
         <% end %>
       </div>
 
+      <% if controller_name == "registrations" && action_name == "new" %>
+        <div class="smooth-scroll-links">
+          <a href="#registrations-new-top">Top</a>
+          <a href="#registrations-new-introduction">Introduction</a>
+          <a href="#registrations-new-feature">Feature</a>
+          <a href="#registrations-new-sns">SNS</a>
+        </div>
+      <% end %>
+
       <!-- ▼ユーザーがログインしている場合 -->
       <% if user_signed_in?  %>
         <div class="collapse navbar-collapse">

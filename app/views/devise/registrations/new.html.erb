@@ -2,7 +2,7 @@
 <%= devise_error_messages! %>
 
 <!-- ▼ ジャンボトロン -->
-<div class="jumbotron jumbotron-registrations-new-main">
+<div class="jumbotron jumbotron-registrations-new-main" id="registrations-new-top">
   <div class="container">
     <div class="row">
       <!-- サイトのコンセプトを説明 -->
@@ -40,7 +40,7 @@
 <!-- ▲ ジャンボトロン -->
 
 
-<div class="registrations-new-heading-1">
+<div class="registrations-new-heading-1" id="registrations-new-introduction">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-xs-12">
@@ -69,7 +69,7 @@
 </div>
 
 
-<div class="registrations-new-heading-2">
+<div class="registrations-new-heading-2" id="registrations-new-feature">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-xs-12">
@@ -175,7 +175,7 @@
 
 
 <!-- ▼snsへのリンク -->
-<div class="registrations-new-heading-3">
+<div class="registrations-new-heading-3" id="registrations-new-sns">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-xs-12">
@@ -214,9 +214,9 @@
 </div>
 <!-- ▲snsへのリンク -->
 
-<!-- pocketのシェアボタン用 -->
-<!-- [head]内や、[body]の終了直前などに配置 -->
-<script type="text/javascript">
+<script>
+
+  // pocketのシェアボタン用
   ! function(d, i) {
     if (!d.getElementById(i)) {
       var j = d.createElement("script");
@@ -226,4 +226,29 @@
       d.body.appendChild(j);
     }
   }(document, "pocket-btn-js");
+
+
+  // スムーズスクロール
+  $(function() {
+    // スクロールのオフセット値
+    var offsetY = -50;
+    // スクロールにかかる時間
+    var time = 500;
+
+    // navbarのリンクのみを取得
+    $('a[href^="#registrations-new-top"], a[href^="#registrations-new-introduction"], a[href^="#registrations-new-feature"], a[href^="#registrations-new-sns"]' ).click(function() {
+      // 移動先となる要素を取得
+      var target = $(this.hash);
+      if (!target.length) return ;
+      // 移動先となる値
+      var targetY = target.offset().top+offsetY;
+      // スクロールアニメーション
+      $('html,body').animate({scrollTop: targetY}, time, 'swing');
+      // ハッシュ書き換えとく
+      window.history.pushState(null, null, this.hash);
+      // デフォルトの処理はキャンセル
+      return false;
+    });
+  });
+
 </script>
