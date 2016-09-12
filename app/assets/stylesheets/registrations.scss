@@ -1,25 +1,27 @@
 .smooth-scroll-links {
   float: right;
-  margin-top: 10px;
   margin-right: 75px;
   a {
-    margin-right: 15px;
     font-size: 20px;
-    color: white;
-  }
-  // クリックされた後に下に線が表示されないように使用
-  a:link {
-    text-decoration: none;
+    color: white !important;
   }
   a:hover {
-    text-decoration: none;
+    color: #23527c !important;
+  }
+  a:focus {
+    color: #23527c !important;
   }
 }
 
-// resigtrations/newでスマホサイズの場合、ナビゲーションバーのハンバーガーを消す
 @media all and (max-width: 640px) {
-  .registrations.new .navbar-toggle {
-    display: none;
+  .smooth-scroll-links {
+    float: none;
+    margin: 0 auto;
+    a {
+      padding-bottom: 0 !important;
+      font-size: 15px;
+      text-align: center;
+    }
   }
 }
 
@@ -85,6 +87,7 @@
 
 @media all and (max-width: 640px) {
   .registrations-new-form {
+    margin-top: 20px;
     margin-bottom: 50px;
   }
 }
