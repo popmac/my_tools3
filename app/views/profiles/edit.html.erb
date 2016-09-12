@@ -4,9 +4,9 @@
       <div class="display-container">
         <div class="form-box">
           <h1>プロフィール編集ページ</h1>
-          <%= form_for(@profile) do |f| %>
+          <%= form_for(@profile, :html => {:multipart => true}) do |f| %>
             <!-- avatar -->
-            <%= f.label :avatar %><br>
+            <%= f.label 'avatar (now)' %><br>
             <!-- avatarが存在するかで条件分岐 start -->
             <% if @profile.avatar.present? %>
               <div class="avatar">
@@ -18,7 +18,13 @@
               </div>
             <% end %>
             <!-- avatarが存在するかで条件分岐 end -->
-            <%= f.file_field :avatar %>
+            <input id="profile-edit-avatar" type="file" style="display:none" name="profile[avatar]">
+            <div class="input-group">
+              <input readonly type="text" id="photoCover0" class="form-control" placeholder="選択されていません" onClick="$('#profile-edit-avatar').click();">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-primary" onClick="$('#profile-edit-avatar').click();">ファイルを選択</button>
+              </span>
+            </div>
             <!-- nickname -->
             <%= f.label :nickname %><br>
             <span>※サイト上で表示される名前です</span>
@@ -42,3 +48,10 @@
     </div>
   </div>
 </div>
+
+<!-- ファイルを選択したらファイル名が表示される -->
+<script>
+ $('input[id=profile-edit-avatar]').change(function() {
+  $('#photoCover0').val($(this).val().replace("C:\\fakepath\\", ""));
+});
+</script>
