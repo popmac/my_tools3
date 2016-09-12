@@ -1,2 +1,2 @@
 $('#comments-number').text('コメント(<%= @review.comments.count %>)');
-$('#comments').html('<%= j(render partial: 'comments/comment', collection: @review.comments) %>');
+$('#comments').html('<%= j(render partial: 'comments/comment', locals: { comments: @review.comments }) %>');
