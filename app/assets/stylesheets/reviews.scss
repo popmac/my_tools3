@@ -81,11 +81,18 @@
 }
 
 .reviews-show-card-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  text-align: center;
   border: 0.5px solid #BDBDBD;
   background-color: #f5f5f5;
-  h3 {
-    margin-left: 15px;
-    margin-bottom: 20px;
+  // avatarの設定
+  img {
+    height: 30px;
+    width: 30px;
+    margin-top: -5px;
+    margin-right: -5px;
   }
 }
 
