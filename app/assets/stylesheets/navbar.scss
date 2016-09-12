@@ -4,6 +4,11 @@
   height: 100%;
 }
 
+// registrations/newのリンクのために設定
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: rgba(164,164,164,0.3) !important;
+}
+
 // navbarのメニューのキャレット
 .dropdown .caret {
   height: 9px;
