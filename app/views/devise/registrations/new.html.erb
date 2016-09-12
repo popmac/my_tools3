@@ -227,7 +227,6 @@
     }
   }(document, "pocket-btn-js");
 
-
   // スムーズスクロール
   $(function() {
     // スクロールのオフセット値
@@ -248,6 +247,20 @@
       window.history.pushState(null, null, this.hash);
       // デフォルトの処理はキャンセル
       return false;
+    });
+  });
+
+  // スマホの場合
+  // navbarのリンクをタップしたら、メニューが閉じる
+  $(document).ready(function () {
+    $(".navbar-nav li a").click(function(event) {
+        $(".navbar-collapse").collapse('hide');
+    });
+  });
+  // navbar以外の部分をタップしたら。メニューが閉じる
+  $(document).ready(function () {
+    $(document).click(function(event) {
+        $(".navbar-collapse").collapse('hide');
     });
   });
 
