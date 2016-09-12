@@ -1,11 +1,19 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
 
       <div class="reviews-show-card">
         <div class="reviews-show-card-title">
-        <h3><a href="/users/<%= @review.user_id %>"><%= @review.user.profile.nickname %>さん</a>の<a href="/tools/<%= @review.tool.id %>"><%= @review.tool.name %></a>のレビューの詳細</h3>
+          <%= link_to user_path(@review.user.id) do %>
+            <% if @review.user.profile.avatar.present? %>
+              <%= image_tag @review.user.profile.avatar %>
+            <% else %>
+              <%= image_tag('no_image.png') %>
+            <% end %>
+            <%= @review.user.profile.nickname %>さん
+          <% end %>
+          の <%= link_to "#{@review.tool.name}" , tool_path(@review.tool.id) %> のレビューの詳細
         </div>
         <div class="reviews-show-card-content">
           <p class="reviews-show-review"><%= @review.review %></p>
@@ -29,7 +37,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
 
       <!-- コメント総数の表示 -->
       <div id="comments-number">
