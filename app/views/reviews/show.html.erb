@@ -13,7 +13,7 @@
             <% end %>
             <%= @review.user.profile.nickname %>さん
           <% end %>
-          の <%= link_to "#{@review.tool.name}" , tool_path(@review.tool.id) %> のレビューの詳細
+          の <%= link_to "#{@review.tool.name}" , tool_path(@review.tool.id) %> のレビュー
         </div>
         <div class="reviews-show-card-content">
           <p class="reviews-show-review"><%= @review.review %></p>
