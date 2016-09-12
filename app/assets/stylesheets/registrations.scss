@@ -1,3 +1,21 @@
+.smooth-scroll-links {
+  float: right;
+  margin-top: 10px;
+  margin-right: 75px;
+  a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: white;
+  }
+  // クリックされた後に下に線が表示されないように使用
+  a:link {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 // resigtrations/newでスマホサイズの場合、ナビゲーションバーのハンバーガーを消す
 @media all and (max-width: 640px) {
   .registrations.new .navbar-toggle {
