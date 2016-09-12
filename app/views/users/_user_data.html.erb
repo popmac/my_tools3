@@ -39,54 +39,56 @@
               <% end %>
           </div>
         </div>
-        <!-- ▼スクリーンショットが登録されている場合 -->
-        <% else %>
-        <!-- carouselを使えるように指定 -->
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- スクリーンショットの下部にある丸いボタン -->
-          <ol class="carousel-indicators">
-            <% photos.each_with_index do |photo, i| %>
-              <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
-            <% end %>
-          </ol>
-          <!-- ▼スクリーンショット -->
-          <div class="carousel-inner">
-            <% photos.each_with_index do |photo, i| %>
-              <div class="item <%= "active" if i == 0 %>">
-                <a data-toggle="modal" data-target=".bs-example-modal-lg">
-                  <img src="<%= photo.image %>" class="img-responsive users-data-photo">
-                </a>
-              </div>
-            <% end %>
-            <!-- 左右に移動するための矢印 -->
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-            <!-- ▼モーダル-->
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <% photos.each_with_index do |photo, i| %>
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= photos.count %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
-                    </div>
-                    <div class="modal-body">
-                      <img src="<%= photo.image %>" class="img-responsive users-data-photo-modal">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
-                    </div>
-                  <% end %>
+      <!-- ▼スクリーンショットが登録されている場合 -->
+      <% else %>
+        <div class="user-data-photo-container">
+          <!-- carouselを使えるように指定 -->
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- スクリーンショットの下部にある丸いボタン -->
+            <ol class="carousel-indicators">
+              <% photos.each_with_index do |photo, i| %>
+                <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class=<%= "active" if i == 0 %>></li>
+              <% end %>
+            </ol>
+            <!-- ▼スクリーンショット -->
+            <div class="carousel-inner">
+              <% photos.each_with_index do |photo, i| %>
+                <div class="item <%= "active" if i == 0 %>">
+                  <a data-toggle="modal" data-target=".bs-example-modal-lg">
+                    <img src="<%= photo.image %>" class="img-responsive users-data-photo">
+                  </a>
+                </div>
+              <% end %>
+              <!-- 左右に移動するための矢印 -->
+              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+              <!-- ▼モーダル-->
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <% photos.each_with_index do |photo, i| %>
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title" id="myModalLabel"><%= i + 1 %>/<%= photos.count %>枚目&nbsp;&nbsp;&nbsp;&nbsp;<%= l photo.created_at, format: :short %>に投稿</h2>
+                      </div>
+                      <div class="modal-body">
+                        <img src="<%= photo.image %>" class="img-responsive users-data-photo-modal">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               </div>
+              <!-- ▲モーダル -->
             </div>
-            <!-- ▲モーダル -->
+            <!-- ▲スクリーンショット -->
           </div>
-          <!-- ▲スクリーンショット -->
         </div>
       <% end %>
     </div>
@@ -95,7 +97,7 @@
   <!-- 自己紹介の表示 -->
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-default user-data-introduce-panel">
+      <div class="panel panel-default">
         <div class="panel-body">
           <% if introduce.blank? %>
             <p>自己紹介が登録されていません</p>

@@ -41,6 +41,10 @@
   }
 }
 
+.user-data-photo-container {
+  margin-bottom: 25px;
+}
+
 // users/_user_dataで表示されるphoto
 .users-data-photo {
   height: 535px !important;
@@ -56,10 +60,6 @@
 // users/_user_dataのphotoにマウスが当たった時
 .carousel-inner div a img {
   cursor: pointer;
-}
-
-.user-data-introduce-panel {
-  margin-top: 30px;
 }
 
 // 以下は_user_dataで表示されるtoolのreview
