@@ -8,6 +8,20 @@
   color: white;
  }
 
+.comment-panel-title {
+  // コメントしたuserのavatar
+  img {
+    width: 20px;
+    height: 20px;
+    margin-top: -2px;
+    margin-right: -2px;
+  }
+  time {
+    color: #848484;
+    margin-left: 5px;
+  }
+}
+
 // reviews/showの「コメントを入力してください」
 .review-comment {
   margin-bottom: 100px;
