@@ -18,7 +18,7 @@
           <div class="tools-show-card-content">
             <p class="tools-show-review short-review"><%= review.review %></p>
             <div class="clearfix">
-              <%= link_to '詳細', review_path(review), class: 'btn btn-warning tools-show-card-reviews-show-link' %>
+              <%= link_to '詳細', review_path(review), class: 'btn btn-warning active tools-show-card-reviews-show-link' %>
               <!-- likeボタン -->
               <div class="tools-show-review-like-button" id="tool-reviews-like-button<%= review.id %>">
                 <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
