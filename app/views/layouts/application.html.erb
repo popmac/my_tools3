@@ -54,7 +54,11 @@
             <ul class="nav navbar-nav navbar-left">
               <!-- メニューボタン -->
               <li class="dropdown">
-                <a href="#" class="btn btn-primary dropdown-toggle nav-menu" data-toggle="dropdown"><%= current_user.profile.nickname %>さんのMENU<b class="caret"></b></a>
+                <% if current_user.profile.avatar.present? %>
+                  <a href="#" class="btn btn-primary dropdown-toggle nav-menu" data-toggle="dropdown"><%= image_tag current_user.profile.avatar, class: "navnar-avatar" %><%= current_user.profile.nickname %>さんのMENU<b class="caret"></b></a>
+                <% else %>
+                  <a href="#" class="btn btn-primary dropdown-toggle nav-menu" data-toggle="dropdown"><%= image_tag('no_image.png', class: "navnar-avatar") %><%= current_user.profile.nickname %>さんのMENU<b class="caret"></b></a>
+                <% end %>
                 <!-- メニューの中身 -->
                 <ul class="dropdown-menu user-dropdown-menu">
                   <li><%= link_to reviews_path, title: 'あなたが登録したアプリのレビュー' do %><span class="glyphicon glyphicon-book glyphicon-user-menu" aria-hidden="true"></span>Reviews<% end %></li>
