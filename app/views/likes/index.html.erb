@@ -33,7 +33,7 @@
               <div class="likes-index-like-button" id="likes-index-like-button<%= like.review.id %>">
                 <%= render partial: "likes/like", locals: { like: like.review.likes.find_by(user_id: current_user.id), review: like.review } %>
               </div>
-              <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= like.review.comments.count %></b></p>
+              <p class="likes-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= like.review.comments.count %></b></p>
               <div class="reviews-show-rating-star-container">
                 <p class="rating-star"><span class="rating-star-inner"><%= like.review.rate %></span></p>
               </div>
