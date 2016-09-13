@@ -3,8 +3,9 @@
     <div class="col-md-12">
       <h2><%= current_user.profile.nickname %>さんが投稿したアプリのレビュー</h2>
       <div class="reviews-index-operate-section">
-        <%= link_to '新しいレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
-        <%= link_to 'サイトに登録されたアプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
+        <%= link_to 'レビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+        <%= link_to 'アプリの一覧', tools_path, class: 'btn btn-info btn-lg active' %>
+        <%= link_to 'コメントしたレビュー' , comments_path, class: 'btn btn-info btn-lg active' %>
       </div>
     </div>
   </div>
@@ -12,24 +13,24 @@
     <% @reviews.each do |review| %>
       <div class="col-md-6">
         <div class="reviews-index-card">
-            <div class="reviews-index-card-title">
-              <a href="/tools/<%= review.tool_id %>"><h3><%= review.tool.name %></h3></a>
-            </div>
-            <div class="reviews-index-card-content">
-              <p class="short-review"><%= review.review %></p>
-              <div class="clearfix">
-                <%= link_to '詳細', review_path(review), class: 'btn btn-warning active reviews-index-card-reviews-show-link' %>
-                <%= link_to '編集', edit_review_path(review), class: 'btn btn-primary active reviews-index-card-reviews-edit-link' %>
-                <!-- likeボタン -->
-                <div class="reviews-index-like-button" id="user-reviews-like-button<%= review.id %>">
-                  <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
-                </div>
-                <p class="reviews-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
-                <div class="reviews-index-rating-star-container">
-                  <p class="rating-star"><span class="rating-star-inner"><%= review.rate %></span></p>
-                </div>
+          <div class="reviews-index-card-title">
+            <a href="/tools/<%= review.tool_id %>"><h3><%= review.tool.name %></h3></a>
+          </div>
+          <div class="reviews-index-card-content">
+            <p class="short-review"><%= review.review %></p>
+            <div class="clearfix">
+              <%= link_to '詳細', review_path(review), class: 'btn btn-warning active reviews-index-card-reviews-show-link' %>
+              <%= link_to '編集', edit_review_path(review), class: 'btn btn-primary active reviews-index-card-reviews-edit-link' %>
+              <!-- likeボタン -->
+              <div class="reviews-index-like-button" id="user-reviews-like-button<%= review.id %>">
+                <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
+              </div>
+              <p class="reviews-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>
+              <div class="reviews-index-rating-star-container">
+                <p class="rating-star"><span class="rating-star-inner"><%= review.rate %></span></p>
               </div>
             </div>
+          </div>
         </div>
       </div>
     <% end %>
