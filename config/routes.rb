@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :comments, only: [:index]
+  resources :likes, only: [:index]
   resources :photos_ranking, only: [:index]
   resources :users_reviews_number_ranking, only: [:index]
   resources :users_reviews_sum_likes_count_ranking, only: [:index]
