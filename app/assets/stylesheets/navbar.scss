@@ -41,6 +41,9 @@ ul li .nav-menu {
   font-size: 15px;
   text-align: center;
   }
+  a:hover {
+    background-color: rgba(164,164,164,0.3) !important;
+  }
 }
 
 // グリフィコンとメニューのタイトルの距離を取るために設定
