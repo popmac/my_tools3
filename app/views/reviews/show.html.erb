@@ -51,7 +51,7 @@
       <div class="review-comment">
         <p>コメントを入力してください</p>
         <%= form_for [@review, @comment], remote: true do |f| %>
-        <%= f.text_area :comment, id: "comment_field" %><br>
+        <%= f.text_area :comment, id: "comment_field", required: true %><br>
         <%= f.submit 'コメントを送信', class: "btn btn-info btn-block btn-lg active" %>
         <% end %>
       </div>
