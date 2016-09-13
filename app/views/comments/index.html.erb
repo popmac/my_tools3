@@ -34,7 +34,7 @@
                 <%= render partial: "likes/like", locals: { like: comment.review.likes.find_by(user_id: current_user.id), review: comment.review } %>
               </div>
               <p class="comments-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= comment.review.comments.count %></b></p>
-              <div class="reviews-show-rating-star-container">
+              <div class="comments-index-rating-star-container">
                 <p class="rating-star"><span class="rating-star-inner"><%= comment.review.rate %></span></p>
               </div>
             </div>
