@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+  def index
+    @comments = current_user.comments.includes({review: [user: :profile]}, {review: :tool})
+  end
+
   def create
     @review = Review.find(params[:review_id])
     Comment.create(comment_params)
