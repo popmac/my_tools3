@@ -1,0 +1,47 @@
+<div class="container comments-index-container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= current_user.profile.nickname %>さんがいいねしたレビュー</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @likes.each do |like| %>
+      <div class="col-md-6">
+        <div class="likes-index-card">
+          <div class="likes-index-card-title">
+            <%= link_to user_path(like.review.user.id) do %>
+              <% if like.review.user.profile.avatar.present? %>
+                <%= image_tag like.review.user.profile.avatar %>
+              <% else %>
+                <%= image_tag('no_image.png') %>
+              <% end %>
+              <%= like.review.user.profile.nickname %>さん
+            <% end %>
+            の
+            <%= link_to tool_path(like.review.tool.id) do %>
+              <%= like.review.tool.name %>
+            <% end %>
+            のレビュー
+          </div>
+          <div class="likes-index-card-content">
+            <p class="short-review"><%= like.review.review %></p>
+            <div class="clearfix">
+              <%= link_to '詳細', review_path(like.review), class: 'btn btn-warning active reviews-index-card-reviews-show-link' %>
+              <!-- likeボタン -->
+              <div class="likes-index-like-button" id="likes-index-like-button<%= like.review.id %>">
+                <%= render partial: "likes/like", locals: { like: like.review.likes.find_by(user_id: current_user.id), review: like.review } %>
+              </div>
+              <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= like.review.comments.count %></b></p>
+              <div class="reviews-show-rating-star-container">
+                <p class="rating-star"><span class="rating-star-inner"><%= like.review.rate %></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
