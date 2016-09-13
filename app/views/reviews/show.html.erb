@@ -19,7 +19,7 @@
           <p class="reviews-show-review"><%= @review.review %></p>
           <div class="clearfix">
             <!-- likeボタン -->
-            <div id="review-detail-like-button">
+            <div class="reviews-show-like-button" id="reviews-show-like-button">
               <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
             </div>
             <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= @review.comments.count %></b></p>

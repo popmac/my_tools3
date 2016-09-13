@@ -27,7 +27,7 @@
             <div class="clearfix">
               <%= link_to '詳細', review_path(review), class: 'btn btn-warning active tools-show-card-reviews-show-link' %>
               <!-- likeボタン -->
-              <div class="tools-show-review-like-button" id="tool-reviews-like-button<%= review.id %>">
+              <div class="tools-show-like-button" id="tools-show-like-button<%= review.id %>">
                 <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
               </div>
               <p class="tools-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>

@@ -22,7 +22,7 @@
               <%= link_to '詳細', review_path(review), class: 'btn btn-warning active reviews-index-card-reviews-show-link' %>
               <%= link_to '編集', edit_review_path(review), class: 'btn btn-primary active reviews-index-card-reviews-edit-link' %>
               <!-- likeボタン -->
-              <div class="reviews-index-like-button" id="user-reviews-like-button<%= review.id %>">
+              <div class="reviews-index-like-button" id="reviews-index-like-button<%= review.id %>">
                 <%= render partial: "likes/like", locals: { like: review.likes.find_by(user_id: current_user.id), review: review } %>
               </div>
               <p class="reviews-index-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= review.comments.count %></b></p>

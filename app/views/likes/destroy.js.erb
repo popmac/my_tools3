@@ -1,3 +1,5 @@
-$("#review-detail-like-button").html("<%= j(render partial: 'like', locals: { review: @review }) %>");
-$("#user-reviews-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
-$("#tool-reviews-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#user-data-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#tools-show-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#reviews-index-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
+$("#reviews-show-like-button").html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
+$("#cooments-index-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
