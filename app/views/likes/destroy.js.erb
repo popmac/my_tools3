@@ -3,3 +3,4 @@ $("#reviews-show-like-button").html("<%= j(render partial: 'like', locals: { rev
 $("#reviews-index-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
 $("#user-data-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
 $("#tools-show-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review }) %>");
+$("#cooments-index-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
