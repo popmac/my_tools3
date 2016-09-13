@@ -28,3 +28,45 @@
   float: left;
   margin-right: 10px;
 }
+
+.likes-index-like-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.likes-index-container {
+  h2 {
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+  }
+}
+
+.likes-index-card {
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.likes-index-card-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  font-size: 24px;
+  text-align: center;
+  border: 0.5px solid #BDBDBD;
+  background-color: #f5f5f5;
+  // avatarの設定
+  img {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-right: -5px;
+  }
+}
+
+.likes-index-card-content {
+  padding: 15px 15px 10px 15px;
+  .short-review {
+    margin-bottom: 15px;
+  }
+}
