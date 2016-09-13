@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def index
     @comments = current_user.comments.includes({review: [user: :profile]}, {review: :tool})
+    @uniq_comments = @comments.select(:review_id).uniq
   end
 
   def create
