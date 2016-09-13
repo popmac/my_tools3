@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     end
   end
   resources :reviews, except: [:new] do
-    resources :comments
+    resources :comments, except: [:index]
     resources :likes, only: [:create, :destroy]
   end
+  resources :comments, only: [:index]
   resources :photos_ranking, only: [:index]
   resources :users_reviews_number_ranking, only: [:index]
   resources :users_reviews_sum_likes_count_ranking, only: [:index]
