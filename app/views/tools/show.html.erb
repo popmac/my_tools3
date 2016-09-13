@@ -35,7 +35,7 @@
                 <p class="rating-star"><span class="rating-star-inner"><%= review.rate %></span></p>
               </div>
               <% if review.user.id == current_user.id %>
-                <%= link_to '編集・削除', edit_review_path(review), class: 'btn btn-primary active reviews-show-reviews-edit-link' %>
+                <%= link_to '編集', edit_review_path(review), class: 'btn btn-primary active reviews-show-reviews-edit-link' %>
               <% end %>
             </div>
           </div>
