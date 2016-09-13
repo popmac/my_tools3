@@ -1,4 +1,5 @@
 $("#review-detail-like-button").html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
 $("#reviews-show-like-button").html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
+$("#reviews-index-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
 $("#user-data-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
 $("#tools-show-like-button" + <%= @review.id %>).html("<%= j(render partial: 'like', locals: { review: @review, like: @like }) %>");
