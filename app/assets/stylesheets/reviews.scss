@@ -19,13 +19,15 @@
 .reviews-index-container {
   h2 {
     color: white;
+    text-align: center;
   }
 }
 
 .reviews-index-operate-section {
   margin-top: 20px;
   margin-bottom: 30px;
-  a:first-child {
+  text-align: center;
+  .btn {
     margin-right: 20px;
   }
 }
