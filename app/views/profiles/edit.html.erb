@@ -20,7 +20,7 @@
             <!-- avatarが存在するかで条件分岐 end -->
             <input id="profile-edit-avatar" type="file" style="display:none" name="profile[avatar]">
             <div class="input-group">
-              <input readonly type="text" id="photoCover0" class="form-control" placeholder="選択されていません" onClick="$('#profile-edit-avatar').click();">
+              <input readonly type="text" id="avatar-file-name" class="form-control" placeholder="選択されていません" onClick="$('#profile-edit-avatar').click();">
               <span class="input-group-btn">
                 <button type="button" class="btn btn-primary" onClick="$('#profile-edit-avatar').click();">ファイルを選択</button>
               </span>
@@ -52,6 +52,6 @@
 <!-- ファイルを選択したらファイル名が表示される -->
 <script>
  $('input[id=profile-edit-avatar]').change(function() {
-  $('#photoCover0').val($(this).val().replace("C:\\fakepath\\", ""));
+  $('#avatar-file-name').val($(this).val().replace("C:\\fakepath\\", ""));
 });
 </script>
