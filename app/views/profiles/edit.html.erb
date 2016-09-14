@@ -6,21 +6,21 @@
           <h1>プロフィール編集ページ</h1>
           <%= form_for(@profile, :html => {:multipart => true}) do |f| %>
             <!-- avatar -->
-            <%= f.label 'avatar (now)' %><br>
+            <%= f.label 'avatar' %><br>
             <!-- avatarが存在するかで条件分岐 start -->
             <% if @profile.avatar.present? %>
               <div class="avatar">
-                <%= image_tag @profile.avatar %>
+                <%= image_tag @profile.avatar, id: "preview" %>
               </div>
             <% else %>
               <div class="avatar">
-                <%= image_tag('no_image.png') %>
+                <%= image_tag('no_image.png', id: "preview") %>
               </div>
             <% end %>
             <!-- avatarが存在するかで条件分岐 end -->
             <input id="profile-edit-avatar" type="file" style="display:none" name="profile[avatar]">
             <div class="input-group">
-              <input readonly type="text" id="avatar-file-name" class="form-control" placeholder="選択されていません" onClick="$('#profile-edit-avatar').click();">
+              <input readonly type="text" id="photoCover0" class="form-control" placeholder="選択されていません" onClick="$('#profile-edit-avatar').click();">
               <span class="input-group-btn">
                 <button type="button" class="btn btn-primary" onClick="$('#profile-edit-avatar').click();">ファイルを選択</button>
               </span>
@@ -49,9 +49,24 @@
   </div>
 </div>
 
-<!-- ファイルを選択したらファイル名が表示される -->
 <script>
- $('input[id=profile-edit-avatar]').change(function() {
-  $('#avatar-file-name').val($(this).val().replace("C:\\fakepath\\", ""));
-});
+  // 以下はファイルを選択 したらファイル名が表示される
+  $('input[id=profile-edit-avatar]').change(function() {
+    $('#photoCover0').val($(this).val().replace("C:\\fakepath\\", ""));
+  });
+
+  // 以下は新しく選択されたavatarの画像が表示される
+  var file = document.querySelector('#profile-edit-avatar');
+
+  file.onchange = function() {
+    var fileList = file.files;
+    //読み込み
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList[0]);
+
+    //読み込み後
+    reader.onload = function() {
+      document.querySelector('#preview').src = reader.result;
+    };
+  };
 </script>
