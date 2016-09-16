@@ -112,9 +112,7 @@
 #reviews-show-modal-content {
   display: none;
   position: fixed;
-  top: 200px;
-  left: 200px;
-  z-index: 2;
+  z-index: 3;
   width: 50%;
   padding-top: 10px;
   padding-left: 10px;
@@ -139,14 +137,14 @@
 }
 
 #reviews-show-modal-overlay{
-  display:none;
-  position:fixed;
-  z-index:1;
-  top:0;
-  left:0;
-  width:100%;
-  height:120%;
-  background-color:rgba(0,0,0,0.75);
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0,0,0,0.75);
 }
 
 .reviews-show-card-comment-number {
