@@ -22,6 +22,7 @@
             <div class="reviews-show-like-button" id="reviews-show-like-button">
               <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
             </div>
+            <a id="reviews-show-modal-open">いいねしたユーザー</a>
             <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= @review.comments.count %></b></p>
             <div class="reviews-show-rating-star-container">
               <p class="rating-star"><span class="rating-star-inner"><%= @review.rate %></span></p>
@@ -58,4 +59,22 @@
     </div>
   </div>
 
+  <!-- ▼モーダルの中身 -->
+  <div id="reviews-show-modal-content">
+    <% @likes.each do |like| %>
+      <%= like.user.profile.nickname %>
+    <% end %>
+    <a id="reviews-show-modal-close">閉じる</a>
+  </div>
+  <!-- ▲モーダルの中身 -->
+
 </div>
+
+<script>
+  $('#reviews-show-modal-open').click(function() {
+    $('#reviews-show-modal-content').fadeIn('slow');
+    $('#reviews-show-modal-close').click(function() {
+      $('#reviews-show-modal-content').fadeOut('slow');
+    });
+  });
+</script>
