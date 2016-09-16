@@ -133,12 +133,13 @@
   height: 50px;
 }
 
+// モーダルの「閉じる」ボタンを中央に寄せるために設定
 .reviews-show-modal-close-btn {
   text-align: center;
 }
 
 #reviews-show-modal-close {
-  margin: 5px;
+  margin: 10px;
 }
 
 #reviews-show-modal-overlay{
