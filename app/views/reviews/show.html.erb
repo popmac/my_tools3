@@ -71,6 +71,10 @@
     // オーバーレイを表示
     $("body").append('<div id="reviews-show-modal-overlay"></div>');
     $("#reviews-show-modal-overlay").fadeIn("slow");
+
+    //コンテンツをセンタリングする
+    centeringModal();
+
     // モーダルを表示
     $('#reviews-show-modal-content').fadeIn('slow');
     // モーダルの「閉じる」,もしくはモーダルの外側, をクリックした時の処理
@@ -79,5 +83,20 @@
         $('#reviews-show-modal-overlay').remove();
       });
     });
+
+    // モーダルが表示されている時にウィンドウのリサイズされた場合にも対応する設定
+    $(window).resize(centeringModal);
+
+    //センタリングを実行する関数
+    function centeringModal() {
+      //画面(ウィンドウ)の幅、高さを取得
+      var w = $(window).width();
+      var h = $(window).height();
+      // コンテンツ(#modal-content)の幅、高さを取得
+      var cw = $("#reviews-show-modal-content").outerWidth();
+      var ch = $("#reviews-show-modal-content").outerHeight();
+      //センタリングを実行する
+      $("#reviews-show-modal-content").css( {"left": ((w - cw)/2) + "px", "top": ((h - ch)/2) + "px"} );
+    }
   });
 </script>
