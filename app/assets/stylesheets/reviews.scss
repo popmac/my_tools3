@@ -102,6 +102,22 @@
   margin: 20px 10px 20px 10px;
 }
 
+#reviews-show-modal-open {
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+#reviews-show-modal-content {
+  display: none;
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  z-index: 2;
+  width: 50%;
+  background-color: white;
+}
+
 .reviews-show-card-comment-number {
   float: left;
   margin-right: 10px;
