@@ -1,6 +1,6 @@
 <div id="reviews-show-modal-content">
   <div class="row">
-    <% @likes.each do |like| %>
+    <% likes.each do |like| %>
       <div class="col-md-4 reviews-show-modal-user">
         <%= link_to user_path(like.user) do %>
           <% if like.user.profile.nickname.present? %>
