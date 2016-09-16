@@ -22,6 +22,7 @@
             <div class="reviews-show-like-button" id="reviews-show-like-button">
               <%= render partial: "likes/like", locals: { like: @review.likes.find_by(user_id: current_user.id), review: @review } %>
             </div>
+            <a id="reviews-show-modal-open">いいねしたユーザー</a>
             <p class="reviews-show-card-comment-number"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><b>Comment:<%= @review.comments.count %></b></p>
             <div class="reviews-show-rating-star-container">
               <p class="rating-star"><span class="rating-star-inner"><%= @review.rate %></span></p>
@@ -58,4 +59,44 @@
     </div>
   </div>
 
+  <!-- ▼モーダルの中身 -->
+  <%= render partial: "reviews/reiviews_show_modal", locals: {likes: @likes} %>
+  <!-- ▲モーダルの中身 -->
+
 </div>
+
+<script>
+  // 「いいねしたユーザー」をクリックしたらモーダルが表示される
+  $('#reviews-show-modal-open').click(function() {
+    // オーバーレイを表示
+    $("body").append('<div id="reviews-show-modal-overlay"></div>');
+    $("#reviews-show-modal-overlay").fadeIn("slow");
+
+    //コンテンツをセンタリングする
+    centeringModal();
+
+    // モーダルを表示
+    $('#reviews-show-modal-content').fadeIn('slow');
+    // モーダルの「閉じる」,もしくはモーダルの外側, をクリックした時の処理
+    $('#reviews-show-modal-close, #reviews-show-modal-overlay').click(function() {
+      $('#reviews-show-modal-content, #reviews-show-modal-overlay').fadeOut('slow', function() {
+        $('#reviews-show-modal-overlay').remove();
+      });
+    });
+
+    // モーダルが表示されている時にウィンドウのリサイズされた場合にも対応する設定
+    $(window).resize(centeringModal);
+
+    //センタリングを実行する関数
+    function centeringModal() {
+      //画面(ウィンドウ)の幅、高さを取得
+      var w = $(window).width();
+      var h = $(window).height();
+      // コンテンツ(#modal-content)の幅、高さを取得
+      var cw = $("#reviews-show-modal-content").outerWidth();
+      var ch = $("#reviews-show-modal-content").outerHeight();
+      //センタリングを実行する
+      $("#reviews-show-modal-content").css( {"left": ((w - cw)/2) + "px", "top": ((h - ch)/2) + "px"} );
+    }
+  });
+</script>

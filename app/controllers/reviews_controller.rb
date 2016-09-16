@@ -22,6 +22,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @posted_comments =  @review.comments.includes({user: [:profile]})
     @comment = Comment.new
+    @likes = @review.likes.includes({user: [:profile]})
   end
 
   def edit
