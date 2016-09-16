@@ -116,11 +116,26 @@
   left: 200px;
   z-index: 2;
   width: 50%;
+  padding-top: 10px;
+  padding-left: 10px;
   background-color: white;
 }
 
+.reviews-show-modal-user {
+  margin-bottom: 10px;
+}
+
+.reciews-show-modal-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.reviews-show-modal-close-btn {
+  text-align: center;
+}
+
 #reviews-show-modal-close {
-  cursor: pointer;
+  margin: 5px;
 }
 
 #reviews-show-modal-overlay{
