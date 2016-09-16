@@ -80,8 +80,9 @@
     $('#reviews-show-modal-content').fadeIn('slow');
     // モーダルの「閉じる」,もしくはモーダルの外側, をクリックした時の処理
     $('#reviews-show-modal-close, #reviews-show-modal-overlay').click(function() {
-      $('#reviews-show-modal-content, #reviews-show-modal-overlay').fadeOut('slow');
-      $('#reviews-show-modal-overlay').remove();
+      $('#reviews-show-modal-content, #reviews-show-modal-overlay').fadeOut('slow', function() {
+        $('#reviews-show-modal-overlay').remove();
+      });
     });
   });
 </script>
