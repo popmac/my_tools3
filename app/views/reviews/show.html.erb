@@ -71,10 +71,17 @@
 </div>
 
 <script>
+  // 「いいねしたユーザー」をクリックしたらモーダルが表示される
   $('#reviews-show-modal-open').click(function() {
+    // オーバーレイを表示
+    $("body").append('<div id="modal-overlay"></div>');
+    $("#modal-overlay").fadeIn("slow");
+    // モーダルを表示
     $('#reviews-show-modal-content').fadeIn('slow');
-    $('#reviews-show-modal-close').click(function() {
-      $('#reviews-show-modal-content').fadeOut('slow');
+    // モーダルの「閉じる」,もしくはモーダルの外側, をクリックした時の処理
+    $('#reviews-show-modal-close, #modal-overlay').click(function() {
+      $('#reviews-show-modal-content, #modal-overlay').fadeOut('slow');
+      $('#modal-overlay').remove();
     });
   });
 </script>
