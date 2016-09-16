@@ -60,12 +60,7 @@
   </div>
 
   <!-- ▼モーダルの中身 -->
-  <div id="reviews-show-modal-content">
-    <% @likes.each do |like| %>
-      <%= like.user.profile.nickname %>
-    <% end %>
-    <a id="reviews-show-modal-close">閉じる</a>
-  </div>
+  <%= render partial: "reviews/reiviews_show_modal", locals: {likes: @likes} %>
   <!-- ▲モーダルの中身 -->
 
 </div>
