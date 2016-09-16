@@ -1,0 +1,17 @@
+<div id="reviews-show-modal-content">
+  <div class="row">
+    <% @likes.each do |like| %>
+      <div class="col-md-4">
+        <%= link_to user_path(like.user) do %>
+          <% if like.user.profile.nickname.present? %>
+            <%= image_tag like.user.profile.avatar, class: "reciews-show-modal-avatar" %>
+          <% else %>
+            <%= image_tag('no_image.png', class: "reciews-show-modal-avatar") %>
+          <% end %>
+        <%= like.user.profile.nickname %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <a id="reviews-show-modal-close">閉じる</a>
+</div>
