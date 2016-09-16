@@ -74,14 +74,14 @@
   // 「いいねしたユーザー」をクリックしたらモーダルが表示される
   $('#reviews-show-modal-open').click(function() {
     // オーバーレイを表示
-    $("body").append('<div id="modal-overlay"></div>');
-    $("#modal-overlay").fadeIn("slow");
+    $("body").append('<div id="reviews-show-modal-overlay"></div>');
+    $("#reviews-show-modal-overlay").fadeIn("slow");
     // モーダルを表示
     $('#reviews-show-modal-content').fadeIn('slow');
     // モーダルの「閉じる」,もしくはモーダルの外側, をクリックした時の処理
-    $('#reviews-show-modal-close, #modal-overlay').click(function() {
-      $('#reviews-show-modal-content, #modal-overlay').fadeOut('slow');
-      $('#modal-overlay').remove();
+    $('#reviews-show-modal-close, #reviews-show-modal-overlay').click(function() {
+      $('#reviews-show-modal-content, #reviews-show-modal-overlay').fadeOut('slow');
+      $('#reviews-show-modal-overlay').remove();
     });
   });
 </script>
