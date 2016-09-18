@@ -1,5 +1,5 @@
 <% comments.each do |comment| %>
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="comment<%= comment.id %>" >
     <div class="panel-heading comment-panel-title">
       <%= link_to user_path(comment.user.id) do %>
           <% if comment.user.profile.avatar.present? %>
@@ -12,10 +12,11 @@
       のコメント
       <time><%= time_ago_in_words comment.created_at %>前</time>
         <% if comment.user.id == current_user.id %>
-          <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, data: { confirm: "本当に削除しますか?" }, remote: true, class: "btn btn-primary active" %>
+          <%= link_to '編集', "/reviews/#{comment.review.id}/comments/#{comment.id}/edit", remote: true, class: "btn btn-primary active" %>
+          <%= link_to '削除', "/reviews/#{comment.review.id}/comments/#{comment.id}", method: :delete, data: { confirm: "本当に削除しますか?" }, remote: true, class: "btn btn-danger active" %>
         <% end %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body comment-panel-content">
       <%= simple_format(comment.comment) %>
     </div>
   </div>

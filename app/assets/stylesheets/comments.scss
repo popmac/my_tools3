@@ -22,6 +22,16 @@
   }
 }
 
+.comment-panel-content {
+  word-break: break-all;
+}
+
+// コメント編集テキストエリア
+.reviews.show #comment_comment {
+  width: 100%;
+  background-color: #eee;
+}
+
 // reviews/showの「コメントを入力してください」
 .review-comment {
   margin-bottom: 100px;

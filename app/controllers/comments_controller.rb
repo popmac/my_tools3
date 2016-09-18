@@ -16,8 +16,23 @@ class CommentsController < ApplicationController
     @review = Review.find(params[:review_id])
   end
 
+  def edit
+    @review = Review.find(params[:review_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:review_id])
+    comment = Comment.find(params[:id])
+    comment.update(update_params)
+  end
+
   private
   def comment_params
+    params.require(:comment).permit(:comment).merge(review_id: @review.id, user_id: current_user.id)
+  end
+
+  def update_params
     params.require(:comment).permit(:comment).merge(review_id: @review.id, user_id: current_user.id)
   end
 

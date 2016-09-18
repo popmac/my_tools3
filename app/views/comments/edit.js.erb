@@ -1,0 +1,2 @@
+// 「編集」ボタンを押したコメントを変更
+$('#comment'+ <%= @comment.id %>).html('<%= j(render partial: 'comments/comment_edit') %>');
