@@ -1,0 +1,21 @@
+<%= form_for([@review, @comment], data: {remote: true}) do |f| %>
+  <div class="panel-heading comment-panel-title">
+    <%= link_to user_path(@comment.user.id) do %>
+        <% if @comment.user.profile.avatar.present? %>
+          <%= image_tag @comment.user.profile.avatar %>
+        <% else %>
+          <%= image_tag('no_image.png') %>
+        <% end %>
+      <%= @comment.user.profile.nickname %>さん
+    <% end %>
+    のコメント
+    <time><%= time_ago_in_words @comment.created_at %>前</time>
+      <% if @comment.user.id == current_user.id %>
+        <%= f.submit '更新', class: "btn btn-success active" %>
+        <%= link_to '削除', "/reviews/#{@comment.review.id}/comments/#{@comment.id}", method: :delete, data: { confirm: "本当に削除しますか?" }, remote: true, class: "btn btn-danger active" %>
+      <% end %>
+  </div>
+  <div class="panel-body">
+    <%= f.text_area :comment, rows: "4", autofocus: true %>
+  </div>
+<% end %>
