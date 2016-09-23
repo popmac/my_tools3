@@ -1,37 +1,57 @@
 <!-- 1つのモーダルに複数の画像が入るパターン -->
 
-<div class="container">
-  <div class="row">
-    <!-- 画面左側 -->
-    <!-- ユーザー一覧の表示 -->
-    <div class="col-md-3 users-list-container">
-      <p class="users-list-title">Users List</p>
-      <!-- ソート用のドロップダウン -->
-      <div class="btn-group users-list-btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle sort-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="sort-menu">
-         Sort Menu <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu sort-dropdown-menu">
-          <li><%= link_to 'ユーザー登録 (古い順)', users_created_at_ascend_index_path, :remote => true %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'レビュー投稿数', users_reviews_number_ranking_index_path, :remote => true %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'スクリーンショット投稿数', photos_ranking_index_path, :remote => true %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'いいね獲得数', users_reviews_sum_likes_count_ranking_index_path, :remote => true %></li>
-        </ul>
+<!-- プロフィールの登録がない場合に表示させる画面 -->
+<% if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default uncreated-profile-panel">
+          <div class="panel-body">
+            <p>簡単なプロフィールを登録すると他の人が使っているアプリを見ることができます！</p>
+            <div class="uncreated-profile-btn-container">
+              <%= link_to '登録はこちらから', edit_profile_path(current_user.profile), class: "btn btn-primary btn-lg active uncreated-profile-btn" %>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- user一覧 -->
-      <div id="user_list">
-        <%= render partial: "users/user_list_show", locals: { users: @users, active_user: @active_user } %>
-      </div>
-    </div>
-    <!-- 画面右側 -->
-    <div id="user_data">
-      <%= render partial: "users/user_data", locals: { user: @user, photos: @photos, introduce: @introduce, reviews: @reviews } %>
     </div>
   </div>
-</div>
+
+<!-- メイン画面 -->
+<% else %>
+  <div class="container">
+    <div class="row">
+      <!-- 画面左側 -->
+      <!-- ユーザー一覧の表示 -->
+      <div class="col-md-3 users-list-container">
+        <p class="users-list-title">Users List</p>
+        <!-- ソート用のドロップダウン -->
+        <div class="btn-group users-list-btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle sort-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="sort-menu">
+           Sort Menu <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu sort-dropdown-menu">
+            <li><%= link_to 'ユーザー登録 (古い順)', users_created_at_ascend_index_path, :remote => true %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'レビュー投稿数', users_reviews_number_ranking_index_path, :remote => true %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'スクリーンショット投稿数', photos_ranking_index_path, :remote => true %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'いいね獲得数', users_reviews_sum_likes_count_ranking_index_path, :remote => true %></li>
+          </ul>
+        </div>
+        <!-- user一覧 -->
+        <div id="user_list">
+          <%= render partial: "users/user_list_show", locals: { users: @users, active_user: @active_user } %>
+        </div>
+      </div>
+      <!-- 画面右側 -->
+      <div id="user_data">
+        <%= render partial: "users/user_data", locals: { user: @user, photos: @photos, introduce: @introduce, reviews: @reviews } %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <script>
   $(".sort-dropdown-button").click(function() {
