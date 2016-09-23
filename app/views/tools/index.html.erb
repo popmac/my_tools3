@@ -9,13 +9,19 @@
   <div class="row">
     <div class="col-md-12">
 
-      <div class="tools-index-operate-section">
+      <div class="tools-index-operate-section clearfix">
 
         <%= form_tag search_tools_path, class: "tools-index-search-form", method: :get, remote: true do %>
           <%= text_field_tag :tool, "",  id: "tool_name", name: "keyword", placeholder: "検索：アプリ名を入力してください"%>
         <% end %>
 
-        <%= link_to '登録されていないアプリのレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+        <div id="tools-reviews-number-ranking-btn">
+          <%= link_to 'レビュー投稿数順', tools_reviews_number_ranking_index_path ,remote: true, class: 'btn btn-success btn-lg active' %>
+        </div>
+
+        <div class="tools-index-tools-new-btn">
+          <%= link_to '登録されていないアプリのレビューを投稿', new_tool_path, class: 'btn btn-info btn-lg active' %>
+        </div>
 
       </div>
 
