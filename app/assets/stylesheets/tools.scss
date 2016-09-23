@@ -16,7 +16,7 @@
 
 // tools/indexの検索フォーム
 .tools-index-search-form {
-  display: inline-block;
+  float: left;
   input:focus {
     outline: 0;
     background: #eee;
@@ -30,6 +30,15 @@
   height: 40px;
   margin-right: 20px;
   text-align: center;
+}
+
+#tools-reviews-number-ranking-btn {
+  float: left;
+  margin-right: 20px;
+}
+
+.tools-index-tools-new-btn {
+  float: left;
 }
 
 // tools/indexのアプリ名
