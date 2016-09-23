@@ -11,6 +11,11 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @tool = Tool.find(params[:tool_id])
+    @temporary_review = current_user.reviews.where(tool_id: @tool.id)
+    if @temporary_review != []
+      redirect_to "/reviews/#{@temporary_review[0].id}/edit"
+      flash[:error] = "すでに登録されているアプリのレビューです。内容を変更する場合はこちらの画面から編集してください。"
+    end
   end
 
   def create
