@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// profileが未登録の場合にusers/indexもしくはusers/showに表示されるパネル
+.uncreated-profile-panel {
+  margin-top: 50px;
+  p {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+// profileが未登録の場合にusers/indexもしくはusers/showに表示されるボタンを中央に寄せるためにdivで括っている
+.uncreated-profile-btn-container {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center !important;
+}
+
+// profileが未登録の場合にusers/indexもしくはusers/showに表示されるボタン
+.uncreated-profile-btn {
+  width: 40%;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
 // user一覧のタイトル
 .users-list-title {
   margin-top: 20px;
