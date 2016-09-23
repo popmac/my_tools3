@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :users_reviews_number_ranking, only: [:index]
   resources :users_reviews_sum_likes_count_ranking, only: [:index]
   resources :users_created_at_ascend, only: [:index]
+  resources :tools_reviews_number_ranking, only: [:index]
   root 'users#index'
 end
