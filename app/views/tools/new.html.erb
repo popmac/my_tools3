@@ -9,7 +9,7 @@
           <%= form_for @tool do |f| %>
           <div class="field">
             <%= f.label 'アプリの名前' %><br>
-            <span>※すでにサイトに登録されているものは予測変換で名前が出ます</span>
+            <span>※サイトに登録されているものは予測変換で名前が出ます</span>
             <%= f.autocomplete_field :name, autocomplete_tool_name_tools_path, autofocus: true %>
           </div>
           <div class="field">
@@ -19,6 +19,7 @@
             <%= f.label 'レビュー' %>
             <%= review_form.text_area :review, rows: "8", cols: "50", placeholder: "アプリの使い方や設定を書いてください" %>
             <% end %>
+            <span>※あなたがすでに投稿したアプリは新しくレビューできません。<br>その場合は<a href="/reviews">こちら</a>から編集をしてください。</span>
           </div>
           <div class="actions">
             <%= f.submit '投稿する', class: 'btn btn-info btn-lg btn-block active', data: { disable_with: "送信中..." } %>

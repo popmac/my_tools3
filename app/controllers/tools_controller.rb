@@ -2,6 +2,10 @@ class ToolsController < ApplicationController
   autocomplete :tool, :name, :full => true
 
   def index
+    # profileが登録されていない場合は、users/indexにリダイレクト
+    if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil
+      redirect_to root_path
+    end
     # reviewが多い順で並ぶようにしている
     tool_ids = Review.group(:tool_id).order('count_tool_id DESC').count(:tool_id).keys
     @tools = tool_ids.map { |id| Tool.find(id) }
@@ -14,6 +18,12 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.where(name: params[:tool][:name]).first_or_initialize
+    @temporary_review = current_user.reviews.where(tool_id: @tool.id)
+    if @temporary_review != [] && @temporary_review[0].tool_id == @tool.id
+      redirect_to "/reviews/#{@temporary_review[0].id}/edit"
+      flash[:error] = "すでに登録されているアプリのレビューです。内容を変更する場合はこちらの画面から編集してください。"
+      return
+    end
     if @tool.name.present? && params[:tool][:review][:review].present? && params[:tool][:review][:rate].present?
       @tool.save
       @review = Review.create(review_params)

@@ -3,7 +3,11 @@
     <div class="col-md-12">
       <div class="display-container">
         <div class="form-box">
-          <h1>プロフィール編集ページ</h1>
+          <% if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil %>
+            <h1>プロフィール登録ページ</h1>
+          <% else %>
+            <h1>プロフィール編集ページ</h1>
+          <% end %>
           <%= form_for(@profile, :html => {:multipart => true}) do |f| %>
             <!-- avatar -->
             <%= f.label 'avatar' %><br>
@@ -39,9 +43,16 @@
             <%= f.label :introduce %>
             <%= f.text_area :introduce, rows: "8", cols: "50", placeholder: "自己紹介やよく使うアプリを書いてください" %>
             <!-- 送信ボタン -->
-            <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "プロフィールを変更してもよろしいですか？", disable_with: "送信中..."} %>
+            <% if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil %>
+              <%= f.submit '登録する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "プロフィールを変更してもよろしいですか？", disable_with: "送信中..."} %>
+            <% else %>
+              <%= f.submit '変更する', class: 'btn btn-info btn-lg btn-block active', data: {confirm: "プロフィールを変更してもよろしいですか？", disable_with: "送信中..."} %>
+            <% end %>
           <% end %>
+          <% if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil %>
+          <% else %>
           <%= link_to 'プロフィールページに戻る', profile_path(@profile), class: 'btn btn-info btn-lg btn-block active' %>
+          <% end %>
           <%= link_to 'ユーザーネームやメールアドレスの変更はこちら', edit_user_registration_path, class: 'btn btn-success btn-lg btn-block active' %>
         </div>
       </div>
