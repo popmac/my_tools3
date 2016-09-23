@@ -2,6 +2,10 @@ class ToolsController < ApplicationController
   autocomplete :tool, :name, :full => true
 
   def index
+    # profileが登録されていない場合は、users/indexにリダイレクト
+    if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil
+      redirect_to root_path
+    end
     # reviewが多い順で並ぶようにしている
     tool_ids = Review.group(:tool_id).order('count_tool_id DESC').count(:tool_id).keys
     @tools = tool_ids.map { |id| Tool.find(id) }
