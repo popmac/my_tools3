@@ -1,0 +1,2 @@
+class ToolsReviewsNumberRankingController < ApplicationController
+end
