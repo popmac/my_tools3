@@ -6,9 +6,10 @@ class ToolsController < ApplicationController
     if current_user.profile.avatar == nil || current_user.profile.nickname == nil || current_user.profile.age == nil || current_user.profile.job == nil || current_user.profile.introduce == nil
       redirect_to root_path
     end
+    @tools = Tool.all
     # reviewが多い順で並ぶようにしている
-    tool_ids = Review.group(:tool_id).order('count_tool_id DESC').count(:tool_id).keys
-    @tools = tool_ids.map { |id| Tool.find(id) }
+    # tool_ids = Review.group(:tool_id).order('count_tool_id DESC').count(:tool_id).keys
+    # @tools = tool_ids.map { |id| Tool.find(id) }
   end
 
   def new
