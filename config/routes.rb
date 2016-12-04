@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :reviews, except: [:new] do
-    resources :comments, except: [:index]
+    resources :comments, except: [:index, :new, :show]
     resources :likes, only: [:create, :destroy]
   end
   resources :comments, only: [:index]
