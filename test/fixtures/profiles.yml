@@ -2,6 +2,6 @@ hoge1:
   age: 30
   job: engineer
   introduce: hello
-  avatar: "no_image.png"
+  avatar: no_image.png
   nickname: hoge1
   user: hoge1
