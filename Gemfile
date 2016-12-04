@@ -48,6 +48,10 @@ group :development do
   gem 'bullet'
 end
 
+group :test do
+  gem 'minitest-reporters'
+end
+
 group :production, :staging do
   gem 'rails_12factor'
 end
