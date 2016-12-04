@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :new, :create, :destroy]
   end
   resources :profiles, only: [:show, :edit, :update]
-  resources :tools do
+  resources :tools, only: [:index, :new, :create, :show, :search] do
     resources :reviews, only: [:new]
     collection do
       get 'autocomplete_tool_name'
