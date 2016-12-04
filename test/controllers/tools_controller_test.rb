@@ -9,4 +9,9 @@ class ToolsControllerTest < ActionController::TestCase
     sign_in(@user)
   end
 
+  test "should get tools" do
+    get :index
+    assert_response :success
+  end
+
 end
