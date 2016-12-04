@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-    resources :photos
   resources :users, only: [:index, :show] do
+    resources :photos, only: [:index, :new, :create, :destroy]
   end
   resources :profiles
   resources :tools do
