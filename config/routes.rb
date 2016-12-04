@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users do
-    resources :photos
+  resources :users, only: [:index, :show] do
+    resources :photos, only: [:index, :new, :create, :destroy]
   end
-  resources :profiles
-  resources :tools do
+  resources :profiles, only: [:show, :edit, :update]
+  resources :tools, only: [:index, :new, :create, :show, :search] do
     resources :reviews, only: [:new]
     collection do
       get 'autocomplete_tool_name'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :reviews, except: [:new] do
-    resources :comments, except: [:index]
+    resources :comments, except: [:index, :new, :show]
     resources :likes, only: [:create, :destroy]
   end
   resources :comments, only: [:index]
