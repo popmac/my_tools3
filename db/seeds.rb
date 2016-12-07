@@ -32,7 +32,16 @@ end
   image_path = File.join(Rails.root, "test/fixtures/images/photo-#{n+1}.png")
 
   Photo.create!(image: File.new(image_path),
-  user_id: 1)
+                user_id: 1)
+end
+
+3.times do |n|
+  image_path = File.join(Rails.root, "test/fixtures/images/photo-#{n+1}.png")
+
+  Photo.create!(image: File.new(image_path),
+                user_id: 2)
+  Photo.create!(image: File.new(image_path),
+                user_id: 3)
 end
 
 Tool.create!(name: "Atom")
@@ -52,6 +61,11 @@ Review.create!(review: "プログラミング関連の忘備録を記録する�
 Review.create!(review: "パスワードを忘れる心配がなくなったため、安心して使えるツールだと思います。",
                user_id: 2,
                tool_id: 3,
+               likes_count: 0,
+               rate: 90)
+Review.create!(review: "画面がきれいで使いやすいと思います。",
+               user_id: 3,
+               tool_id: 1,
                likes_count: 0,
                rate: 90)
 
