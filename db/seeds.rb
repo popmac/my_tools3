@@ -34,3 +34,6 @@ end
   Photo.create!(image: File.new(image_path),
   user_id: 1)
 end
+
+Tool.create!(name: "Atom")
+
