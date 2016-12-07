@@ -32,7 +32,7 @@ end
   image_path = File.join(Rails.root, "test/fixtures/images/photo-#{n+1}.png")
 
   Photo.create!(image: File.new(image_path),
-  user_id: 1)
+                user_id: 1)
 end
 
 Tool.create!(name: "Atom")
