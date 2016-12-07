@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }, format: { with: /\A[a-z0-9_]+\z/i }
 
+  acts_as_paranoid
+
   before_create :build_default_profile
 
   attr_accessor :login
