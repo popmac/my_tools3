@@ -52,22 +52,22 @@ Tool.create!(name: "1password")
 Review.create!(review: "最初はsublime textを使っていましたが、試しにAtomを使ってみたら、いつの間にかこちらがメインになっていました。",
                user_id: 1,
                tool_id: 1,
-               likes_count: 0,
+               likes_count: nil,
                rate: 90)
 Review.create!(review: "プログラミング関連の忘備録を記録するのに便利です。",
                user_id: 1,
                tool_id: 2,
-               likes_count: 0,
+               likes_count: nil,
                rate: 90)
 Review.create!(review: "パスワードを忘れる心配がなくなったため、安心して使えるツールだと思います。",
                user_id: 2,
                tool_id: 3,
-               likes_count: 0,
+               likes_count: nil,
                rate: 90)
 Review.create!(review: "画面がきれいで使いやすいと思います。",
                user_id: 3,
                tool_id: 1,
-               likes_count: 0,
+               likes_count: nil,
                rate: 90)
 
 Comment.create!(comment: "僕も使っています！",
