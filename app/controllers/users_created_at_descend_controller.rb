@@ -1,0 +1,2 @@
+class UsersCreatedAtDescendController < ApplicationController
+end
