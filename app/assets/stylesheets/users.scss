@@ -73,6 +73,16 @@
 .users-data-photo {
   height: 535px !important;
   margin: 0 auto;
+  @media all and (max-width: 1200px) {
+    & {
+      height: 440px !important;
+    }
+  }
+  @media all and (max-width: 648px) {
+    & {
+      height: 250px !important;
+    }
+  }
 }
 
 // users/_user_dataのモーダルで表示されるphoto
