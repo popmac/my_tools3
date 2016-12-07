@@ -27,3 +27,10 @@ user.profile.update!(age: 29,
                        nickname: "まっちゃん",
                        user_id: "#{n+2}")
 end
+
+5.times do |n|
+  image_path = File.join(Rails.root, "test/fixtures/images/photo-#{n+1}.png")
+
+  Photo.create!(image: File.new(image_path),
+  user_id: 1)
+end
