@@ -35,6 +35,15 @@ end
                 user_id: 1)
 end
 
+3.times do |n|
+  image_path = File.join(Rails.root, "test/fixtures/images/photo-#{n+1}.png")
+
+  Photo.create!(image: File.new(image_path),
+                user_id: 2)
+  Photo.create!(image: File.new(image_path),
+                user_id: 3)
+end
+
 Tool.create!(name: "Atom")
 Tool.create!(name: "Kobito")
 Tool.create!(name: "1password")
