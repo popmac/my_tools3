@@ -248,6 +248,10 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
+    paranoia (2.2.0)
+      activerecord (>= 4.0, < 5.1)
+    paranoia_uniqueness_validator (1.2.0)
+      activerecord (>= 4.0.0)
     pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -357,6 +361,8 @@ DEPENDENCIES
   jquery-ui-rails
   minitest-reporters
   mysql2 (= 0.3.18)
+  paranoia
+  paranoia_uniqueness_validator
   pry-rails
   rails (= 4.2.6)
   rails-jquery-autocomplete
