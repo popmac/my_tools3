@@ -47,3 +47,5 @@ Comment.create!(comment: "僕も使っています！",
                 user_id: 2,
                 review_id: 1)
 
+Like.create!(user_id: 2,
+             review_id: 1)
