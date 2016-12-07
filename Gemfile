@@ -66,3 +66,4 @@ gem 'rails-jquery-autocomplete'
 gem 'fog'
 gem 'faker'
 gem "paranoia"
+gem 'paranoia_uniqueness_validator'
