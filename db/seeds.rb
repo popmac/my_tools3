@@ -20,11 +20,12 @@ user.profile.update!(age: 29,
                       password:              "aaaa1111",
                       password_confirmation: "aaaa1111")
   image_path = File.join(Rails.root, "test/fixtures/images/profile-#{n+2}.jpg")
+  nickname = Faker::Name.name
   user.profile.update!(age: "#{n+30}",
                        job: "Webマーケター",
                        introduce: "よろしくお願いします！",
                        avatar: File.new(image_path),
-                       nickname: "まっちゃん",
+                       nickname: nickname,
                        user_id: "#{n+2}")
 end
 
