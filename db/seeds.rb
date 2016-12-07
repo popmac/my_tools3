@@ -37,3 +37,9 @@ end
 
 Tool.create!(name: "Atom")
 
+Review.create!(review: "最初はsublime textを使っていましたが、試しにAtomを使ってみたら、いつの間にかこちらがメインになっていました。",
+               user_id: 1,
+               tool_id: 1,
+               likes_count: 0,
+               rate: 90)
+
