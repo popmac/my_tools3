@@ -10,10 +10,10 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }, format: { with: /\A[a-z0-9_]+\z/i }
-
   acts_as_paranoid
+
   validates :email, uniqueness_without_deleted: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }, format: { with: /\A[a-z0-9_]+\z/i }
 
   before_create :build_default_profile
 
@@ -26,12 +26,6 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
-  end
-
-  private
-  def build_default_profile
-    build_profile
-    true
   end
 
   # deviseの設定をオーバーライドして、emailのユニーク制約を外す
@@ -49,4 +43,12 @@ class User < ActiveRecord::Base
       validates_length_of       :password, within: password_length, allow_blank: true
     end
   end
+
+
+  private
+  def build_default_profile
+    build_profile
+    true
+  end
+
 end
