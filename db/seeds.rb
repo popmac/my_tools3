@@ -43,3 +43,7 @@ Review.create!(review: "最初はsublime textを使っていましたが、試�
                likes_count: 0,
                rate: 90)
 
+Comment.create!(comment: "僕も使っています！",
+                user_id: 2,
+                review_id: 1)
+
