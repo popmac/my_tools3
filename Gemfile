@@ -65,3 +65,4 @@ gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
 gem 'fog'
 gem 'faker'
+gem "paranoia"
