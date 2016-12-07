@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  # uniqueness_without_deleted: true を追加するとユニークチェックが余分にかかってしまうのを阻止する
+  def email_changed?
+    false
+  end
 
   private
   def build_default_profile
