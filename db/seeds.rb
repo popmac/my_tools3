@@ -63,6 +63,11 @@ Review.create!(review: "パスワードを忘れる心配がなくなったた�
                tool_id: 3,
                likes_count: 0,
                rate: 90)
+Review.create!(review: "画面がきれいで使いやすいと思います。",
+               user_id: 3,
+               tool_id: 1,
+               likes_count: 0,
+               rate: 90)
 
 Comment.create!(comment: "僕も使っています！",
                 user_id: 2,
