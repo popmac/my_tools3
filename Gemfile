@@ -67,3 +67,4 @@ gem 'fog'
 gem 'faker'
 gem "paranoia"
 gem 'paranoia_uniqueness_validator'
+gem 'activeadmin', github: 'activeadmin'
