@@ -83,4 +83,5 @@ Like.create!(user_id: 3,
              review_id: 1)
 Like.create!(user_id: 1,
              review_id: 3)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
+AdminUser.create!(email: 'hoge1@hoge.com', password: 'aaaa1111', password_confirmation: 'aaaa1111')
