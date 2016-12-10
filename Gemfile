@@ -71,6 +71,6 @@ gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
 gem 'fog'
 gem 'faker'
-gem "paranoia"
+gem 'paranoia'
 gem 'paranoia_uniqueness_validator'
 gem 'activeadmin', github: 'activeadmin'
