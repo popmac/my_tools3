@@ -59,4 +59,7 @@ RSpec.configure do |config|
 
   config.include Devise::Test::ControllerHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+
+  # ファクトリを簡単に呼び出せるよう、Factory Girl の構文をインクルードする
+  config.include FactoryGirl::Syntax::Methods
 end
