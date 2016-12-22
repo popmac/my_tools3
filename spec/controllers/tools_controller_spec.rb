@@ -23,4 +23,17 @@ RSpec.describe ToolsController, type: :controller do
     end
   end
 
+  describe 'GET#show' do
+    it "assigns the requested tool to @tool" do
+      tool = create(:tool)
+      get :show, id: tool
+      expect(assigns(:tool)).to eq tool
+    end
+    it "renders the :show template" do
+      tool = create(:tool)
+      get :show, id: tool
+      expect(response).to render_template :show
+    end
+  end
+
 end
