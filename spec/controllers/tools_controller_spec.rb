@@ -12,13 +12,14 @@ RSpec.describe ToolsController, type: :controller do
   end
 
   describe 'GET#new' do
+
+    before { get :new }
+
     it "assigns a new Tool to @tool" do
-      get :new
       expect(assigns(:tool)).to be_a_new(Tool)
     end
     # :new テンプレートを表示すること
     it "renders the :new template" do
-      get :new
       expect(response).to render_template :new
     end
   end
