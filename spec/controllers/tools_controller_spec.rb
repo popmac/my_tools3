@@ -18,7 +18,6 @@ RSpec.describe ToolsController, type: :controller do
     it "assigns a new Tool to @tool" do
       expect(assigns(:tool)).to be_a_new(Tool)
     end
-    # :new テンプレートを表示すること
     it "renders the :new template" do
       expect(response).to render_template :new
     end
