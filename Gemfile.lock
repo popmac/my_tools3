@@ -303,6 +303,7 @@ GEM
       ruby-progressbar
     multi_json (1.12.1)
     mysql2 (0.3.18)
+    newrelic_rpm (3.17.2.327)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -459,6 +460,7 @@ DEPENDENCIES
   launchy
   minitest-reporters
   mysql2 (= 0.3.18)
+  newrelic_rpm
   paranoia
   paranoia_uniqueness_validator
   pry-rails
