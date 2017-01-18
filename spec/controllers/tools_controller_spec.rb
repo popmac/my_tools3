@@ -23,6 +23,56 @@ RSpec.describe ToolsController, type: :controller do
     end
   end
 
+  describe 'POST#create' do
+
+    before do
+      @review = attributes_for(:review)
+      @no_review = attributes_for(:review, review: nil)
+      @no_rate = attributes_for(:review, rate: nil)
+    end
+
+    context 'with valid attributes' do
+      it 'saves the new tool in the database' do
+        expect{
+          post :create, tool: attributes_for(:tool, review: @review)
+        }.to change(Tool, :count).by(1)
+      end
+      it "redirects to root" do
+        post :create, tool: attributes_for(:tool, review: @review)
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    context 'with invalid attributes' do
+      it "does not save the new tool in the database" do
+        expect{
+          post :create, tool: attributes_for(:invalid_tool)
+        }.to_not change(Tool, :count)
+      end
+      it "re-renders the :new template" do
+        post :create, tool: attributes_for(:invalid_tool)
+        expect(response).to render_template :new
+      end
+    end
+
+    context 'paramsのreviewの中にreviewが存在しない場合' do
+      it "does not save the new tool in the database" do
+        expect{
+          post :create, tool: attributes_for(:tool, review: @no_review)
+        }.to_not change(Tool, :count)
+      end
+    end
+
+    context 'paramsのreviewの中にrateが存在しない場合' do
+      it "does not save the new tool in the database" do
+        expect{
+          post :create, tool: attributes_for(:tool, review: @no_rate)
+        }.to_not change(Tool, :count)
+      end
+    end
+
+  end
+
   describe 'GET#show' do
 
     before do
