@@ -29,6 +29,7 @@ RSpec.describe ToolsController, type: :controller do
       @review = attributes_for(:review)
       @no_review = attributes_for(:review, review: nil)
       @no_rate = attributes_for(:review, rate: nil)
+      @no_review_and_rate = attributes_for(:review, review: nil, rate: :nil)
     end
 
     context 'with valid attributes' do
@@ -67,6 +68,14 @@ RSpec.describe ToolsController, type: :controller do
       it "does not save the new tool in the database" do
         expect{
           post :create, tool: attributes_for(:tool, review: @no_rate)
+        }.to_not change(Tool, :count)
+      end
+    end
+
+    context 'paramsのreviewの中にreviewとrateが存在しない場合' do
+      it "does not save the new tool in the database" do
+        expect{
+          post :create, tool: attributes_for(:tool, review: @no_review_and_rate)
         }.to_not change(Tool, :count)
       end
     end
