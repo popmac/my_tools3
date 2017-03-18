@@ -15,3 +15,6 @@
 # ローカルに画像を保存する場合は無視する
 /public/uploads/photo
 /public/uploads/profile
+
+# RubyMine project files
+.idea
